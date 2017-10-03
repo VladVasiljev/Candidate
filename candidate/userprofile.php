@@ -19,7 +19,7 @@
     
          <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>
            </div>
-            <div class="col-2-1">
+            <div  class="col-2-2">
       <h2>User Details</h2>
        <?php
              if(isset($_SESSION['id'])){
@@ -46,6 +46,7 @@ mysqli_close($conn);
          }
         
           ?>
+          
            <form action="includes/logout.inc.php" >
         <button>
             
