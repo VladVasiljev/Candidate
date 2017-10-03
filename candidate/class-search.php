@@ -19,7 +19,7 @@ class search{
         FROM newuser
         WHERE industry LIKE '%{$sanitized}%'
         OR first LIKE '%{$sanitized}%'
-        ORDER by years
+        ORDER by years DESC
         ");
         
         //check results
