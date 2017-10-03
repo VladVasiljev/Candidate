@@ -1,6 +1,7 @@
 <?php
 // including the database connection file
 include_once("dbh.php");
+include 'header.php';
 
 if(isset($_POST['update']))
 {	
