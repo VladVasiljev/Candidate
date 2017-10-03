@@ -77,11 +77,13 @@ while($res = mysqli_fetch_array($result))
 </head>
 
 <body>
-	<a href="userprofile.php">Home</a>
+	<a href="userprofile.php">Back To Profile</a>
 	<br/><br/>
-	<<H1>Please Enter All Fields</H1>
+	<div class="forms">
+	<H1>Please Enter All Fields</H1>
 	<form name="form1" method="post" action="editProfile.php">
 		<table border="0">
+			
 			<tr> 
 				<td>First Name</td>
 				<td><input type="text" name="first" value="<?php echo $firstName;?>"></td>
@@ -110,6 +112,9 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
 				<td><input type="submit" name="update" value="Update"></td>
 			</tr>
+			</div>
+				
+			
 		</table>
 	</form>
 </body>
