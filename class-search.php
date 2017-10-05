@@ -18,7 +18,11 @@ class search{
         SELECT first, last, email, industry, years
         FROM newuser
         WHERE industry LIKE '%{$sanitized}%'
+<<<<<<< HEAD
+        OR years LIKE '%{$sanitized}%'
+=======
         OR first LIKE '%{$sanitized}%'
+>>>>>>> e367eb7a720bcd818cbf34377eeb3fe1bd310da2
         ORDER by years DESC
         ");
         

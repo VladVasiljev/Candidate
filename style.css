@@ -125,9 +125,7 @@ nav ul form button {
     box-sizing: border-box;
 }
 
-#search{
-    width:auto;
-}
+
 
 
 #signup select {
@@ -168,7 +166,7 @@ input[type=text], input[type=password],input[type=number] {
     width: auto;
     padding: 10px 20px;
     margin: 2px 0px;
-    display:inline- block;
+    display:block;
     border: 1px solid #74031C;
     box-sizing: border-box;
 }
