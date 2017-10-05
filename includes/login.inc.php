@@ -14,7 +14,7 @@ $sql = "SELECT * FROM newuser WHERE uid='$uid' AND pwd='$pwd'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc();
 $pwd = $row['pwd'];
-$hash = password_verify($pwd, $hash_pwd);
+//$hash = password_verify($pwd, $hash_pwd);
 
 
     if(!$row = mysqli_fetch_assoc($result)){

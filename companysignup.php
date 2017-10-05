@@ -18,7 +18,7 @@ include 'header.php';
             }
             
             elseif(strpos($url, 'error=username')!==false){
-                echo "Fill out all fields!";
+                echo "Username already exists!";
             }
             
          if(isset($_SESSION['id'])){
