@@ -54,7 +54,7 @@
 		</div>
 		<div class="row">
 			<div class="col-1-2">
-				<h2>Bio</h2>
+				<!-- <h2>Bio</h2> -->
 			</div>
 		</div><!-- /.row -->
 	</div><!-- /.wrapper -->

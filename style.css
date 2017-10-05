@@ -232,6 +232,14 @@ h2 {
   width: 100%;
 }
 
+.forms{
+    margin: auto;
+    width: 30%;
+    border: 0;
+    padding: 10px;
+}
+
+
 @media all and ( min-width: 600px ) {
   
   /* set col widths */
