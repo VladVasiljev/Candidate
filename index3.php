@@ -25,6 +25,7 @@ include 'header.php';
           
          
                         <div align="center" class="form">
+                        
                             <?php
                 
                                 if(isset($_SESSION['id'])){

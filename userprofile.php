@@ -16,7 +16,7 @@
 					<img alt="Logo" src="img/logo.png">
 				</center>
 			</div>
-			<div class="col-2-1">
+			<div class="col-1-2">
 				<h2>User Details</h2>
                 <?php
 				if (isset($_SESSION['id'])) {
@@ -37,7 +37,7 @@
 				        echo "0 results";
 				    }
 				    
-				    mysqli_close($conn);
+				  //  mysqli_close($conn);
 				    
 				} else {
 				    echo "You are not logged in";
@@ -53,6 +53,20 @@
 			</div>
 		</div>
 		<div class="row">
+
+<?php
+
+$q = mysqli_query($conn, "SELECT * FROM newuser");
+while($row = mysqli_fetch_assoc($q)){
+	echo $row['uid'];
+	if($row['image'] == ""){
+		echo "<img width = 300px height=300px src='uploads/default.png'/><br>";
+	}
+}
+
+?>
+
+	
 			<div class="col-1-2">
 				<!-- <h2>Bio</h2> -->
 			</div>

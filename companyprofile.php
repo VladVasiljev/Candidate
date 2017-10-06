@@ -14,14 +14,13 @@
 
 <body>
   <div class="wrapper">
-       <div class="row">
-      
-    <center> 
-        <img  src="img/logo.png" alt="Logo" max-width="100%" >
-    </center>
-     </div>
-            <div class="col-1-2">
-      <h2>Company Details</h2>
+  <div class="row">
+  <div class="col-1-1">
+      <center>
+          <img alt="Logo" src="img/logo.png">
+      </center>
+  </div>
+  <div class="col-1-2">
       <?php
 				if (isset($_SESSION['cid'])) {
 				    echo "Hello, Welcome back.<br> Your user ID is: ";
@@ -55,8 +54,8 @@
             </button>
         </form>
       </div></div>
-    <div class="row">
-      <div class="col-2-2">
+    
+      <div class="col-1-2">
       
         <?php
             
@@ -83,8 +82,8 @@ if(isset($_GET['s'])){
     <div class="search-form">
         <form action=" " method="get">
             <div class="form-field">
-            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="
-            <?php $search_term =' '; echo $search_term; ?>">
+            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value=" "
+            <?php $search_term =' '; echo $search_term; ?>">                                                                       
              <input type="submit" value="Search">
             </div>
         </form>
