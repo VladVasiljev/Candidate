@@ -16,6 +16,8 @@ if(isset($_POST['update']))
 	$yearsXP = mysqli_real_escape_string($conn, $_POST['years']);	
 	$industryType = mysqli_real_escape_string($conn, $_POST['industry']);	
 	$bio = mysqli_real_escape_string($conn, $_POST['bio']);	
+
+	
 		
 	
 	// checking empty fields

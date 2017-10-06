@@ -47,9 +47,6 @@
 				<form action="includes/logout.inc.php">
 					<button>LOG OUT</button>
 				</form>
-
-            
-
 			</div>
 		</div>
 		<div class="row">

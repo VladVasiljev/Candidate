@@ -33,7 +33,7 @@
 				        // output data of each row
 				        while ($row = mysqli_fetch_assoc($result)) {
 							echo " <br>Company Name: " . $row['name'] . " <br> Username: " . $row["username"] ;
-							echo "</br><a href=\"editProfile.php?cid=$row[cid]\">Edit Profile</a>";
+							echo "</br><a href=\"editProfileCompany.php?cid=$row[cid]\">Edit Profile</a>";
 							
 				        }
 				    } else {
