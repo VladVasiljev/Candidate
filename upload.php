@@ -25,15 +25,9 @@ if(isset($_POST['submit'])){
             move_uploaded_file($fileTmpName, $fileDestination);
             
 
-<<<<<<< HEAD
-        //  $sql = "INSERT INTO  newuser (image)
-        //  VALUES ('uploads\\".$fileName."')" ;
-        //header("location:userprofile.php?upload=success");
-=======
                 $sql = "UPDATE  newuser SET (image)
                   VALUES ('uploads\\".$fileNameNew."')" ;
                   header("location:userprofile.php?upload=success");
->>>>>>> e63493a1010d1a4cfdec277e0c04035c7953d33e
           
            }else{
                echo "Your file is to big";
