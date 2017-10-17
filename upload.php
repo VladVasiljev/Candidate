@@ -1,14 +1,10 @@
 
 <?php
 include 'dbh.php';
-
-    ?>
-
+?>
 <?php
 if(isset($_POST['submit'])){
     $file = $_FILES['file'];
-
-
     $fileName = $_FILES['file']['name'];
     $fileTmpName = $_FILES['file']['tmp_name'];
     $fileSize = $_FILES['file']['size'];
@@ -23,14 +19,15 @@ if(isset($_POST['submit'])){
 
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
-           if($fileSze < 10000000) {
+           if($fileSize < 10000000) {
             $fileNameNew = uniqid('',true).".".$fileActualExt;
             $fileDestination = 'uploads/'.$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
+            
 
-          //  $sql = "INSERT INTO  newuser (image)
-          //  VALUES ('uploads\\".$fileName."')" ;
-           // header("location:userprofile.php?upload=success");
+                $sql = "UPDATE  newuser SET (image)
+                  VALUES ('uploads\\".$fileNameNew."')" ;
+                  header("location:userprofile.php?upload=success");
           
            }else{
                echo "Your file is to big";
