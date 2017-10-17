@@ -16,7 +16,8 @@
                 <li><a href="signup.php">USER</a>
                 </li>
                 </ul>
-            </nav> 
+            </nav>
+
      </header>
     </body>
 </html>

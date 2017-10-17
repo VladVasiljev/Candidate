@@ -32,6 +32,7 @@
 							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br>Bio: " . $row["bio"];
 							echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
 							
+							
 				        }
 				    } else {
 				        echo "0 results";
@@ -52,7 +53,7 @@
 		<?php
 $q = mysqli_query($conn, "SELECT * FROM newuser");
 while($row = mysqli_fetch_assoc($q)){
-	echo $row['uid'];
+	
 	if($row['image'] == ""){
 		echo "<img width = 200px  src='img/default.png'/>";
 	}

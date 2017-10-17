@@ -19,6 +19,8 @@
       <center>
           <img alt="Logo" src="img/logo.png">
       </center>
+      
+      
   </div>
   <div class="col-1-2">
       <?php
@@ -53,7 +55,8 @@
             LOG OUT
             </button>
         </form>
-      </div></div>
+        
+      </div>
     
       <div class="col-1-2">
       
@@ -116,6 +119,7 @@ if(isset($_GET['s'])){
         </form>
       
         <?php endif; ?>
+      </div>
       </div>
       
     </div><!-- /.row -->

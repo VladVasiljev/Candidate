@@ -82,7 +82,7 @@ while($res = mysqli_fetch_array($result))
 	<a href="userprofile.php">Back To Profile</a>
 	<br/><br/>
 	<div class="forms">
-	<H1>Please Enter All Fields</H1>
+	<center><H1>Please Enter All Fields</H1></center>
 	<form name="form1" method="post" action="editProfile.php">
 		<table border="0">
 			
@@ -99,12 +99,25 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="text" name="email" value="<?php echo $email;?>"></td>
 			</tr>
             <tr> 
-				<td>Years Experience</td>
+				<td>Years Exp</td>
 				<td><input type="text" name="years" value="<?php echo $yearsXP;?>"></td>
 			</tr>
             <tr> 
-				<td>Industry Type</td>
-				<td><input type="text" name="industry" value="<?php echo $industryType;?>"></td>
+				<td>Industry</td>
+				<td><select name='industry'>
+        <option value='it'>IT</option>
+        <option value='retail'>Retail</option>
+        <option value='medical'>Medical</option>
+        <option value='manual labour'>Manual Labour</option>
+        <option value='motor industry'>Motor Industry</option>
+        <option value='academic'>Academic</option>
+        <option value='accountancy and finance'>Accountancy and Finance</option>
+        <option value='architecture/design'>Architecture/Design</option>
+        <option value='childcare'>Childcare</option>
+        <option value='drivers'>Drivers</option>
+        <option value='education/training'>Education/Training</option>
+        <option value='graduate'>Graduate</option>
+        <option value='hair and beauty'>Hair and Beauty</option></td>
 			</tr>
             <tr> 
 				<td>Bio</td>
