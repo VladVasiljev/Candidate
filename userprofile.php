@@ -48,20 +48,21 @@
 					<button>LOG OUT</button>
 				</form>
 			</div>
-		</div>
-		<div class="row">
-
-<?php
-
+			<div class="col-1-2">
+		<?php
 $q = mysqli_query($conn, "SELECT * FROM newuser");
 while($row = mysqli_fetch_assoc($q)){
 	echo $row['uid'];
 	if($row['image'] == ""){
-		echo "<img width = 300px height=300px src='uploads/default.png'/><br>";
+		echo "<img width = 200px  src='img/default.png'/>";
 	}
 }
 
 ?>
+</div>
+		</div>
+		<div class="row">
+
 
 	
 			<div class="col-1-2">
