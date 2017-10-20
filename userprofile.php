@@ -6,6 +6,8 @@
 ?>
 <head>
 	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>RightPerson</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<script src="bootstrap/js/bootstrap.min.js"></script>

@@ -48,13 +48,8 @@ if(empty($industry)){
     exit();  
         } else{
                
-<<<<<<< HEAD
-               $sql = "INSERT INTO newuser (first, last, uid, pwd, email, years, industry, bio, userPic) 
-VALUES ('$first', '$last', '$uid', '$pwd', '$email','$years','$industry', '$bio','$userPicture')";
-=======
                $sql = "INSERT INTO newuser (first, last, uid, pwd, email, years, industry) 
 VALUES ('$first', '$last', '$uid', '$pwd', '$email','$years','$industry')";
->>>>>>> 4a3ac5032956ef1d0c33fd7e32a0b7b3ac5807dd
 $result = mysqli_query($conn, $sql);
 
 header("Location: ../index3.php"); 
