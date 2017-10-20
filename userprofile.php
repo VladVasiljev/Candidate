@@ -53,18 +53,6 @@
 					<button>LOG OUT</button>
 				</form>
 			</div>
-<<<<<<< HEAD
-=======
-			<div class="col-1-2">
-		<?php
-$q = mysqli_query($conn, "SELECT * FROM newuser");
-while($row = mysqli_fetch_assoc($q)){
-	
-	if($row['image'] == ""){
-		echo "<img width = 200px  src='img/default.png'/>";
-	}
-}
->>>>>>> 4a3ac5032956ef1d0c33fd7e32a0b7b3ac5807dd
 
 </div>
 		</div>

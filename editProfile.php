@@ -222,34 +222,12 @@ if(isset($_POST['cancel']))
 				<td><input type="text" name="email" value="<?php //echo $email;?>"></td>
 			</tr>
             <tr> 
-<<<<<<< HEAD
 				<td>Years Experience</td>
 				<td><input type="text" name="years" value="<?php //echo $yearsXP;?>"></td>
 			</tr>
             <tr> 
 				<td>Industry Type</td>
 				<td><input type="text" name="industry" value="<?php// echo $industryType;?>"></td>
-=======
-				<td>Years Exp</td>
-				<td><input type="text" name="years" value="<?php echo $yearsXP;?>"></td>
-			</tr>
-            <tr> 
-				<td>Industry</td>
-				<td><select name='industry'>
-        <option value='it'>IT</option>
-        <option value='retail'>Retail</option>
-        <option value='medical'>Medical</option>
-        <option value='manual labour'>Manual Labour</option>
-        <option value='motor industry'>Motor Industry</option>
-        <option value='academic'>Academic</option>
-        <option value='accountancy and finance'>Accountancy and Finance</option>
-        <option value='architecture/design'>Architecture/Design</option>
-        <option value='childcare'>Childcare</option>
-        <option value='drivers'>Drivers</option>
-        <option value='education/training'>Education/Training</option>
-        <option value='graduate'>Graduate</option>
-        <option value='hair and beauty'>Hair and Beauty</option></td>
->>>>>>> 4a3ac5032956ef1d0c33fd7e32a0b7b3ac5807dd
 			</tr>
             <tr> 
 				<td>Bio</td>

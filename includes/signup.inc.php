@@ -8,12 +8,8 @@ $pwd = $_POST ['pwd'];
 $email = $_POST['email'];
 $years = $_POST['years'];
 $industry = $_POST['industry'];
-<<<<<<< HEAD
 $bio = $_POST['bio'];
 $userPicture =$_POST['userPic'];
-=======
-
->>>>>>> 4a3ac5032956ef1d0c33fd7e32a0b7b3ac5807dd
 
 if(empty($first)){
     header("Location: ../signup.php?error=empty");
