@@ -79,7 +79,7 @@ if(isset($_GET['s'])){
 }
 
 ?>
-<div align="center" id="search">
+<div  id="search">
               <h1>Search for your Candidate</h1>
         <p>Please use the search box to search by industry or name</p><br>
     <div class="search-form">
