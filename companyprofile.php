@@ -19,6 +19,8 @@
       <center>
           <img alt="Logo" src="img/logo.png">
       </center>
+      
+      
   </div>
   <div class="col-1-2">
       <?php
@@ -53,7 +55,8 @@
             LOG OUT
             </button>
         </form>
-      </div></div>
+        
+      </div>
     
       <div class="col-1-2">
       
@@ -76,7 +79,7 @@ if(isset($_GET['s'])){
 }
 
 ?>
-<div align="center" id="search">
+<div  id="search">
               <h1>Search for your Candidate</h1>
         <p>Please use the search box to search by industry or name</p><br>
     <div class="search-form">
@@ -116,6 +119,7 @@ if(isset($_GET['s'])){
         </form>
       
         <?php endif; ?>
+      </div>
       </div>
       
     </div><!-- /.row -->

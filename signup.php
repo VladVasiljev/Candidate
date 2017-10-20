@@ -53,9 +53,16 @@ include 'header.php';
         <option value='retail'>Retail</option>
         <option value='medical'>Medical</option>
         <option value='manual labour'>Manual Labour</option>
+        <option value='motor industry'>Motor Industry</option>
+        <option value='academic'>Academic</option>
+        <option value='accountancy and finance'>Accountancy and Finance</option>
+        <option value='architecture/design'>Architecture/Design</option>
+        <option value='childcare'>Childcare</option>
+        <option value='drivers'>Drivers</option>
+        <option value='education/training'>Education/Training</option>
+        <option value='graduate'>Graduate</option>
+        <option value='hair and beauty'>Hair and Beauty</option>
         </select>
-        <label for='Bio'>Bio</label>
-        <textarea rows='5' cols='50' name='bio' placeholder='Bio Here'> </textarea>
         <button type ='submit'>Sign Up</button>
         </form>";
          } 
