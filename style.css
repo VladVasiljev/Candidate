@@ -34,6 +34,18 @@ button {
     border: none;
     cursor: pointer;
     width: auto;
+    border-radius: 30px;
+}
+
+.cancelbtn{
+    background-color: #A00000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 20;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    border-radius: 30px;
 }
 
 button:hover {

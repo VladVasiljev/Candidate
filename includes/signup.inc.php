@@ -9,6 +9,7 @@ $email = $_POST['email'];
 $years = $_POST['years'];
 $industry = $_POST['industry'];
 $bio = $_POST['bio'];
+$userPicture =$_POST['userPic'];
 
 if(empty($first)){
     header("Location: ../signup.php?error=empty");
@@ -47,8 +48,8 @@ if(empty($industry)){
     exit();  
         } else{
                
-               $sql = "INSERT INTO newuser (first, last, uid, pwd, email, years, industry, bio) 
-VALUES ('$first', '$last', '$uid', '$pwd', '$email','$years','$industry', '$bio')";
+               $sql = "INSERT INTO newuser (first, last, uid, pwd, email, years, industry, bio, userPic) 
+VALUES ('$first', '$last', '$uid', '$pwd', '$email','$years','$industry', '$bio','$userPicture')";
 $result = mysqli_query($conn, $sql);
 
 header("Location: ../index3.php"); 
