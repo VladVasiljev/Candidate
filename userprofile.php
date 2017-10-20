@@ -6,6 +6,8 @@
 ?>
 <head>
 	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>RightPerson</title>
 </head>
 <body>
@@ -54,7 +56,7 @@
 $q = mysqli_query($conn, "SELECT * FROM newuser");
 while($row = mysqli_fetch_assoc($q)){
 	
-	if($row['image'] == ""){
+	if($row['userPic'] == ""){
 		echo "<img width = 200px  src='img/default.png'/>";
 	}
 }
