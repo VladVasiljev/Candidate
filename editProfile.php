@@ -200,12 +200,8 @@ if(isset($_POST['cancel']))
 	<br/><br/>
 	
 	<div class="forms">
-<<<<<<< HEAD
 	<H1>Please Enter All Fields</H1>
 	<!--
-=======
-	<center><H1>Please Enter All Fields</H1></center>
->>>>>>> 4a3ac5032956ef1d0c33fd7e32a0b7b3ac5807dd
 	<form name="form1" method="post" action="editProfile.php">
 		<table border="0">
 			
