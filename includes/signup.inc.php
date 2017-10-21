@@ -52,7 +52,7 @@ if(empty($industry)){
 VALUES ('$first', '$last', '$uid', '$pwd', '$email','$years','$industry')";
 $result = mysqli_query($conn, $sql);
 
-header("Location: ../index3.php"); 
+header("Location: ../home.php"); 
         }
         
      

@@ -5,6 +5,7 @@ $name = $_POST ['name'];
 $username = $_POST ['username'];
 $pwd = $_POST ['pwd'];
 $industry = $_POST['industry'];
+$position = $_POST['position'];
 
 
 if(empty($name)){
@@ -37,8 +38,8 @@ if(empty($industry)){
     exit();  
         } else{
                
-               $sql = "INSERT INTO company (name, username, pwd, industry) 
-VALUES ('$name', '$username',  '$pwd','$industry')";
+               $sql = "INSERT INTO company (name, username, pwd, industry, position) 
+VALUES ('$name', '$username',  '$pwd', '$industry', '$position')";
 $result = mysqli_query($conn, $sql);
 
 header("Location: ../index3.php"); 

@@ -12,7 +12,7 @@ include 'header.php';
 <html>
     <head>
     <meta charset="UTF-8">
-    <title>Right Person</title>
+    <title>Candidate</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
@@ -46,25 +46,7 @@ include 'header.php';
                           
 
                             ?>
-                            <?php
-                                  if(isset($_SESSION['cid'])){
-                                    echo"You are currently logged in, continue to your profile";
-                             echo" <form action='userprofile.php' >
-        <button>Profile</button>
-        </form>";
-                         } else{
-                                    echo"<h1>Company Login</h1>";
-                              echo" <form action='includes/company.login.inc.php' method='POST'>
-                                <input type ='text' name='username' placeholder='Username'>
-                                <input type ='password' name='pwd' placeholder='Password'>
-                                <button type ='submit'>Login</button>
-                                </form>";
-                              
-                                    
-                         }
-                          
-
-                            ?>
+                        
                             </div>
                         
              

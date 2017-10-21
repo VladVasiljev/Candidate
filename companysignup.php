@@ -45,13 +45,28 @@ include 'header.php';
          
         <input type ='text' name='username' placeholder='Username'><br>
        <input type ='password' name='pwd' placeholder='Password'><br>
+       <label for='position'>Position</label> 
+       <select name='position'>
+       <option value='manager'>Manager</option>
+       <option value='hr'>HR</option>
+       <option value='recruiter'>Recruiter</option>
+       </select>
          
-         <label for='Industry'>Select Industry</label> 
+        <label for='Industry'>Select Industry</label> 
         <select name='industry'>
         <option value='it'>IT</option>
         <option value='retail'>Retail</option>
         <option value='medical'>Medical</option>
-        <option value='manual labour'>Manual Labour</option></select>
+        <option value='manual labour'>Manual Labour</option>
+        <option value='motor industry'>Motor Industry</option>
+        <option value='academic'>Academic</option>
+        <option value='accountancy and finance'>Accountancy and Finance</option>
+        <option value='architecture/design'>Architecture/Design</option>
+        <option value='childcare'>Childcare</option>
+        <option value='drivers'>Drivers</option>
+        <option value='education/training'>Education/Training</option>
+        <option value='graduate'>Graduate</option>
+        <option value='hair and beauty'>Hair and Beauty</option></select>
         
         <button type ='submit'>Sign Up</button>
         </form>";

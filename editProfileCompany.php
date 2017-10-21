@@ -11,7 +11,8 @@ if(isset($_POST['update']))
 
 	$companyName = mysqli_real_escape_string($conn, $_POST['name']);	
 	$userName = mysqli_real_escape_string($conn, $_POST['username']);		
-	$industryType = mysqli_real_escape_string($conn, $_POST['industry']);	
+	$industryType = mysqli_real_escape_string($conn, $_POST['industry']);
+	$positionType = mysqli_real_escape_string($conn, $_POST['position']);	
 
 	
 		
@@ -30,11 +31,15 @@ if(isset($_POST['update']))
 		
 		if(empty($industryType)) {
 			echo "<font color='red'>Email field is empty.</font><br/>";
-        }	
+		}	
+		
+		if(empty($positionType)) {
+			echo "<font color='red'>Email field is empty.</font><br/>";
+        }
         
 	} else {	
 		//updating the table
-		$result = mysqli_query($conn, "UPDATE company SET name='$companyName',username='$userName',industry='$industryType' WHERE cid=$cid");
+		$result = mysqli_query($conn, "UPDATE company SET name='$companyName',username='$userName',industry='$industryType', position='$positionType' WHERE cid=$cid");
 		
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: companyprofile.php");
@@ -53,7 +58,8 @@ while($res = mysqli_fetch_array($result))
 {
 	$companyName = $res['name'];
 	$userName = $res['username'];
-    $industryType = $res['industry'];
+	$industryType = $res['industry'];
+	$positionType = $res['position'];
 	
 }
 ?>
@@ -63,7 +69,10 @@ while($res = mysqli_fetch_array($result))
 </head>
 
 <body>
-	<a href="companyprofile.php">Back To Profile</a>
+<form action="companyprofile.php">
+    <button type="submit" value="Go to Profile" />Go to Profile</button>
+</form>
+	
 	<br/><br/>
 	<div class="forms">
 	<H1>Please Enter All Fields</H1>
@@ -81,6 +90,10 @@ while($res = mysqli_fetch_array($result))
 			<tr> 
 				<td>Industry</td>
 				<td><input type="text" name="industry" value="<?php echo $industryType;?>"></td>
+			</tr>
+			<tr> 
+				<td>Position</td>
+				<td><input type="text" name="position" value="<?php echo $positionType;?>"></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="cid" value=<?php echo $_GET['cid'];?>></td>

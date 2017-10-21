@@ -24,6 +24,7 @@ if(isset($_GET['s'])){
          <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+    <div class="wrapper">
     <h1>Search</h1>
         <p>Please use the search box to search by industry or name</p><br>
     <div class="search-form">
@@ -35,14 +36,16 @@ if(isset($_GET['s'])){
             </div>
         </form>
         </div>
-         
+        <div class="row">
+        <div class="col-1-2"> 
         <?php 
         if(!empty($search_results)):?>
         <div class="results-count">
         <p><?php echo $search_results['count'];?> Results found</p>
         </div><br>
+        </div>
+        <div class="col-1-2">
         
-        <div class="results-table">
         <?php foreach($search_results['results'] as $search_result): ?>
             <div class="result">
             <p>First Name: <?php echo $search_result->first; ?></p>
@@ -52,9 +55,11 @@ if(isset($_GET['s'])){
                 <p>Years Experience: <?php echo $search_result->years; ?></p><br><br>
             </div>
             <?php endforeach; ?>
+        
         </div>
       
         <?php endif; ?>
+        </div>
     </body>
 </html>
 

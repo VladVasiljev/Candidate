@@ -5,7 +5,7 @@
     include 'dbh.php';
 ?>
 <head>
-	<link href="style.css" rel="stylesheet" type="text/css">
+<!--	<link href="style.css" rel="stylesheet" type="text/css">-->
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>RightPerson</title>
@@ -20,9 +20,12 @@
 					<img alt="Logo" src="img/logo.png">
 				</center>
 			</div>
-			<div class="col-1-2">
-				<h2>User Details</h2>
-                <?php
+			<div align="center" class="col-1-1">
+				
+				
+			<h2>User Details</h2>
+			
+		<?php
 				if (isset($_SESSION['id'])) {
 				    echo "Hello, your user ID is:";
 				    echo $_SESSION['id'];
@@ -51,14 +54,12 @@
 
 				?>
 
-				<form action="includes/logout.inc.php">
-					<button>LOG OUT</button>
-				</form>
-			</div>
+				
+			
 
-</div>
-		</div>
-		<div class="row">
+
+
+	
 		<?php
 			include 'imageUploadConnection.php';
 			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['id'] . "'");
@@ -71,15 +72,18 @@
 					extract($row);
 					?>
 
-				<div class="col-xs-3">
+				<div class="col-1-2">
 						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
-						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="250px" height="250px" />
+						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
 						<p class="page-header">
 						<span>
-						<a class="btn btn-info" href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('sure to edit ?')"><span class="glyphicon glyphicon-edit"></span>Edit Profile</a> 
+						<a class="btn btn-info" href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Edit Profile ?')"><span class="glyphicon glyphicon-edit"></span>Edit Profile</a> 
 						<!--  <a class="btn btn-danger" href="?delete_id=<?php echo $row['id']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a> -->
 						</span>
 						</p>
+						<form action="includes/logout.inc.php">
+					<button>LOG OUT</button>
+				</form>
 					</div>
 					       
 					<?php
@@ -99,14 +103,13 @@
 		?>
 		</div>	
 		
+		
 	
 
 
 
 	
-			<div class="col-1-2">
-				<!-- <h2>Bio</h2> -->
-			</div>
+			
 		</div><!-- /.row -->
 	</div><!-- /.wrapper -->
 </body>
