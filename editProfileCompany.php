@@ -66,13 +66,13 @@ while($res = mysqli_fetch_array($result))
 <html>
 <head>	
 	<title>Edit Data</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-<form action="companyprofile.php">
-    <button type="submit" value="Go to Profile" />Go to Profile</button>
-</form>
-	
+<div class="wrapper">
+	<div class="row">
+	<div class="col-1-1">
 	<br/><br/>
 	<div class="forms">
 	<H1>Please Enter All Fields</H1>
@@ -99,10 +99,16 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="hidden" name="cid" value=<?php echo $_GET['cid'];?>></td>
 				<td><input type="submit" name="update" value="Update"></td>
 			</tr>
-			</div>
+			
 				
 			
 		</table>
 	</form>
+	<form action="companyprofile.php">
+    <button type="submit" value="Go to Profile" />Go to Profile</button>
+</form>
+</div>
+</div>
+<div>
 </body>
 </html>

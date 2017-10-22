@@ -103,6 +103,7 @@ Candidate
 
 
         <?php 
+        
 if(!empty($search_results)):?>
 <div align="center" class="results-count">
 <p><?php echo $search_results['count'];?> Results found,
@@ -113,13 +114,14 @@ if(!empty($search_results)):?>
 
 
 <?php foreach($search_results['results'] as $search_result): ?>
-<div class="col 1-2">
+<div align="center" class="col 1-1">
     
     <p>First Name: <?php echo $search_result->first; ?></p>
         <p>Surname: <?php echo $search_result->last; ?></p>
         <p>Email Address: <?php echo $search_result->email; ?></p>
         <p>Industry: <?php echo $search_result->industry; ?></p>
-        <p>Years Experience: <?php echo $search_result->years; ?></p><br><br>
+        <p>Years Experience: <?php echo $search_result->years; ?></p>
+        <a href="#"><p>Contact Candidate</p></a><br><br>
     
     <?php endforeach; ?>
     </div>

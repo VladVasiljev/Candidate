@@ -237,8 +237,9 @@ body {
 }
 .wrapper {
   margin: 0 auto;
-  padding: 20px;
+  padding-bottom: 0px;
   max-width: 95%;
+  margin-bottom: 0px;
   
 }
 h1 {
@@ -251,6 +252,12 @@ h2 {
     color:red;
   font-weight: 700;
 }
+
+label {
+    font-weight: bold;
+}
+
+
 
 /* grid */
 .row {

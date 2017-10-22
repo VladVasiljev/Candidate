@@ -52,7 +52,7 @@ include 'header.php';
        <option value='recruiter'>Recruiter</option>
        </select>
          
-        <label for='Industry'>Select Industry</label> 
+        <label >Select Industry</label> 
         <select name='industry'>
         <option value='it'>IT</option>
         <option value='retail'>Retail</option>

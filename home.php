@@ -41,9 +41,40 @@ include 'header.php';
                         
              
              
-           
+           <footer>
+
+    <div align="center" class="social">
+<span>
+                                            <a href="#" target="_blank">
+                                                <img src="img/fb_icon.png" alt="Facebook icon" /></a>
+                                        </span>
+
+                                <span>
+                                <a href="#" target="_blank">
+                                    <img src="img/twitter_icon.png" alt="Twitter icon" /></a></span>
+
+                                <span>
+                                        <a href="#" target="_blank">
+                                    <img src="img/insta_icon.png" alt="Instagram icon" ></a>
+                                    </span>
+
+                                <span>
+                                        <a href="#" target="_blank">
+                                    <img src="img/linkedin-icon.png" alt="Linkedin icon" ></a>
+                                    </span>
+
+
+
+                                 <span>
+                                        <a href="" target="_blank">
+                                    <img src="img/Snapchat-icon-png.png" alt="Snapchat icon" ></a>
+                                    </span><br>
+</div>
+
+</footer>
              
              </div>
+
             
     </body>
 </html>
