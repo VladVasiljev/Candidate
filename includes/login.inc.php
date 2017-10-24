@@ -26,10 +26,10 @@ $pwd = $row['pwd'];
 else{
     
      $_SESSION['id'] = $row['id']; 
-    
+     header("Location: ../userprofile.php");
 }
 
-header("Location: ../userprofile.php");
+//header("Location: ../userprofile.php");
 
 
 
