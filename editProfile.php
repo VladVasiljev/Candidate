@@ -1,7 +1,8 @@
 <?php
 // including the database connection file
 include_once("dbh.php");
-include 'header.php';
+//include 'header.php';
+//Session_start();
 /*
 if(isset($_POST['update']))
 {	
@@ -191,16 +192,23 @@ if(isset($_POST['cancel']))
 
 ?>
 
-<html>
-<head>	
-	<title>Edit Data</title>
-</head>
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Title</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
 <body>
-	<br/><br/>
+  
+
+		<br/><br/>
+
 	
-	<div class="forms">
-	<H1>Please Enter All Fields</H1>
+	
 	<!--
 	<form name="form1" method="post" action="editProfile.php">
 		<table border="0">
@@ -240,9 +248,30 @@ if(isset($_POST['cancel']))
 	</form>
 	-->
 
-	<form method="post" enctype="multipart/form-data" class="form-horizontal">
-	
-    
+
+	<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+	<div class="container">
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+		<img src="user_images/<?php echo $userPic; ?>" height="250" width="250" class="rounded-circle" alt="avatar" />
+          <h6>Prefered Image Size 250 x250</h6>
+		  
+          <input type="file" name="user_image" class="form-control" accept="image/*">
+        </div>
+	  </div>
+	  
+	  <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          Please Fill In <strong>All Fields</strong> Before Saving Changes.
+        </div>
+		<h3>Personal info</h3>
+		
     <?php
 	if(isset($errMSG)){
 		?>
@@ -252,10 +281,51 @@ if(isset($_POST['cancel']))
         <?php
 	}
 	?>
+
    
     
-	<table class="table table-bordered table-responsive">
-	
+		<div class="form-group">
+            <label class="col-lg-3 control-label">First Name:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="first_name" value="<?php echo $firstName; ?>" required />
+            </div>
+		</div>
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Last Name:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="last_name" value="<?php echo $lastName; ?>" required />
+            </div>
+		</div>
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Email Address:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="email_Address" value="<?php echo $email; ?>" required />
+            </div>
+		</div>
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Years of Experience:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="years_XP" value="<?php echo $yearsXP; ?>" required />
+            </div>
+		</div>
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Industry:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="industry_Type" value="<?php echo $industryType; ?>" required /></td>
+            </div>
+		</div>
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Biography:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="biography" value="<?php echo $bio; ?>" required />
+            </div>
+        </div>
+<!--
     <tr>
 	<td><label class="control-label">First Name</label></td>
 	<td><input class="form-control" type="text" name="first_name" value="<?php echo $firstName; ?>" required /></td>
@@ -289,10 +359,23 @@ if(isset($_POST['cancel']))
     	<td><label class="control-label">Profile Imgage</label></td>
         <td>
         	<p><img src="user_images/<?php echo $userPic; ?>" height="150" width="150" /></p>
-        	<input  type="file" name="user_image" accept="image/*" />
+        	<input  type="file" name="user_image" accept="image/*" /> 
         </td>
     </tr>
-    
+	-->
+	
+	<div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+			<button type="submit" name="btn_save_updates" class="btn btn-success"> Save Changes</button>
+              <span></span>
+              <button type="submit" name="cancel" class="btn btn-danger">Cancel </button>
+            </div>
+		  </div>
+		  </div>
+        </div>
+		</div>
+<!--
     <tr>
         <td colspan="2"><button type="submit" name="btn_save_updates"> Update</button>
         
@@ -301,11 +384,17 @@ if(isset($_POST['cancel']))
         </td>
     </tr>
     
-    </table>
+	</table>
+	
+-->
     
 </form>
 
-	
-	</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+		integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 </body>
 </html>

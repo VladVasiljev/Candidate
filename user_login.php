@@ -40,8 +40,8 @@ include 'header.php';
                          else{
                                     echo"<h1>Candidate Login</h1>";
                               echo" <form action='includes/login.inc.php' method='POST'>
-                                <input type ='text' name='uid' placeholder='Username'>
-                                <input type ='password' name='pwd' placeholder='Password'>
+                                <input type ='text' name='uid' placeholder='Username' required>
+                                <input type ='password' name='pwd' placeholder='Password' required>
                                 <button type ='submit'>Login</button>
                                 </form>";
                               
