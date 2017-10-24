@@ -25,16 +25,20 @@ include 'header.php';
           
          
                         <div align="center" class="form">
-                        
+                       
+                     
                             <?php
+                           
                 
                                 if(isset($_SESSION['id'])){
                                     echo"You are currently logged in, continue to your profile";
                              echo" <form action='userprofile.php' >
         <button>Profile</button>
         </form>";
-                         } else{
-                                    echo"<h1>User Login</h1>";
+                         } 
+                         
+                         else{
+                                    echo"<h1>Candidate Login</h1>";
                               echo" <form action='includes/login.inc.php' method='POST'>
                                 <input type ='text' name='uid' placeholder='Username'>
                                 <input type ='password' name='pwd' placeholder='Password'>
@@ -46,6 +50,8 @@ include 'header.php';
                           
 
                             ?>
+
+                            
                         
                             </div>
                         

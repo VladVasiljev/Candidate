@@ -5,6 +5,7 @@ include 'dbh.php';
 ?>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>
 Candidate
 </title>
@@ -61,7 +62,8 @@ Candidate
 
 
 <div class="row">
-    <div class="col-1-2">
+    <div align="center" class="col-1-1">
+    <div class="user_details">
                 <?php
                 if (isset($_SESSION['cid'])) {
                     echo "Hello, Welcome back.<br> Your user ID is: ";
@@ -93,20 +95,17 @@ Candidate
                         LOG OUT
                         </button>
                     </form>
+                    </div>
 
     </div>
 
-<div class="col-1-2">
-<p>This is the right side div- place content here</p>
-             
-</div>
-
-
-        <?php 
+<div class="col-1-1">
+<p>Results of your search appear here!</p>
+<?php 
         
 if(!empty($search_results)):?>
 <div align="center" class="results-count">
-<p><?php echo $search_results['count'];?> Results found,
+<p><?php echo $search_results['count'];?> Search Results found,
     </p></br>
 
     
@@ -114,22 +113,49 @@ if(!empty($search_results)):?>
 
 
 <?php foreach($search_results['results'] as $search_result): ?>
-<div align="center" class="col 1-1">
-    
-    <p>First Name: <?php echo $search_result->first; ?></p>
-        <p>Surname: <?php echo $search_result->last; ?></p>
+
+    <div class="namecard"></br>
+    <div class="card">
+        <div class="card_img">
+    <img src="user_images/<?php echo $search_result->userPic; ?>" width="100%" height="100px" />
+            </div>
+    <h1><?php echo $search_result->first; ?></h1>
+        <h1><?php echo $search_result->last; ?></h1>
         <p>Email Address: <?php echo $search_result->email; ?></p>
         <p>Industry: <?php echo $search_result->industry; ?></p>
         <p>Years Experience: <?php echo $search_result->years; ?></p>
-        <a href="#"><p>Contact Candidate</p></a><br><br>
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-twitter"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-whatsapp"></i></a> 
+        </div>
+        <button>View Profile</button><br><br>
+   
+        </div>
+            </div>
     
     <?php endforeach; ?>
-    </div>
+  
     
 
  
 
 <?php endif; ?>
+
+             
+</div>
+<div class="row">
+<div align="center" class="col 1-1">
+ 
+  
+    
+<p>This an empty div</p>
+ 
+
+
+</div>
+</div>
 </div>
 <!-- /.row -->
 </div><!-- /.wrapper -->

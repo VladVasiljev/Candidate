@@ -15,7 +15,7 @@ class search{
         $sanitized = $this->mysqli->real_escape_string($search_term);
         
         $query = $this->mysqli->query("
-        SELECT first, last, email, industry, years
+        SELECT first, last, email, industry, years, userPic
         FROM newuser
         WHERE industry LIKE '%{$sanitized}%'
         OR years LIKE '%{$sanitized}%'

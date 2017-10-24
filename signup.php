@@ -25,7 +25,7 @@ include 'header.php';
              echo "<p class='pCenter'>Hi there user!</p>";
          } else{
              echo " <div align='center'>Enter User details and SignUp<br>";
-             echo "Already Signed up?<br>Click <a href='index3.php'>Login</a></div> ";
+             echo "Already Signed up?<br>Click <a href='user_login.php'>Login</a></div> ";
          }
         
         ?>
@@ -65,8 +65,12 @@ include 'header.php';
         </select>
         <button type ='submit'>Sign Up</button>
         </form>";
+        
+
+        
          } 
             ?>
+            
               </div>
            </div></div></div>
     </body>

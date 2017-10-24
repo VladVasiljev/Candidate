@@ -25,7 +25,7 @@ include 'header.php';
              echo "<p class='pCenter'>Hi there user!</p>";
          } else{
              echo " <div align='center'>Enter Company details and SignUp<br>";
-             echo "Already Signed up?<br>Click <a href='index3.php'>Login</a></div> ";
+             echo "Already Signed up?<br>Click <a href='company_login.php'>Login</a></div> ";
          }
         
         ?>

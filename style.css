@@ -257,6 +257,71 @@ label {
     font-weight: bold;
 }
 
+.card {
+    border-style:groove;
+    border-color:white;
+    background-color: white;
+    float:left;
+    color:black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    padding-bottom: 0px;
+    text-align: center;
+    font-family: arial;
+  }
+  .card h1{
+      font-family: Arial;
+      color:BD1414;
+  }
+  .card_img{
+      background-color: BD1414;
+      width:100%;
+  }
+
+.namecard{
+    display: inline-block;
+   
+   
+}
+
+.card p{
+    margin-left:2px;
+    margin-right:2px;
+    text-align: center;
+    font-size:1.5em;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: BD1414;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius:0px;
+    margin-left: 0px;
+    margin-bottom:-18px;
+  }
+  
+ .card  a {
+    text-decoration: none;
+    font-size: 25px;
+    color: BD1414;
+  }
+  
+  .card button:hover, a:hover {
+    opacity: 0.7;
+  }
+
+  .user_details p{
+      font-weight: 1.5em;
+  }
+
 
 
 /* grid */

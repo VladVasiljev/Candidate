@@ -23,11 +23,11 @@
 			<div align="center" class="col-1-1">
 				
 				
-			<h2>User Details</h2>
+			<h2>Candidate Details</h2>
 			
 		<?php
 				if (isset($_SESSION['id'])) {
-				    echo "Hello, your user ID is:";
+				    echo "Hello Candidate, your user ID is:";
 				    echo $_SESSION['id'];
 				    
 				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio FROM newuser WHERE id = '" . $_SESSION['id'] . "'";
