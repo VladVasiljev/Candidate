@@ -28,9 +28,9 @@ else{
      $_SESSION['cid'] = $row['cid']; 
      echo  $_SESSION['cid'];
     
+header("Location: ../companyprofile.php");
 }
 
-header("Location: ../companyprofile.php");
 
 
 

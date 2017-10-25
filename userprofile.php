@@ -21,7 +21,8 @@
 				</center>
 			</div>
 			<div align="center" class="col-1-1">
-				
+			<div class="user_details">
+
 				
 			<h2>Candidate Details</h2>
 			
@@ -53,14 +54,8 @@
 				}
 
 				?>
-
-				
-			
-
-
-
-	
-		<?php
+				</div>
+<?php
 			include 'imageUploadConnection.php';
 			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['id'] . "'");
 			$stmt->execute();

@@ -66,7 +66,7 @@ Candidate
     <div class="user_details">
                 <?php
                 if (isset($_SESSION['cid'])) {
-                    echo "Hello, Welcome back.<br> Your user ID is: ";
+                    echo "<p>Hello, Welcome back.<br> Your user ID is:</p> ";
                     echo $_SESSION['cid'];
                     
                     $sql    = "SELECT cid, name, username, position FROM company WHERE cid = '" . $_SESSION['cid'] . "'";
