@@ -1,0 +1,21 @@
+.bg-faded {
+    background-color: #BD1414;
+}
+
+.nav-link {
+    color: rgb(206, 17, 17);
+}
+
+.navbar {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0.0rem 1rem;
+}
