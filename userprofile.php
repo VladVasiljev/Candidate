@@ -37,7 +37,7 @@
 				    if (mysqli_num_rows($result) > 0) {
 				        // output data of each row
 				        while ($row = mysqli_fetch_assoc($result)) {
-							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br>Bio: " . $row["bio"];
+							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br><h2>Bio:</h2> " . $row["bio"];
 							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
 							
 							

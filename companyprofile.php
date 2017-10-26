@@ -50,8 +50,8 @@ Candidate
                     <form action=" " method="get">
                         <div class="form-field">
                             <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value=" ">
-                                <?php $search_term =' '; echo $search_term; ?>">                                                                       
-                                 <input type="submit" value="Search">
+                                <?php $search_term =' '; echo $search_term; ?>                                                                      
+                                 <button>Search</button>
                         </div>
                     </form>
 
@@ -146,7 +146,7 @@ if(!empty($search_results)):?>
              
 </div>
 <div class="row">
-<div align="center" class="col 1-1">
+<div  class="col-1-1">
  
   
     

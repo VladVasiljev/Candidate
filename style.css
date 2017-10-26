@@ -16,17 +16,18 @@
 }
 
 body {
-    background-image: url("img/background.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size:cover; 
-    background-position:center center;
+  /* background-image: url("img/background.png");*/
+  /*   background-repeat: no-repeat;*/
+  /*   background-attachment: fixed;*/
+  /*   background-size:cover; */
+   /*  background-position:center center;*/
+   background:white;
 }
 
 header{
     width: 100%;
-    height:40px;
-    background-color:#BD1414;
+    height:45px;
+    background-color:#C3D7CE;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
@@ -139,24 +140,41 @@ nav ul form button {
     
 }
 
+#search p{
+    font-weight:bold;
+}
 
+.social{
+    align-content: center;
+
+}
+
+.home_text{
+    text-align: center;
+    color:black;
+}
 
 #search button{
-    border: 2px solid #74031C;
+    background: url(img/search_icon.png) no-repeat;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #C3D7CE;
     border-radius: 25px;
-    width: auto;
+    width: 150px;
     background-color: #fff;
-    color:#222;
+    color:#746767;
     font-size: 15px;
     cursor: pointer;
 }
 
 #search input{
-    width: auto;
+    width: 70%;
+    height:60px;
     padding: 10px 20px;
     margin: 2px 0px;
     display: block;
-    border: 1px solid #74031C;
+    border: 3px solid #C3D7CE;
+    border-radius:25px;
     box-sizing: border-box;
 }
 
@@ -236,6 +254,7 @@ body {
   line-height: 1.3;
 }
 .wrapper {
+  
   margin: 0 auto;
   padding-bottom: 0px;
   max-width: 95%;
@@ -243,10 +262,10 @@ body {
   
 }
 h1 {
-  font-family: "Lobster", cursive;
+  font-family: "Arial", cursive;
   font-size: 2em;
   margin-bottom: 10px;
-    color: #74031C;
+    color: #746767;
 }
 h2 {
     color:red;
@@ -259,23 +278,24 @@ label {
 
 .card {
     border-style:groove;
-    border-color:white;
+    border-color:#C3D7CE;
     background-color: white;
     float:left;
     color:black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
+    margin-left:13px;
     padding-bottom: 0px;
     text-align: center;
     font-family: arial;
   }
   .card h1{
       font-family: Arial;
-      color:BD1414;
+      color:black;
   }
   .card_img{
-      background-color: BD1414;
+      background-color: #C3D7CE;
       width:100%;
   }
 
@@ -298,7 +318,7 @@ label {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: BD1414;
+    background-color: #C3D7CE;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -311,7 +331,8 @@ label {
  .card  a {
     text-decoration: none;
     font-size: 25px;
-    color: BD1414;
+     
+    color:#C3D7CE;;
   }
   
   .card button:hover, a:hover {
