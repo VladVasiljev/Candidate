@@ -29,15 +29,25 @@ include 'header.php';
         <div class="row">
                         <div   class="col-1-2">
                         <a href="user_login.php">
-                        <img id="user"  src="img/user.png" alt="Logo" max-width="100%" >
+                        <img id="user"  src="img/user.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
                         <div  class="col-1-2">
                         <a href="company_login.php">
-                        <img id ="company"  src="img/company.png" alt="Logo" max-width="100%" >
+                        <img id ="company"  src="img/company.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
                             </div>
+<div class="row">
+<div class="col-1-1">
+<div class="home_text">
+<p>Click the User icon to login and start editing your profile so you can get noticed by hiring managers looking to fill positions today</p>
+<p>Managers click the Company icon to find the right candidate to fill that position</p>
+<p>Don't have an account? Candidate sign up <a href="signup.php">Here</a></p>
+<p>Company sign up <a href="companysignup.php">Here</a></p>
+</div>
+</div>
+</div>
                         
              
              
@@ -69,13 +79,11 @@ include 'header.php';
                                         <a href="" target="_blank">
                                     <img src="img/Snapchat-icon-png.png" alt="Snapchat icon" ></a>
                                     </span><br>
-</div>
+            </div>
 
-</footer>
+        </footer>
              
-             </div>
-
-            
-    </body>
+    </div>
+ </body>
 </html>
       

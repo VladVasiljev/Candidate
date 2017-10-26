@@ -25,7 +25,7 @@ include 'header.php';
              echo "<p class='pCenter'>Hi there user!</p>";
          } else{
              echo " <div align='center'>Enter User details and SignUp<br>";
-             echo "Already Signed up?<br>Click <a href='index3.php'>Login</a></div> ";
+             echo "Already Signed up?<br>Click <a href='user_login.php'>Login</a></div> ";
          }
         
         ?>
@@ -41,12 +41,12 @@ include 'header.php';
              echo "You're already logged in";
          } else{
             echo" <form id ='signup'  action='includes/signup.inc.php' method='POST'>
-      <input type ='text' name='first' placeholder='First Name'><br>
-         <input type ='text' name='last' placeholder='last Name'><br>
-        <input type ='text' name='uid' placeholder='Username'><br>
-       <input type ='password' name='pwd' placeholder='Password'><br>
-         <input type ='text' name='email' placeholder='email'><br>
-        <input type ='number' name='years' placeholder='Years experience'><br>
+      <input type ='text' name='first' placeholder='First Name'required><br>
+         <input type ='text' name='last' placeholder='last Name'required><br>
+        <input type ='text' name='uid' placeholder='Username'required><br>
+       <input type ='password' name='pwd' placeholder='Password'required><br>
+         <input type ='text' name='email' placeholder='email'required><br>
+        <input type ='number' name='years' placeholder='Years experience'required><br>
         <label for='Industry'>Select Industry</label> 
         <select name='industry'>
         <option value='it'>IT</option>
@@ -65,8 +65,12 @@ include 'header.php';
         </select>
         <button type ='submit'>Sign Up</button>
         </form>";
+        
+
+        
          } 
             ?>
+            
               </div>
            </div></div></div>
     </body>

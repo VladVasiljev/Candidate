@@ -36,8 +36,8 @@ include 'header.php';
                          } else{
                                     echo"<h1>Company Login</h1>";
                               echo" <form action='includes/company.login.inc.php' method='POST'>
-                                <input type ='text' name='username' placeholder='Username'>
-                                <input type ='password' name='pwd' placeholder='Password'>
+                                <input type ='text' name='username' placeholder='Username'required>
+                                <input type ='password' name='pwd' placeholder='Password'required>
                                 <button type ='submit'>Login</button>
                                 </form>";
                               

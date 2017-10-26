@@ -25,7 +25,7 @@ include 'header.php';
              echo "<p class='pCenter'>Hi there user!</p>";
          } else{
              echo " <div align='center'>Enter Company details and SignUp<br>";
-             echo "Already Signed up?<br>Click <a href='index3.php'>Login</a></div> ";
+             echo "Already Signed up?<br>Click <a href='company_login.php'>Login</a></div> ";
          }
         
         ?>
@@ -41,19 +41,19 @@ include 'header.php';
              echo "You're already logged in";
          } else{
             echo" <form id ='signup'  action='includes/company.signup.inc.php' method='POST'>
-      <input type ='text' name='name' placeholder='Company Name'><br>
+      <input type ='text' name='name' placeholder='Company Name'required><br>
          
-        <input type ='text' name='username' placeholder='Username'><br>
-       <input type ='password' name='pwd' placeholder='Password'><br>
+        <input type ='text' name='username' placeholder='Username'required><br>
+       <input type ='password' name='pwd' placeholder='Password'required><br>
        <label for='position'>Position</label> 
-       <select name='position'>
+       <select name='position'required>
        <option value='manager'>Manager</option>
        <option value='hr'>HR</option>
        <option value='recruiter'>Recruiter</option>
        </select>
          
         <label >Select Industry</label> 
-        <select name='industry'>
+        <select name='industry'required>
         <option value='it'>IT</option>
         <option value='retail'>Retail</option>
         <option value='medical'>Medical</option>

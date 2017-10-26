@@ -191,8 +191,8 @@ if(isset($_POST['cancel']))
 }
 
 ?>
-
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 	<!--
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -266,7 +266,7 @@ if(isset($_POST['cancel']))
 
 	<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
 	<div class="container">
-    <h1>Edit Profile</h1>
+    <h2>Hello <?php echo $firstName; ?> you can edit your profile here!</h2>
   	<hr>
 	<div class="row">
       <!-- left column -->

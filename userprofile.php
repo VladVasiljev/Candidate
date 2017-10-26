@@ -21,13 +21,14 @@
 				</center>
 			</div>
 			<div align="center" class="col-1-1">
+			<div class="user_details">
+
 				
-				
-			<h2>User Details</h2>
+			<h2>Candidate Details</h2>
 			
 		<?php
 				if (isset($_SESSION['id'])) {
-				    echo "Hello, your user ID is:";
+				    echo "Hello Candidate, your user ID is:";
 				    echo $_SESSION['id'];
 				    
 				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio FROM newuser WHERE id = '" . $_SESSION['id'] . "'";
@@ -36,7 +37,7 @@
 				    if (mysqli_num_rows($result) > 0) {
 				        // output data of each row
 				        while ($row = mysqli_fetch_assoc($result)) {
-							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br>Bio: " . $row["bio"];
+							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br><h2>Bio:</h2> " . $row["bio"];
 							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
 							
 							
@@ -53,14 +54,8 @@
 				}
 
 				?>
-
-				
-			
-
-
-
-	
-		<?php
+				</div>
+<?php
 			include 'imageUploadConnection.php';
 			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['id'] . "'");
 			$stmt->execute();
