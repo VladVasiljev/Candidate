@@ -282,7 +282,7 @@ if(isset($_POST['cancel']))
 	  <div class="col-md-9 personal-info">
         <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
+          <i class="fa fa-coffee"></i>  
           Please Fill In <strong>All Fields</strong> Before Saving Changes.
         </div>
 		<h3>Personal info</h3>
