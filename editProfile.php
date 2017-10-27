@@ -287,7 +287,7 @@ if(isset($_POST['cancel']))
 
 	<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
 	<div class="container">
-    <h2>Hello <?php echo $firstName; ?> you can edit your profile here!</h2>
+    <h3>Hello <?php echo $firstName; ?> you can edit your profile here!</h3>
   	<hr>
 	<div class="row">
       <!-- left column -->
