@@ -4,11 +4,13 @@ include 'header.php';
 include 'dbh.php';
 ?>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 <title>
 Candidate
 </title>
+
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
 
 </head>
  
@@ -49,16 +51,34 @@ Candidate
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
-                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value=" ">
+                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value=" " class='auto'>
+                            
                                 <?php $search_term =' '; echo $search_term; ?>                                                                      
                                  <button>Search</button>
                         </div>
                     </form>
+                    
 
         </div>
                 </div>
 </div>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+                    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>	
+
+
+                    <script type="text/javascript">
+                   $(function() {
+    
+                    //autocomplete
+                    $(".auto").autocomplete({
+                    source: "liveSearch.php",
+                    minLength: 1
+    });                
+
+});
+</script>
 
 
 <div class="row">
