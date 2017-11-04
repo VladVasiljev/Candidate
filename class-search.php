@@ -13,7 +13,17 @@ class search{
     
     public function search($search_term){
         $sanitized = $this->mysqli->real_escape_string($search_term);
+
+        $query = $this->mysqli->query("
+        SELECT first, last, email, industry, years, userPic
+        FROM newuser
+        WHERE industry LIKE '%{$sanitized}%'
+        OR years < $sanitized
+        ORDER by years DESC
+        ");
+
         
+        /*
         $query = $this->mysqli->query("
         SELECT first, last, email, industry, years, userPic
         FROM newuser
@@ -21,7 +31,8 @@ class search{
         OR years LIKE '%{$sanitized}%'
         ORDER by years DESC
         ");
-        
+        */
+
         //check results
         if( !$query->num_rows){
             return false;
