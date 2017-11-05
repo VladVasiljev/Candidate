@@ -13,7 +13,7 @@ if (isset($_GET['term'])){
 		$conn = new PDO("mysql:host={$HOST};dbname={$NAME}",$USER,$PASS);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    
-	    $stmt = $conn->prepare('SELECT industry FROM newuser WHERE industry LIKE :term');
+	    $stmt = $conn->prepare('SELECT industry FROM industrytypes WHERE industry LIKE :term');
 	    $stmt->execute(array('term' => '%'.$_GET['term'].'%'));
 	    
 	    while($row = $stmt->fetch()) {
