@@ -16,10 +16,29 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <?php
+                                  if(isset($_SESSION['id'])){
+                                   
+                             echo"  <form action='includes/logout.inc.php' >
+                             <button>
+                             LOG OUT
+                             </button>
+                         </form>";
+                         }else{
+                          if(isset($_SESSION['cid'])){
+                            
+                      echo"  <form action='includes/logout.inc.php' >
+                      <button>
+                      LOG OUT
+                      </button>
+                  </form>";}
+                          }
+                           ?>
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="home.php">Home</a>
             <a class="nav-item nav-link" href="companysignup.php">Company</a>
             <a class="nav-item nav-link" href="signup.php">User</a>
+           
           </div>
         </div>
       </nav>
