@@ -20,6 +20,10 @@
     padding: 0.0rem 1rem;
 }
 
+.form-horizontal {
+    padding-top: 10px;
+}
+
  img{
     max-width: 250px;
     height: auto;
@@ -379,7 +383,7 @@ label {
   margin-bottom: 0;
 }
 [class*="col-"] {
-  padding: 10px;
+  /*padding: 10px;*/
   width: 100%;
 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 05, 2017 at 04:02 PM
+-- Generation Time: Nov 05, 2017 at 11:12 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `cid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `industry` enum('it','retail','medical','manual labour') NOT NULL,
+  `industry` enum('it','retail','medical','manual labour','academic','accountancy and finance','architecture/design','childcare','drivers','education/training','graduate','hair and beauty','motor industry') DEFAULT NULL,
   `pwd` varchar(100) NOT NULL,
   `userPic` varchar(200) NOT NULL,
   `position` enum('manager','hr','recruiter','') NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`cid`, `name`, `username`, `industry`, `pwd`, `userPic`, `position`) VALUES
-(1, 'Tesco', 'Mary', 'retail', '1234', '', 'manager'),
+(1, 'Tesco', 'Mary', 'retail', '1234', '824334.png', 'manager'),
 (2, 'SAP', 'Steven', 'it', '12345', '', 'manager'),
 (3, 'NCI', 'nci', 'it', '1234', '', 'manager'),
 (4, 'Burger King', 'BK', 'retail', '12345', '', 'manager'),
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `newuser` (
 --
 
 INSERT INTO `newuser` (`id`, `first`, `last`, `uid`, `pwd`, `email`, `years`, `industry`, `bio`, `userPic`, `profile`) VALUES
-(1, ' Vlad', 'Gates', 'kince', '1234', '123@gmail.com', 30, 'academic', 'Bill Gates. Bill Gates, in full William Henry Gates III (born October 28, 1955, Seattle, Washington, U.S.), American computer programmer and entrepreneur who cofounded Microsoft Corporation, the world\'s largest personal-computer software company. Gates wrote his first software program at the age of 13.  computer programmer and entrepreneur who cofounded Microsoft Corporation, the worldâ€™s largest personal-computer software company.  Gates wrote his first software program at the age of 13. In high school he helped form a group of programmers who computerized their schoolâ€™s payroll system and founded Traf-O-Data, a company that sold traffic-counting systems to local governments. In 1975 Gates, then a sophomore at Harvard University, joined his hometown friend Paul G. Allen to develop software for the first microcomputers. They began by adapting BASIC, a popular programming language used on large computers, for use on microcomputers. With the success of this project, Gates left Harvard', '416589.jpg', ''),
+(1, 'Joe', 'Gates', 'kince', '1234', '123@gmail.com', 30, 'academic', 'Bill Gates. Bill Gates, in full William Henry Gates III (born October 28, 1955, Seattle, Washington, U.S.), American computer programmer and entrepreneur who cofounded Microsoft Corporation, the world\'s largest personal-computer software company. Gates wrote his first software program at the age of 13.  computer programmer and entrepreneur who cofounded Microsoft Corporation, the worldâ€™s largest personal-computer software company.  Gates wrote his first software program at the age of 13. In high school he helped form a group of programmers who computerized their schoolâ€™s payroll system and founded Traf-O-Data, a company that sold traffic-counting systems to local governments. In 1975 Gates, then a sophomore at Harvard University, joined his hometown friend Paul G. Allen to develop software for the first microcomputers. They began by adapting BASIC, a popular programming language used on large computers, for use on microcomputers. With the success of this project, Gates left Harvard', '416589.jpg', ''),
 (2, 'Steven', 'Seagal', 'under seige', '1234', '123@gmail.com', 12, 'medical', ' Blah blah', '', ''),
 (3, 'Paul', 'Kinsella', 'king', '1234', '123@gmail.com', 10, 'it', 'Blah Blah ', '670053.png', ''),
 (4, 'Jake', 'Jakeson', 'jake', '1234', 'jake@gmail.com', 23, 'academic', '', '', ''),
