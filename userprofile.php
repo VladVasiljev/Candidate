@@ -2,7 +2,6 @@
 <html>
 <?php
     include 'header.php';
-    include 'dbh.php';
 ?>
 <head>
 <!--	<link href="style.css" rel="stylesheet" type="text/css">-->
@@ -21,10 +20,52 @@
 			<div align="center" class="col-1-1">
 			<div class="user_details">
 
-				
-			<h2>Candidate Details</h2>
+			<?php
+			include_once 'imageUploadConnection.php';
+			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['id'] . "'");
+			$stmt->execute();
+			
+			if($stmt->rowCount() > 0)
+			{
+				while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+				{
+					extract($row);
+					?>
+
+				<div class="col-1-2">
+						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
+						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
+						<p class="page-header">
+						<span>
+						<a class="btn btn-info" href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Edit Profile ?')"><span class="glyphicon glyphicon-edit"></span>Edit Profile</a> 
+
+						</span>
+						</p>
+						<form action="includes/logout.inc.php">
+					<button>LOG OUT</button>
+				</form>
+					</div>
+					       
+					<?php
+				}
+			}
+			else
+			{
+				?>
+				<div class="col-xs-12">
+					<div class="alert alert-warning">
+						<span class="glyphicon glyphicon-info-sign"></span> &nbsp; No Data Found ...
+					</div>
+				</div>
+				<?php
+			}
+			
+		?>
+		
+		<h2>Candidate Details</h2>
 			
 		<?php
+		include_once 'dbh.php';
 				if (isset($_SESSION['id'])) {
 				    echo "Hello Candidate, your user ID is:";
 				    echo $_SESSION['id'];
@@ -53,48 +94,8 @@
 
 				?>
 				</div>
-<?php
-			include 'imageUploadConnection.php';
-			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['id'] . "'");
-			$stmt->execute();
-			
-			if($stmt->rowCount() > 0)
-			{
-				while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-				{
-					extract($row);
-					?>
+				</div>	
 
-				<div class="col-1-2">
-						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
-						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
-						<p class="page-header">
-						<span>
-						<a class="btn btn-info" href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Edit Profile ?')"><span class="glyphicon glyphicon-edit"></span>Edit Profile</a> 
-						<!--  <a class="btn btn-danger" href="?delete_id=<?php echo $row['id']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a> -->
-						</span>
-						</p>
-						<form action="includes/logout.inc.php">
-					<button>LOG OUT</button>
-				</form>
-					</div>
-					       
-					<?php
-				}
-			}
-			else
-			{
-				?>
-				<div class="col-xs-12">
-					<div class="alert alert-warning">
-						<span class="glyphicon glyphicon-info-sign"></span> &nbsp; No Data Found ...
-					</div>
-				</div>
-				<?php
-			}
-			
-		?>
-		</div>	
 		
 		
 	
