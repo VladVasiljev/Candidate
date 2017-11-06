@@ -26,25 +26,26 @@
                         <a class="nav-item nav-link" href="contact.php">Contact Us</a>
 
                     </div>
-                    <?php
-if (isset($_SESSION['id'])) {
-    
-    echo "  <form class='logoutbtn' action='includes/logout.inc.php' >
-                             <button>
-                             LOG OUT
-                             </button>
-                         </form>";
-} else {
-    if (isset($_SESSION['cid'])) {
-        
-        echo "  <form class='logoutbtn' action='includes/logout.inc.php' >
-                      <button>
-                      LOG OUT
-                      </button>
-                  </form>";
-    }
-}
-?>
+                                                        <?php
+                                    if (isset($_SESSION['id'])) {
+                                        
+                                        echo "  <form class='logoutbtn' action='includes/logout.inc.php' >
+                                                                <button>
+                                                                LOG OUT
+                                                                </button>
+                                                            </form>";
+                                    } else {
+                                        if (isset($_SESSION['cid'])) {
+                                            
+                                                    echo "<form class='logoutbtn' action='includes/logout.inc.php' >
+                                                        <button>
+                                                        LOG OUT
+                                                        </button>
+                                                    </form> ";
+                                                    
+                                        }
+                                    }
+                                    ?>
             </div>
 
 

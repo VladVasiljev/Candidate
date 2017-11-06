@@ -1,7 +1,7 @@
 <html>
 <?php
 include 'header.php';
-include 'dbh.php';
+
 ?>
 <head>
 <!-- <link rel="stylesheet" type="text/css" href="style.css"> 
@@ -84,7 +84,43 @@ Candidate
 <div class="row">
     <div align="center" class="col-1-1">
     <div class="user_details">
+    <?php
+			include_once 'imageUploadConnection.php';
+			$stmt = $conn->prepare("SELECT cid,userPic FROM company WHERE cid = '" . $_SESSION['cid'] . "'");
+			$stmt->execute();
+			
+			if($stmt->rowCount() > 0)
+			{
+				while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+				{
+					extract($row);
+					?>
+
+				<div class="col-1-2">
+						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
+						<img src="company_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
+		
+					</div>
+					       
+					<?php
+				}
+			}
+			else
+			{
+				?>
+				<div class="col-xs-12">
+					<div class="alert alert-warning">
+						<span class="glyphicon glyphicon-info-sign"></span> &nbsp; No Data Found ...
+					</div>
+				</div>
+				<?php
+			}
+			
+		?>
+    <h2>Company Details</h2>
                 <?php
+                
+                include_once 'dbh.php';
                 if (isset($_SESSION['cid'])) {
                     echo "<p>Hello, Welcome back.<br> Your user ID is:</p> ";
                     echo $_SESSION['cid'];
