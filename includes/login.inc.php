@@ -6,12 +6,8 @@ $uid = $_POST ['uid'];
 $pwd = $_POST ['pwd'];
 
 
-
 $sql = "SELECT * FROM newuser WHERE uid ='$uid'";
 $result = mysqli_query($conn, $sql);
-
-
-
 
 $sql = "SELECT * FROM newuser WHERE uid='$uid' AND pwd='$pwd'";
 $result = mysqli_query($conn, $sql);

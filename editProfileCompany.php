@@ -2,7 +2,7 @@
 // including the database connection file
 include_once("dbh.php");
 include 'header.php';
-
+/*
 if(isset($_POST['update']))
 {	
 	
@@ -45,14 +45,15 @@ if(isset($_POST['update']))
 		header("Location: companyprofile.php");
 	}
 }
+*/
 ?>
 
 <?php
 //getting id from url
-$cid = $_GET['cid'];
+$id = $_GET['cid'];
 
 //selecting data associated with this particular id
-$result = mysqli_query($conn, "SELECT * FROM company WHERE cid=$cid");
+$result = mysqli_query($conn, "SELECT * FROM company WHERE cid=$id");
 
 while($res = mysqli_fetch_array($result))
 {
@@ -63,13 +64,127 @@ while($res = mysqli_fetch_array($result))
 	
 }
 ?>
-<html>
-<head>	
-	<title>Edit Data</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
 
+<?php
+	//Start of Image Upload PHP
+	error_reporting( ~E_NOTICE );
+	
+	require_once 'imageUploadConnection.php';
+
+	
+	
+	if(isset($_GET['cid']) && !empty($_GET['cid']))
+	{
+		$id = $_GET['cid'];
+		$stmt_edit = $conn->prepare('SELECT cid,name,username,industry,position,userPic FROM company WHERE cid =:uid');
+		$stmt_edit->execute(array(':uid'=>$id));
+		$edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+		extract($edit_row);
+	}
+	else
+	{
+		header("Location: companyprofile.php");
+		
+		
+	}
+	
+	
+	
+	if(isset($_POST['btn_save_updates']))
+	{
+		$companyName = $_POST['company_Name'];//Users First Name
+		$userName = $_POST['user_Name'];//Users last name
+		$industryType = $_POST['industry_Type'];//Emaill Address
+		$positionType = $_POST['position_Type'];//Years of Experi
+
+		
+		$imgFile = $_FILES['user_image']['name'];
+		$tmp_dir = $_FILES['user_image']['tmp_name'];
+		$imgSize = $_FILES['user_image']['size'];
+					
+		if($imgFile)
+		{
+			$upload_dir = 'company_images/'; // upload directory	
+			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
+			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+			$userpic = rand(1000,1000000).".".$imgExt;
+			if(in_array($imgExt, $valid_extensions))
+			{			
+				if($imgSize < 5000000)
+				{
+					unlink($upload_dir.$edit_row['userPic']);
+					move_uploaded_file($tmp_dir,$upload_dir.$userpic);
+				}
+				else
+				{
+					$errMSG = "Sorry, your file is too large it should be less then 5MB";
+				}
+			}
+			else
+			{
+				$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";		
+			}	
+		}
+		else
+		{
+			// if no image selected the old image remain as it is.
+			$userpic = $edit_row['userPic']; // old image from database
+		}	
+						
+		
+		// if no error occured, continue ....
+		if(!isset($errMSG))
+		{
+			$stmt = $conn->prepare('UPDATE company SET name=:fname,
+													   username=:lname,
+													   industry=:email,
+													   position=:yearsofXP,
+													   userPic=:upic 
+													   WHERE cid=:uid');
+			$stmt->bindParam(':fname',$companyName);
+			$stmt->bindParam(':lname',$userName);
+			$stmt->bindParam(':email',$industryType);
+			$stmt->bindParam(':yearsofXP',$positionType);						
+			$stmt->bindParam(':upic',$userpic);
+			$stmt->bindParam(':uid',$id);
+				
+			if($stmt->execute()){
+				?>
+                <script>
+				alert('Successfully Updated ...');
+				window.location.href='companyprofile.php';
+				</script>
+                <?php
+			}
+			else{
+				$errMSG = "Sorry Data Could Not Updated !";
+			}
+		
+		}
+		
+						
+	}
+	//End of Image Upload File
+?>
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<!--
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link href="bootstrap/css/custom.css" rel="stylesheet"/>
+-->
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Edit Profile</title>
+	
+</head>
 <body>
+
+<!--
 <div class="wrapper">
 	<div class="row">
 	<div class="col-1-1">
@@ -110,5 +225,110 @@ while($res = mysqli_fetch_array($result))
 </div>
 </div>
 <div>
+-->
+
+<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+	<div class="container">
+    <h3>Hello <?php echo $companyName; ?> you can edit your profile here!</h3>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+		<img src="company_images/<?php echo $userPic; ?>" height="250" width="250" class="rounded-circle" alt="avatar" />
+          <h6>Prefered Image Size 250 x250</h6>
+		  
+          <input type="file" name="user_image" class="form-control" accept="image/*">
+        </div>
+	  </div>
+	  
+	  <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>  
+          Please Fill In <strong>All Fields</strong> Before Saving Changes.
+        </div>
+		<h3>Personal info</h3>
+		
+    <?php
+	if(isset($errMSG)){
+		?>
+        <div>
+          <span class="glyphicon glyphicon-info-sign"></span> &nbsp; <?php echo $errMSG; ?>
+        </div>
+        <?php
+	}
+	?>
+
+   
+    
+		<div class="form-group">
+            <label class="col-lg-3 control-label">First Name:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="company_Name" value="<?php echo $companyName; ?>" required />
+            </div>
+		</div>
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Last Name:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="user_Name" value="<?php echo $userName; ?>" required />
+            </div>
+		</div>
+		
+		
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Years of Experience:</label>
+            <div class="col-lg-8">
+			<input class="form-control" type="text" name="position_Type" value="<?php echo $positionType; ?>" required />
+            </div>
+		</div>
+
+		<div class="form-group">
+            <label class="col-lg-3 control-label">Industry</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select name="industry_Type" class="form-control">
+				<?php
+				while($res = mysqli_fetch_array($result)){
+					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";
+				}
+				?>
+                  <option value="academic">Acedemic</option>
+                  <option value="accountancy">Accountancy</option>
+                  <option value="architecture">Architecture</option>
+                  <option value="childcare">Childcare</option>
+                  <option value="drivers">Drivers</option>
+                  <option value="education">Education</option>
+                  <option value="graduate">Graduate</option>
+                  <option value="hair and beauty">Hair And Beauty</option>
+				  <option value="it">IT</option>
+				  <option value="manaul labour">Manual Labour</option>
+				  <option value="medical">Medical</option>
+				  <option value="motor industry">Motor Industry</option>
+				  <option value="retail">Retail</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+	
+	<div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+			<button type="submit" name="btn_save_updates" class="btn btn-success"> Save Changes</button>
+              <span></span>
+              <button type="submit" name="cancel" class="btn btn-danger">Cancel </button>
+            </div>
+		  </div>
+		  </div>
+        </div>
+		</div>
+
+
+    
+</form>
+
+
 </body>
 </html>
