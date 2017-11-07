@@ -23,25 +23,32 @@
                         <a class="nav-item nav-link" href="home.php">Home</a>
                         <a class="nav-item nav-link" href="companysignup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
-                        <a class="nav-item nav-link" href="contact.php">Contact Us</a>
+                        <a class="nav-item nav-link" href="contact.php">Contact</a>
 
                     </div>
                                                         <?php
                                     if (isset($_SESSION['id'])) {
+                                      
+                                        echo"<form action='userprofile.php' >
+                                        <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
+                                        </form>";
                                         
-                                        echo "  <form class='logoutbtn' action='includes/logout.inc.php' >
+                                        echo "<form class='logoutbtn' action='includes/logout.inc.php' >
                                                                 <button>
                                                                 LOG OUT
                                                                 </button>
                                                             </form>";
                                     } else {
                                         if (isset($_SESSION['cid'])) {
-                                            
+                                            echo" <form action='companyprofile.php' >
+                                            <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
+                                            </form>";
                                                     echo "<form class='logoutbtn' action='includes/logout.inc.php' >
                                                         <button>
                                                         LOG OUT
                                                         </button>
                                                     </form> ";
+                                                    
                                                     
                                         }
                                     }

@@ -161,7 +161,7 @@ Candidate
         
 if(!empty($search_results)):?>
 <div align="center" class="results-count">
-<p><?php echo $search_results['count'];?> Search Results found,
+<p><?php echo $search_results['count'];?> Candidates match your search,
     </p></br>
 
     
