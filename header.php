@@ -45,7 +45,7 @@
                                             </form>";
                                                     echo "<form class='logoutbtn' action='includes/logout.inc.php' >
                                                         <button>
-                                                        LOG OUT
+                                                        <img  src='img/logout.png'/>
                                                         </button>
                                                     </form> ";
                                                     

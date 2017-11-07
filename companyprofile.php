@@ -47,7 +47,7 @@ Candidate
                 ?>
         <div align="center"  id="search">
             <h1>Search for your Candidate</h1>
-            <p>Please use the search box to search by industry or name</p><br>
+            <p>Please use the search box to search by industry or years experience</p><br>
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
