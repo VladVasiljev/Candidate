@@ -118,6 +118,7 @@ Candidate
 			
 		?>
     <h2>Company Details</h2>
+     
                 <?php
                 
                 include_once 'dbh.php';
@@ -130,9 +131,13 @@ Candidate
                     
                     if (mysqli_num_rows($result) > 0) {
                         // output data of each row
+                        
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo " <br>Company Name: " . $row['name'] . " <br> Username: " . $row["username"]." <br> Position: " .$row["position"] ;
-                            echo "</br><a href=\"editProfileCompany.php?cid=$row[cid]\">Edit Profile</a>";
+                            //echo "</br><a href=\"editProfileCompany.php?cid=$row[cid]\">Edit Profile</a>";
+                            //echo " <a href=\"editProfileCompany.php?cid=$row[cid]\"> <img src='img/edit.png'></a>";
+                            echo " <a href=\"editProfileCompany.php?cid=$row[cid]\"> <img id='edit' src='img/edit.png'></a>";
+                            
                             
                         }
                     } else {
@@ -146,11 +151,7 @@ Candidate
                 }
 
                 ?>
-                    <form action="includes/logout.inc.php" >
-                        <button>
-                        LOG OUT
-                        </button>
-                    </form>
+                  
                     </div>
 
     </div>

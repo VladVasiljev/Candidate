@@ -247,7 +247,17 @@ a{
 }
 
 #profile-icon{
-    width:20x;
+    width:20px;
+    height:20px;
+}
+
+#logout{
+    width:20px;
+    height:20px;
+}
+
+#edit{
+    width:20px;
     height:20px;
 }
 

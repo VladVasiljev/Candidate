@@ -19,15 +19,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 
-                    <div class="navbar-nav">
+                   <!-- <div class="navbar-nav">
                         <a class="nav-item nav-link" href="home.php">Home</a>
                         <a class="nav-item nav-link" href="companysignup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
 
-                    </div>
+                    </div>-->
                                                         <?php
                                     if (isset($_SESSION['id'])) {
+                                       echo" <div class='navbar-nav'>
+                                        <a class='nav-item nav-link' href='home.php'>Home</a>
+                                        <a class='nav-item nav-link' href='contact.php'>Contact</a>
+                                    </div>";
                                       
                                         echo"<form action='userprofile.php' >
                                         <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
@@ -35,23 +39,36 @@
                                         
                                         echo "<form class='logoutbtn' action='includes/logout.inc.php' >
                                                                 <button>
-                                                                LOG OUT
+                                                                <img id='logout'  src='img/logout.png'/>
                                                                 </button>
                                                             </form>";
-                                    } else {
-                                        if (isset($_SESSION['cid'])) {
+                                    } else if (isset($_SESSION['cid'])) {
+                                        echo" <div class='navbar-nav'>
+                                        <a class='nav-item nav-link' href='home.php'>Home</a>
+                                        <a class='nav-item nav-link' href='contact.php'>Contact</a>
+                                    </div>";
                                             echo" <form action='companyprofile.php' >
                                             <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
                                             </form>";
                                                     echo "<form class='logoutbtn' action='includes/logout.inc.php' >
-                                                        <button>
-                                                        <img  src='img/logout.png'/>
+                                                        <button >
+                                                        <img id='logout'  src='img/logout.png'/>
                                                         </button>
                                                     </form> ";
                                                     
                                                     
                                         }
-                                    }
+                                        else{
+                                            echo"<div class='navbar-nav'>
+                                            <a class='nav-item nav-link' href='home.php'>Home</a>
+                                            <a class='nav-item nav-link' href='companysignup.php'>Company</a>
+                                            <a class='nav-item nav-link' href='signup.php'>User</a>
+                                            <a class='nav-item nav-link' href='contact.php'>Contact</a>
+                    
+                                        </div>";
+                                        }
+                                        
+                                    
                                     ?>
             </div>
 

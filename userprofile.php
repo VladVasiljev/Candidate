@@ -37,13 +37,12 @@
 						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
 						<p class="page-header">
 						<span>
-						<a class="btn btn-info" href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Edit Profile ?')"><span class="glyphicon glyphicon-edit"></span>Edit Profile</a> 
+					
+						<a  href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
 
 						</span>
 						</p>
-						<form action="includes/logout.inc.php">
-					<button>LOG OUT</button>
-				</form>
+					
 					</div>
 					       
 					<?php
