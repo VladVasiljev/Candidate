@@ -10,9 +10,11 @@
 
     <body>
 
+
+
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <span class="text-muted">© Candidate Ireland, Inc. IFSC, Mayor Street, North Dock, Dublin 1, D01 Y300.</span>
       </div>
     </footer>
 

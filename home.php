@@ -51,7 +51,7 @@ include 'header.php';
                         
              
              
-           <footer>
+          
 
     <div align="center" class="social">
 <span>
@@ -81,7 +81,7 @@ include 'header.php';
                                     </span><br>
             </div>
 
-        </footer>
+  
              
     </div>
  </body>
