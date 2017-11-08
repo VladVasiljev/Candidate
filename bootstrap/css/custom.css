@@ -15,8 +15,13 @@
 footer {
     display: block;
     height: 40px;
-    background: #c3d7ce;
+    background: #D6624D;
     margin-top: 100px;
+}
+
+/*Colour change for the footer text */ 
+.text-muted {
+    color: #000000!important;
 }
 
 /* Controls the navbar */
