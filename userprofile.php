@@ -13,9 +13,9 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-1-1">
-				<center>
+			<!--	<center>
 					<img alt="Logo" src="img/logo.png">
-				</center>
+				</center>-->
 			</div>
 			<div align="center" class="col-1-1">
 			<div class="user_details">

@@ -18,7 +18,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                
+               <!-- <img id="nav-logo" src="img/new-logo.png"/>-->
                    <!-- <div class="navbar-nav">
                         <a class="nav-item nav-link" href="home.php">Home</a>
                         <a class="nav-item nav-link" href="companysignup.php">Company</a>
@@ -38,7 +38,7 @@
                                         </form>";
                                         
                                         echo "<form class='logoutbtn' action='includes/logout.inc.php' >
-                                                                <button>
+                                                                <button id='logout-button'>
                                                                 <img id='logout'  src='img/logout.png'/>
                                                                 </button>
                                                             </form>";
@@ -70,11 +70,12 @@
                                         
                                     
                                     ?>
+                        
             </div>
 
 
         </nav>
-
+                    <img id=logo2"" src="img/logo2.png">
         
 
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
