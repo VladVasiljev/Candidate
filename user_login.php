@@ -14,6 +14,7 @@ include 'header.php';
     <meta charset="UTF-8">
     <title>Candidate</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src = "js/form.js"></script>
     </head>
     
     <body>
@@ -21,10 +22,10 @@ include 'header.php';
        <div class="row">
       <div class="col-1-1">
         
-        <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>
+       <!-- <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>-->
           
          
-                        <div align="center" class="form">
+                        <div align="center" >
                        
                      
                             <?php
@@ -39,11 +40,16 @@ include 'header.php';
                          
                          else{
                                     echo"<h1>Candidate Login</h1>";
-                              echo" <form action='includes/login.inc.php' method='POST'>
-                                <input type ='text' name='uid' placeholder='Username' required>
-                                <input type ='password' name='pwd' placeholder='Password' required>
-                                <button type ='submit'>Login</button>
-                                </form>";
+                             echo" <form action='includes/login.inc.php' method='POST'>
+                              <input type ='text' name='uid' placeholder='Username' required>
+                               <input type ='password' name='pwd' placeholder='Password' required>
+                               <button type ='submit'>Login</button>
+                               </form>";
+
+                             
+                                
+                               
+                               
                               
                                     
                          }
@@ -62,6 +68,7 @@ include 'header.php';
              </div>
              </div>            
         </div>
+        
     </body>
 </html>
       

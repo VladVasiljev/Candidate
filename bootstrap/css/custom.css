@@ -3,7 +3,7 @@
 
   
 .bg-faded {
-    background-color: #C3D7CE;
+    background-color: #D6624D;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -66,14 +66,14 @@ footer {
    margin-bottom: 0px;
 }
 
-body {
+/*body {*/
   /* background-image: url("img/background.png");*/
   /*   background-repeat: no-repeat;*/
   /*   background-attachment: fixed;*/
   /*   background-size:cover; */
    /*  background-position:center center;*/
-   background:white;
-}
+   /*background:white;*/
+/*}*/
 
 header{
     width: 100%;
@@ -99,6 +99,22 @@ button {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+#logo2{
+    position:absolute;
+    left:0;
+    top:0;
+    max-width: 100%;
+    height: auto;
+}
+
+#logout-button{
+    background-color: #D6624D;
+    
+}
+#logout-button :hover{
+    background-color: white;
+    
 }
 
 .cancelbtn{
@@ -257,6 +273,11 @@ a{
 #profile-icon{
     width:20px;
     height:20px;
+}
+
+#nav-logo{
+    width:auto;
+    height:auto;
 }
 
 #logout{
@@ -499,10 +520,14 @@ button {
 }
 
 #profile-icon-button{
-    background-color:red;
-    border-radius:15px;
+    background-color:#D6624D;
+    
     
     height:auto;
+}
+
+#profile-icon-button :hover{
+    background-color:white;
 }
 
 
@@ -854,5 +879,10 @@ label {
   }
   
 }
+
+
+    
+    
+   
 
 

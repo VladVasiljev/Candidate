@@ -19,9 +19,9 @@ Candidate
 <div class="wrapper">
 <div class="row">
     <div class="col-1-1">
-        <center>
+     <!--   <center>
             <img alt="Logo" src="img/logo.png">
-        </center>
+        </center>-->
     </div>
 </div>
 <div class="row">
