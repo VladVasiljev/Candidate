@@ -167,6 +167,14 @@ while($res = mysqli_fetch_array($result))
 	//End of Image Upload File
 ?>
 
+<?php
+if(isset($_POST['cancel']))
+{
+	header("Location: companyprofile.php");
+}
+
+?>
+
 
 <!doctype html>
 <html lang="en">
