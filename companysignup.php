@@ -7,7 +7,7 @@ include 'header.php';
        <div class="row">
       <div class="col-1-1">
         
-        <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>
+      <!--  <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>-->
       
         
         <?php
