@@ -1,6 +1,7 @@
     <html>
 
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="bootstrap/css/custom.css" rel="stylesheet" />
         <meta charset="UTF-8">
@@ -15,6 +16,13 @@
     <footer class="footer">
       <div class="container">
         <span class="text-muted">© Candidate Ireland, Inc. IFSC, Mayor Street, North Dock, Dublin 1, D01 Y300.</span>
+        
+        <div class="LogoGroup">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        </div>
       </div>
     </footer>
 

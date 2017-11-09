@@ -14,9 +14,22 @@
 /*Control the footer part of the webiste. */
 footer {
     display: block;
-    height: 40px;
+    max-height: 120px;
     background: #D6624D;
     margin-top: 100px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
 }
 
 /*Colour change for the footer text */ 
