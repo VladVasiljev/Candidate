@@ -674,6 +674,14 @@ nav ul form button {
     cursor: pointer;
 }
 
+#search button:hover{
+  
+        -moz-box-shadow:    1px 1px 2px 3px #ccc;
+        -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+        box-shadow:         1px 1px 2px 3px #ccc;
+    
+}
+
 #search input{
     width: 70%;
     height:60px;
@@ -684,6 +692,14 @@ nav ul form button {
     border-radius:25px;
     box-sizing: border-box;
 }
+
+#search input:hover{
+    -moz-box-shadow:    1px 1px 2px 3px #ccc;
+    -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+    box-shadow:         1px 1px 2px 3px #ccc;
+
+}
+
 
 
 
