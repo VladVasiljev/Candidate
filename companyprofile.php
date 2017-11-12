@@ -1,7 +1,7 @@
 <html>
 <?php
-include 'header.php';
 
+include 'header.php';
 
 ?>
 <head>
@@ -27,6 +27,7 @@ Candidate
 </div>
 <div class="row">
 <div class="col-1-1">
+<!-- Searching Database-->
 <?php
                     
                 //check if search data was submitted
@@ -118,9 +119,10 @@ Candidate
 			}
 			
 		?>
+
+        <!--Display company information-->
     <h2>Company Details</h2>
-     
-                <?php
+      <?php
                 
                 include_once 'dbh.php';
                 if (isset($_SESSION['cid'])) {
@@ -156,7 +158,7 @@ Candidate
                     </div>
 
     </div>
-
+<!-- Search results-->
 <div class="col-1-1">
 <p>Results of your search appear here!</p>
 <?php 
@@ -165,13 +167,9 @@ if(!empty($search_results)):?>
 <div align="center" class="results-count">
 <p><?php echo $search_results['count'];?> Candidates match your search,
     </p></br>
-
-    
 </div><br>
-
-
 <?php foreach($search_results['results'] as $search_result): ?>
-
+<!--Start of the profile card section-->
     <div class="namecard"></br>
     <div class="card">
         <div class="card_img">
@@ -183,11 +181,8 @@ if(!empty($search_results)):?>
         <p>Industry: <?php echo $search_result->industry; ?></p>
         <p>Years Experience: <?php echo $search_result->years; ?></p> 
         <?php echo $search_result->user_cv; ?> <!--Displays link saved in database-->
-        
-      <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?> <!--Displays link saved in database in an iframe-->
-     
-        
-        <div style="margin: 24px 0;">
+        <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?> <!--Displays link saved in database in an iframe-->
+      <div style="margin: 24px 0;">
             <a href="#"><i class="fa fa-twitter"></i></a>  
             <a href="#"><i class="fa fa-linkedin"></i></a>  
             <a href="#"><i class="fa fa-facebook"></i></a>

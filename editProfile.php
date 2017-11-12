@@ -308,7 +308,9 @@ if(isset($_POST['cancel']))
           <h6>Prefered Image Size 250 x250</h6>
 		  
           <input type="file" name="user_image" class="form-control" accept="image/*">
+		  <p><b>Image upload</b></p>
 		  <input type="file" name="user_cv" class="form-control" accept="file_extention/*">
+		  <p><b>CV upload</b></p>
         </div>
 	  </div>
 	  
