@@ -2,10 +2,11 @@
 <?php
 include 'header.php';
 
+
 ?>
 <head>
-<!-- <link rel="stylesheet" type="text/css" href="style.css"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>
 Candidate
 </title>
@@ -180,14 +181,19 @@ if(!empty($search_results)):?>
         <h1><?php echo $search_result->last; ?></h1>
         <p>Email Address: <?php echo $search_result->email; ?></p>
         <p>Industry: <?php echo $search_result->industry; ?></p>
-        <p>Years Experience: <?php echo $search_result->years; ?></p>
+        <p>Years Experience: <?php echo $search_result->years; ?></p> 
+        <?php echo $search_result->user_cv; ?> <!--Displays link saved in database-->
+        
+      <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?> <!--Displays link saved in database in an iframe-->
+     
+        
         <div style="margin: 24px 0;">
             <a href="#"><i class="fa fa-twitter"></i></a>  
             <a href="#"><i class="fa fa-linkedin"></i></a>  
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-whatsapp"></i></a> 
         </div>
-        <button>View Profile</button><br><br>
+        <button>View CV</button><br><br>
    
         </div>
             </div>

@@ -16,7 +16,7 @@ class search{
 
         
         $query = $this->mysqli->query("
-        SELECT first, last, email, industry, years, userPic
+        SELECT  first, last, email, industry, years, userPic, user_cv
         FROM newuser
         WHERE industry LIKE '%{$sanitized}%'
         OR years < '$sanitized'

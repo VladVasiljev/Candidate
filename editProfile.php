@@ -1,4 +1,5 @@
 <?php
+//session_start();
 // including the database connection file
 include_once("dbh.php");
 include 'header.php';
@@ -87,7 +88,7 @@ while($res = mysqli_fetch_array($result))
 	if(isset($_GET['id']) && !empty($_GET['id']))
 	{
 		$id = $_GET['id'];
-		$stmt_edit = $conn->prepare('SELECT id,first,last,years,industry,bio,userPic FROM newuser WHERE id =:uid');
+		$stmt_edit = $conn->prepare('SELECT id,first,last,years,industry,bio,userPic, user_cv FROM newuser WHERE id =:uid');
 		$stmt_edit->execute(array(':uid'=>$id));
 		$edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
 		extract($edit_row);
@@ -109,8 +110,9 @@ while($res = mysqli_fetch_array($result))
 		$yearsXP = $_POST['years_XP'];//Years of Experi
 		$industryType = $_POST['industry_Type'];//Industry Type
 		$bio = $_POST['biography'];//biography
-
 		
+
+		//image upload code
 		$imgFile = $_FILES['user_image']['name'];
 		$tmp_dir = $_FILES['user_image']['tmp_name'];
 		$imgSize = $_FILES['user_image']['size'];
@@ -143,6 +145,34 @@ while($res = mysqli_fetch_array($result))
 			// if no image selected the old image remain as it is.
 			$userpic = $edit_row['userPic']; // old image from database
 		}	
+			//cv upload code
+		$cvFile = $_FILES['user_cv']['name'];
+		$tmp_dir = $_FILES['user_cv']['tmp_name'];
+		$cvSize = $_FILES['user_cv']['size'];
+
+		if($cvFile)
+		{
+			$upload_dir = 'user_cv/'; // cv upload directory	
+			$cvExt = strtolower(pathinfo($cvFile,PATHINFO_EXTENSION)); // get cv extension
+			$valid_extensions = array('pdf'); // valid extensions
+			$usercv = rand(1000,1000000).".".$cvExt;
+			if(in_array($cvExt, $valid_extensions))
+			{			
+				if($cvSize < 5000000)
+				{
+					unlink($upload_dir.$edit_row['usercv']);
+					move_uploaded_file($tmp_dir,$upload_dir.$usercv);
+				}
+				else
+				{
+					$errMSG = "Sorry, your file is too large it should be less then 5MB";
+				}
+			}
+			else
+			{
+				$errMSG = "Sorry, only PDF files are allowed.";		
+			}	
+		}
 						
 		
 		// if no error occured, continue ....
@@ -154,7 +184,8 @@ while($res = mysqli_fetch_array($result))
 													   years=:yearsofXP,
 													   industry=:industry,
 													   bio=:biography,
-													   userPic=:upic 
+													   userPic=:upic,
+													   user_cv=:cv 
 													   WHERE id=:uid');
 			$stmt->bindParam(':fname',$firstName);
 			$stmt->bindParam(':lname',$lastName);
@@ -164,6 +195,7 @@ while($res = mysqli_fetch_array($result))
 			$stmt->bindParam(':biography',$bio);						
 			$stmt->bindParam(':upic',$userpic);
 			$stmt->bindParam(':uid',$id);
+			$stmt->bindParam(':cv',$usercv);
 				
 			if($stmt->execute()){
 				?>
@@ -276,6 +308,7 @@ if(isset($_POST['cancel']))
           <h6>Prefered Image Size 250 x250</h6>
 		  
           <input type="file" name="user_image" class="form-control" accept="image/*">
+		  <input type="file" name="user_cv" class="form-control" accept="file_extention/*">
         </div>
 	  </div>
 	  

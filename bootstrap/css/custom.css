@@ -20,7 +20,8 @@ footer {
 }
 
 .fa {
-    padding: 20px;
+    color:#D6624D;  
+    padding: 10px;
     font-size: 30px;
     width: 50px;
     text-align: center;
@@ -781,7 +782,7 @@ label {
 
 .card {
     border-style:groove;
-    border-color:#C3D7CE;
+    border-color:#D6624D;
     background-color: white;
     float:left;
     color:black;
@@ -798,7 +799,7 @@ label {
       color:black;
   }
   .card_img{
-      background-color: #C3D7CE;
+      background-color: #D6624D;
       width:100%;
   }
 
@@ -821,7 +822,7 @@ label {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #C3D7CE;
+    background-color: #D6624D;
     text-align: center;
     cursor: pointer;
     width: 100%;
