@@ -22,6 +22,7 @@ if(isset($_POST['btn-signup']))
 	$userIndustryType = strip_tags($_POST['txt_industryType']);	
 	$userBiography = strip_tags($_POST['txt_userBio']);
 	$userPicture = strip_tags($_POST['txt_userPic']);
+	$userCV = strip_tags($_POST['txt_userCV']);
 
 	
 	/*
@@ -69,8 +70,8 @@ if(isset($_POST['btn-signup']))
 			}
 			else
 			{
-				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture)){	
-					$user->redirect('sign-up.php?joined');
+				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)){	
+					$user->redirect('signup.php?joined');
 				}
 			}
 		}
@@ -169,6 +170,12 @@ if(isset($_POST['btn-signup']))
 			<div class="form-group">
             	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="7798.png" />
             </div>
+
+			<div class="form-group">
+            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
+            </div>
+
+			
 			
             <div class="clearfix"></div><hr />
             <div class="form-group">
@@ -177,7 +184,7 @@ if(isset($_POST['btn-signup']))
                 </button>
             </div>
             <br />
-            <label>have an account ! <a href="index.php">Sign In</a></label>
+            <label>have an account ! <a href="user_login.php">Sign In</a></label>
         </form>
        </div>
 </div>
