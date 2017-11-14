@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once('class.user.php');
-$user = new USER();
+require_once('class.company.php');
+$company = new COMPANY();
 
-if($user->is_loggedin()!="")
+if($company->is_loggedin()!="")
 {
 	//Redirects the user to userprofile, if user tries to sign up while logged in.
-	$user->redirect('userprofile.php');
+	$company->redirect('companyprofile.php');
 }
 
 if(isset($_POST['btn-signup']))
@@ -14,15 +14,12 @@ if(isset($_POST['btn-signup']))
 	
 	
 	$userName = strip_tags($_POST['txt_userName']);
-	$userPassword = strip_tags($_POST['txt_userPassword']);
-	$userEmail = strip_tags($_POST['txt_userEmail']);
-	$firstName = strip_tags($_POST['txt_firstName']);
-	$lastName = strip_tags($_POST['txt_lastName']);	
-	$userExperience = strip_tags($_POST['txt_userExperience']);	
-	$userIndustryType = strip_tags($_POST['txt_industryType']);	
-	$userBiography = strip_tags($_POST['txt_userBio']);
-	$userPicture = strip_tags($_POST['txt_userPic']);
-	$userCV = strip_tags($_POST['txt_userCV']);
+	$companyPassword = strip_tags($_POST['txt_companyPassword']);
+	$companyName = strip_tags($_POST['txt_companyName']);
+    $IndustryType = strip_tags($_POST['txt_industryType']);	
+    $companyPicture = strip_tags($_POST['txt_userPic']);
+    $position = strip_tags($_POST['txt_position']);
+	
 
 	
 	/*
@@ -32,46 +29,37 @@ if(isset($_POST['btn-signup']))
 	}
 	*/
 
-	if($firstName=="")	{
+	if($companyName=="")	{
 		$error[] = "Provide Your First Name";	
 	}
-	else if($lastName=="")	{
+	else if($userName=="")	{
 		$error[] = "Provide Your Last Name";	
 	}
-	else if($userName=="")	{
-		$error[] = "Provide Your Username";	
-	}
-	else if($userPassword=="")	{
+	
+	else if($companyPassword=="")	{
 		$error[] = "Provide Password";
 	}
 	
-	else if($userEmail=="")	{
-		$error[] = "Provide Your Username";	
-	}
-	else if(!filter_var($userEmail, FILTER_VALIDATE_EMAIL))	{
-	    $error[] = 'Please enter a valid email address';
-	}
-	else if(strlen($userPassword) < 6){
+
+	else if(strlen($companyPassword) < 6){
 		$error[] = "Password must be atleast 6 characters";	
 	}
 	else
 	{
 		try
 		{
-			$stmt = $user->runQuery("SELECT uid, email FROM newuser WHERE uid=:userName OR email=:userEmail");
-			$stmt->execute(array(':userName'=>$userName, ':userEmail'=>$userEmail));
+			$stmt = $company->runQuery("SELECT username FROM company WHERE username=:userName ");
+			$stmt->execute(array(':userName'=>$userName));
 			$row=$stmt->fetch(PDO::FETCH_ASSOC);
 				
-			if($row['uid']==$userName) {
+			if($row['username']==$userName) {
 				$error[] = "sorry username already taken !";
 			}
-			else if($row['email']==$userEmail) {
-				$error[] = "sorry email id already taken !";
-			}
+			
 			else
 			{
-				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)){	
-					$user->redirect('signup.php?joined');
+				if($company->register($userName,$companyName,$companyPassword,$position,$IndustryType,$companyPicture)){	
+					$company->redirect('signup.php?joined');
 				}
 			}
 		}
@@ -123,31 +111,17 @@ if(isset($_POST['btn-signup']))
 			?>
 			
             <div class="form-group">
-            <input type="text" class="form-control" name="txt_firstName" placeholder="Enter First Name" value="<?php if(isset($error)){echo $firstName;}?>"  />
+            <input type="text" class="form-control" name="txt_companyName" placeholder="Enter Company Name" value="<?php if(isset($error)){echo $CompanyName;}?>"  />
             </div>
 			
-            <div class="form-group">
-            <input type="text" class="form-control" name="txt_lastName" placeholder="Enter Last Name"  value="<?php if(isset($error)){echo $lastName;}?>"/>
-            </div>
+            
 			
             <div class="form-group">
             	<input type="text" class="form-control" name="txt_userName" placeholder="Enter Username" value="<?php if(isset($error)){echo $userName;}?>"/>
             </div>
 			<div class="form-group">
-            	<input type="password" class="form-control" name="txt_userPassword" placeholder="Enter Password" />
+            	<input type="password" class="form-control" name="txt_companyPassword" placeholder="Enter Password" />
             </div>
-			<div class="form-group">
-            	<input type="email" class="form-control" name="txt_userEmail" placeholder="Enter Email" value="<?php if(isset($error)){echo $userEmail;}?>"  />
-            </div>
-			
-			<div class="form-group">
-            	<input type="number" class="form-control" name="txt_userExperience" placeholder="Enter Years Experinece" min="0" max="60" value="0" />
-            </div>
-
-			<div class="form-group">
-            	<input type="text" class="form-control" name="txt_userBio" placeholder="Enter Your Bio" value="<?php if(isset($error)){echo $bio;}?>"/>
-            </div>
-
 			<div class="form-group">
 			<select name="txt_industryType">
 			<option value="academic">Acedemic</option>
@@ -167,13 +141,19 @@ if(isset($_POST['btn-signup']))
 			</select>
             </div>
 
+            <div class="form-group">
+            <label for='position'>Position</label> 
+                <select name='txt_position'>
+                <option value='manager'>Manager</option>
+                <option value='hr'>HR</option>
+                <option value='recruiter'>Recruiter</option>
+                </select>
+            </div>
+
 			<div class="form-group">
             	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="default.png" />
             </div>
 
-			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
-            </div>
 
 			
 			
