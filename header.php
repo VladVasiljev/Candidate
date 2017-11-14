@@ -1,9 +1,10 @@
 <?php
- session_start();
+ //session_start();
 
  
 ?>
-    <html>
+<!doctype html>
+<html lang="en">
       <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="bootstrap/css/custom.css" rel="stylesheet" />
@@ -35,7 +36,7 @@
                                         <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
                                         </form>";
                                         
-                                        echo "<form class='logoutbtn' action='includes/logout.inc.php' >
+                                        echo "<form class='logoutbtn' action='includes/logout.php' >
                                                                 <button id='logout-button'>
                                                                 <img id='logout'  src='img/logout.png'/>
                                                                 </button>

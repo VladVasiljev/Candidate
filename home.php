@@ -1,7 +1,7 @@
 <?php
 
 include 'header.php';
-    include 'dbh.php';
+include 'dbh.php';
 
 
 
@@ -9,7 +9,8 @@ include 'header.php';
 ?>
 
 
-<html>
+<!doctype html>
+<html lang="en">
     <head>
     <meta charset="UTF-8">
     <title>Candidate</title>
@@ -18,6 +19,7 @@ include 'header.php';
     </head>
     
     <body>
+
          <div class="wrapper">
        <div class="row">
       <div class="col-1-1">
