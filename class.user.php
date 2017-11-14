@@ -26,7 +26,7 @@ class USER
 		{
 			$new_password = password_hash($userPassword, PASSWORD_DEFAULT);
 			
-			$stmt = $this->conn->prepare("INSERT INTO newuser(uid,email,pwd,first,last,years,industry,bio,userPic,user_cv) 
+			$stmt = $this->conn->prepare("INSERT INTO newuser(uid,email,pwd,first,last,years,industry,bio,userPic) 
 		                                               VALUES(:userName, :userEmail, :userNewPassword, :firstName, :lastName, :userExperience, :userIndustryType, :userBiography, :userPicture,:userCV)");
 			
 			
@@ -40,8 +40,8 @@ class USER
 			$stmt->bindparam(":userExperience", $userExperience);									  
 			$stmt->bindparam(":userIndustryType", $userIndustryType);									  
 			$stmt->bindparam(":userBiography", $userBiography);									  
-			$stmt->bindparam(":userPicture", $userPicture);								  
-			$stmt->bindparam(":userCV", $userCV);								  
+			$stmt->bindparam(":userPicture", $userPicture);									  
+			$stmt->bindparam(":userCV", $userCV);									  
 				
 			$stmt->execute();	
 			

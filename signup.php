@@ -1,16 +1,10 @@
 <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 session_start();
 require_once('class.user.php');
 $user = new USER();
 
 if($user->is_loggedin()!="")
 {
-	//Redirects the user to userprofile, if user tries to sign up while logged in.
 	$user->redirect('userprofile.php');
 }
 
@@ -75,8 +69,8 @@ if(isset($_POST['btn-signup']))
 			}
 			else
 			{
-				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)){	
-					$user->redirect('signup.php?joined');
+				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture)){	
+					$user->redirect('sign-up.php?joined');
 				}
 			}
 		}
@@ -88,17 +82,19 @@ if(isset($_POST['btn-signup']))
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage : Sign up</title>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="style.css" type="text/css"  />
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+	<title>Title</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+	  
 <div class="signin-form">
 
 <div class="container">
@@ -177,10 +173,8 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
+            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="7798.pdf" />
             </div>
-
-			
 			
             <div class="clearfix"></div><hr />
             <div class="form-group">
@@ -193,110 +187,13 @@ if(isset($_POST['btn-signup']))
         </form>
        </div>
 </div>
-=======
-include 'header.php';
-?>
-=======
-include 'header.php';
-?>
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
-include 'header.php';
-?>
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
-include 'header.php';
-?>
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
-include 'header.php';
-?>
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-<html>
-        <body>
-             <div class="wrapper">
-       <div class="row">
-      <div class="col-1-1">
-        
-       <!-- <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>-->
-      
-        
-        <?php
-            
-            $url ="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            if(strpos($url, 'error=empty')!==false){
-                echo " <div align='center'><h2>Please fill in all fields</h2><br>";
-            }
-            
-            elseif(strpos($url, 'error=username')!==false){
-                echo "<div align='center'><h2>Username already in use!</h2><br>";
-            }
-            
-         if(isset($_SESSION['id'])){
-             echo "<p class='pCenter'>Hi there user!</p>";
-         } else{
-             echo " <div align='center'>Enter User details and SignUp<br>";
-             echo "Already Signed up?<br>Click <a href='user_login.php'>Login</a></div> ";
-         }
-        
-        ?>
-        
-        
-        
-        <br>
-        <br>
-        <br>
-          <div align="center">
-        <?php
-         if(isset($_SESSION['id'])){
-             echo "You're already logged in";
-         } else{
-            echo" <form id ='signup'  action='includes/signup.inc.php' method='POST'>
-      <input type ='text' name='first' placeholder='First Name'required><br>
-         <input type ='text' name='last' placeholder='last Name'required><br>
-        <input type ='text' name='uid' placeholder='Username'required><br>
-       <input type ='password' name='pwd' placeholder='Password'required><br>
-         <input type ='text' name='email' placeholder='email'required><br>
-        <input type ='number' name='years' placeholder='Years experience'required><br>
-        <label for='Industry'>Select Industry</label> 
-        <select name='industry'>
-        <option value='it'>IT</option>
-        <option value='retail'>Retail</option>
-        <option value='medical'>Medical</option>
-        <option value='manual labour'>Manual Labour</option>
-        <option value='motor industry'>Motor Industry</option>
-        <option value='academic'>Academic</option>
-        <option value='accountancy and finance'>Accountancy and Finance</option>
-        <option value='architecture/design'>Architecture/Design</option>
-        <option value='childcare'>Childcare</option>
-        <option value='drivers'>Drivers</option>
-        <option value='education/training'>Education/Training</option>
-        <option value='graduate'>Graduate</option>
-        <option value='hair and beauty'>Hair and Beauty</option>
-        </select>
-        <button type ='submit'>Sign Up</button>
-        </form>";
-        
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
-=======
->>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
 
-        
-         } 
-            ?>
-            
-              </div>
-           </div></div></div>
-    </body>
+</div>
 
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
 </html>
