@@ -67,7 +67,6 @@ $result = mysqli_query($conn, "SELECT * FROM newuser WHERE id=$id");
 
 while($res = mysqli_fetch_array($result))
 {
-	$userName = $res['uid'];
 	$firstName = $res['first'];
 	$lastName = $res['last'];
     $email = $res['email'];
@@ -156,8 +155,7 @@ while($res = mysqli_fetch_array($result))
 			$upload_dir = 'user_cv/'; // cv upload directory	
 			$cvExt = strtolower(pathinfo($cvFile,PATHINFO_EXTENSION)); // get cv extension
 			$valid_extensions = array('pdf'); // valid extensions
-			$usercv = $userName.".".$cvExt;
-			//$usercv = rand(1000,1000000).".".$cvExt;
+			$usercv = rand(1000,1000000).".".$cvExt;
 			if(in_array($cvExt, $valid_extensions))
 			{			
 				if($cvSize < 5000000)

@@ -29,12 +29,12 @@ include 'header.php';
         <div class="row">
                         <div   class="col-1-2">
                         <a href="user_login.php">
-                        <img id="user"  src="img/user-login.png" alt="Logo" max-width="100%" ></a>
+                        <img id="user"  src="img/user.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
                         <div  class="col-1-2">
                         <a href="company_login.php">
-                        <img id ="company"  src="img/company-login.png" alt="Logo" max-width="100%" ></a>
+                        <img id ="company"  src="img/company.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
                             </div>
