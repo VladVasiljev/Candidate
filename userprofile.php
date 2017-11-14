@@ -1,39 +1,28 @@
-<?php include 'header.php';?>
+<!DOCTYPE html>
+<html>
 <?php
-
-	require_once("session.php");
-	
-	require_once("class.user.php");
-	$auth_user = new USER();
-	
-	
-	$user_id = $_SESSION['user_session'];
-	
-	$stmt = $auth_user->runQuery("SELECT * FROM newuser WHERE id=:user_id");
-	$stmt->execute(array(":user_id"=>$user_id));
-	
-	$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
-	
+    include 'header.php';
 ?>
-<!doctype html>
-<html lang="en">
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<link href="bootstrap/css/custom.css" rel="stylesheet" />
-<title>welcome - <?php print($userRow['id']); ?></title>
+<!--	<link href="style.css" rel="stylesheet" type="text/css">-->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>RightPerson</title>
 </head>
-
 <body>
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-1-1">
+			<!--	<center>
+					<img alt="Logo" src="img/logo.png">
+				</center>-->
+			</div>
+			<div align="center" class="col-1-1">
+			<div class="user_details">
 
-
-
-    <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
-
-    <div class="container">
-
-		<?php
+			<?php
 			include_once 'imageUploadConnection.php';
-			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['user_session'] . "'");
+			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['id'] . "'");
 			$stmt->execute();
 			
 			if($stmt->rowCount() > 0)
@@ -49,7 +38,7 @@
 						<p class="page-header">
 						<span>
 					
-						<a  href="editProfile.php?id=<?php echo $userRow['id']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
+						<a  href="editProfile.php?id=<?php echo $row['id']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
 
 						</span>
 						</p>
@@ -71,12 +60,52 @@
 			}
 			
 		?>
-	
-	<?php echo " <br>Username: " . $userRow['uid'] . " <br> Name " . $userRow["first"] . " " . $userRow["last"] . " <br>Email: " . $userRow["email"] . "<br> Years Experience: " . $userRow["years"] . "<br> Industry: " . $userRow["industry"] . "<br><h2>Bio:</h2> " . $userRow["bio"]; ?>
-
+		
+		<h2>Candidate Details</h2>
 			
-	
-	<?php include 'footer.php'?>
+		<?php
+		include_once 'dbh.php';
+				if (isset($_SESSION['id'])) {
+				    echo "Hello Candidate, your user ID is:";
+				    echo $_SESSION['id'];
+				    
+				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio FROM newuser WHERE id = '" . $_SESSION['id'] . "'";
+				    $result = mysqli_query($conn, $sql);
+				    
+				    if (mysqli_num_rows($result) > 0) {
+				        // output data of each row
+				        while ($row = mysqli_fetch_assoc($result)) {
+							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br><h2>Bio:</h2> " . $row["bio"];
+							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
+							
+							
+							
+				        }
+				    } else {
+				        echo "0 results";
+				    }
+				    
+				  //  mysqli_close($conn);
+				    
+				} else {
+				    echo "You are not logged in";
+				}
 
+				?>
+				</div>
+				</div>	
+
+		
+		
+	
+
+
+
+	
+			
+		</div><!-- /.row -->
+		
+	</div><!-- /.wrapper -->
+	<?php include 'footer.php'?>
 </body>
 </html>

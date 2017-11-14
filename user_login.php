@@ -1,88 +1,74 @@
 <?php
-session_start();
-require_once("class.user.php");
-$login = new USER();
 
-if($login->is_loggedin()!="")
-{
-	$login->redirect('userprofile.php');
-}
+include 'header.php';
+    include 'dbh.php';
 
-if(isset($_POST['btn-login']))
-{
-    
-	$userName = strip_tags($_POST['txt_uname_email']);
-	$userEmail = strip_tags($_POST['txt_uname_email']);
-	$userPassword = strip_tags($_POST['txt_password']);
-		
-	if($login->doLogin($userName,$userEmail,$userPassword))
-	{
-		$login->redirect('userprofile.php');
-	}
-	else
-	{
-		$error = "Wrong Details !";
-	}	
-}
+
+
+
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage : Login</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<link href="bootstrap/css/custom.css" rel="stylesheet" />
-</head>
-<body>
 
-<div class="signin-form">
 
-	<div class="container">
-     
-        
-       <form class="form-signin" method="post" id="login-form">
-      
-        <h2 class="form-signin-heading">Log In to WebApp.</h2><hr />
-        
-        <div id="error">
-        <?php
-        
-			if(isset($error))
-			{
-				?>
-                <div class="alert alert-danger">
-                   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?> !
-                </div>
-                <?php
-			}
-		?>
-        </div>
-        
-        <div class="form-group">
-        <input type="text" class="form-control" name="txt_uname_email" placeholder="Username or E mail ID" required />
-        <span id="check-e"></span>
-        </div>
-        
-        <div class="form-group">
-        <input type="password" class="form-control" name="txt_password" placeholder="Your Password" />
-        </div>
-       
-        
-
-     	<hr />
-        
-        <div class="form-group">
-            <button type="submit" name="btn-login" class="btn btn-default">
-                	<i class="glyphicon glyphicon-log-in"></i> &nbsp; SIGN IN
-            </button>
-        </div>  
-      	<br />
-            <label>Don't have account yet ! <a href="sign-up.php">Sign Up</a></label>
-      </form>
-
-    </div>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Candidate</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src = "js/form.js"></script>
+    </head>
     
-</div>
+    <body>
+         <div class="wrapper">
+       <div class="row">
+      <div class="col-1-1">
+        
+       <!-- <center> <img  src="img/logo.png" alt="Logo" max-width="100%" ></center>-->
+          
+         
+                        <div align="center" >
+                       
+                     
+                            <?php
+                           
+                
+                                if(isset($_SESSION['id'])){
+                                    echo"You are currently logged in, continue to your profile";
+                             echo" <form action='userprofile.php' >
+        <button>Profile</button>
+        </form>";
+                         } 
+                         
+                         else{
+                                    echo"<h1>Candidate Login</h1>";
+                             echo" <form action='includes/login.inc.php' method='POST'>
+                              <input type ='text' name='uid' placeholder='Username' required>
+                               <input type ='password' name='pwd' placeholder='Password' required>
+                               <button type ='submit'>Login</button>
+                               </form>";
 
-</body>
+                             
+                                
+                               
+                               
+                              
+                                    
+                         }
+                          
+
+                            ?>
+
+                            
+                        
+                            </div>
+                        
+             
+             
+           
+             
+             </div>
+             </div>            
+        </div>
+        
+    </body>
 </html>
+      
