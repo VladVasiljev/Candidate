@@ -87,7 +87,7 @@ Candidate
     <div align="center" class="col-1-1">
     <div class="user_details">
     <?php
-			include_once 'imageUploadConnection.php';
+			include_once 'configs/imageUploadConnection.php';
 			$stmt = $conn->prepare("SELECT cid,userPic FROM company WHERE cid = '" . $_SESSION['cid'] . "'");
 			$stmt->execute();
 			
@@ -124,7 +124,7 @@ Candidate
     <h2>Company Details</h2>
       <?php
                 
-                include_once 'dbh.php';
+                include_once 'configs/dbh.php';
                 if (isset($_SESSION['cid'])) {
                     echo "<p>Hello, Welcome back.<br> Your user ID is:</p> ";
                     echo $_SESSION['cid'];

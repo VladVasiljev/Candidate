@@ -26,7 +26,7 @@
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
                          </div>-->
                                                         <?php
-                                    if (isset($_SESSION['id'])) {
+                                    if (isset($_SESSION['user_sessionid'])) {
                                        echo" <div class='navbar-nav'>
                                         <a class='nav-item nav-link' href='home.php'>Home</a>
                                         <a class='nav-item nav-link' href='contact.php'>Contact</a>

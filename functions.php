@@ -1,5 +1,5 @@
 <?php
-require("dbh.php");
+require("configs/dbh.php");
 
 //function getUsersData($id){
     $array = array();

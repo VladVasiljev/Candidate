@@ -32,7 +32,7 @@
     <div class="container">
 
 		<?php
-			include_once 'imageUploadConnection.php';
+			include_once 'configs/imageUploadConnection.php';
 			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['user_session'] . "'");
 			$stmt->execute();
 			
