@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 session_start();
 require_once('class.user.php');
 $user = new USER();
@@ -202,6 +203,10 @@ include 'header.php';
 include 'header.php';
 ?>
 >>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
+=======
+include 'header.php';
+?>
+>>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
 <html>
         <body>
              <div class="wrapper">
@@ -269,6 +274,9 @@ include 'header.php';
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
+=======
 >>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
 =======
 >>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
