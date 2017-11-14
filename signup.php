@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 session_start();
 require_once('class.user.php');
 $user = new USER();
@@ -192,6 +193,10 @@ if(isset($_POST['btn-signup']))
 =======
 include 'header.php';
 ?>
+=======
+include 'header.php';
+?>
+>>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
 <html>
         <body>
              <div class="wrapper">
@@ -257,6 +262,9 @@ include 'header.php';
         <button type ='submit'>Sign Up</button>
         </form>";
         
+<<<<<<< HEAD
+>>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
+=======
 >>>>>>> parent of a9bd66c... Added Secure Signup and Register system.
 
         
