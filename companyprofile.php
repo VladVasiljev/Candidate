@@ -1,8 +1,8 @@
 <html>
 <?php
-session_start();
+
 include 'header.php';
-include_once("dbh.php");
+
 ?>
 <head>
 <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
@@ -88,7 +88,7 @@ Candidate
     <div class="user_details">
     <?php
 			include_once 'imageUploadConnection.php';
-			$stmt = $conn->prepare("SELECT cid,userPic FROM company WHERE cid = '" . $_SESSION['company_session'] . "'");
+			$stmt = $conn->prepare("SELECT cid,userPic FROM company WHERE cid = '" . $_SESSION['cid'] . "'");
 			$stmt->execute();
 			
 			if($stmt->rowCount() > 0)

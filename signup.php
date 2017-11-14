@@ -116,7 +116,7 @@ if(isset($_POST['btn-signup']))
 			{
 				 ?>
                  <div class="alert alert-info">
-                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='home.php'>login</a> here
+                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='index.php'>login</a> here
                  </div>
                  <?php
 			}
@@ -168,7 +168,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="default.png" />
+            	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="7798.png" />
             </div>
 
 			<div class="form-group">
