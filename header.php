@@ -58,7 +58,7 @@
                                         else{
                                             echo"<div class='navbar-nav'>
                                             <a class='nav-item nav-link' href='home.php'>Home</a>
-                                            <a class='nav-item nav-link' href='companysignup.php'>Company</a>
+                                            <a class='nav-item nav-link' href='company_signup.php'>Company</a>
                                             <a class='nav-item nav-link' href='signup.php'>User</a>
                                         </div>";
                                         }

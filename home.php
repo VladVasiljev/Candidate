@@ -35,7 +35,7 @@ include 'header.php';
                         
                         </div>
                         <div  class="col-1-2">
-                        <a href="company_login.php">
+                        <a href="new_company_login.php">
                         <img id ="company"  src="img/company-login.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
