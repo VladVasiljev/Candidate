@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 session_start();
 require_once('class.user.php');
 $user = new USER();
@@ -149,7 +150,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-			<select name="txt_industryType">
+			<select type="industry" name="txt_industryType">
 			<option value="academic">Acedemic</option>
                   <option value="accountancy">Accountancy</option>
                   <option value="architecture">Architecture</option>
@@ -168,7 +169,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="7798.png" />
+            	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="default.png" />
             </div>
 
 			<div class="form-group">

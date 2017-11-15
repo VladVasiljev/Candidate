@@ -27,7 +27,7 @@
 
 
 
-    <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+   <!-- <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
 
     <div class="container">
 
@@ -43,15 +43,11 @@
 					extract($row);
 					?>
 
-				<div class="col-1-2">
+				<div class="col-1-1">
 						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
-						<img src="company_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
+						<center><img src="company_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" /></center>
 						<p class="page-header">
-						<span>
-					
-						<a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
-
-						</span>
+						
 						</p>
 					
 					</div>
@@ -71,14 +67,12 @@
 			}
 			
 		?>
-	
-	<?php echo "Hello ". $companyRow['username'] .   " <br><b>Username:</b> " . $companyRow['username'] . " <br> <b>Company Name:</b> " . $companyRow["name"] . "<br><b>Industry:</b> " . $companyRow["industry"] .  "<br><b>Position:</b> " . $companyRow["position"]; ?>
-       
-    <div class="row">
-    <div class="col-1-1">
-     <!--   <center>
-            <img alt="Logo" src="img/logo.png">
-        </center>-->
+	 <div class="row">
+    <div align="center" class="col-1-1">
+    <span>
+    <a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
+    </span>
+    <?php echo "Hello ". $companyRow['username'] .   " <br><b>Username:</b> " . $companyRow['username'] . " <br> <b>Company Name:</b> " . $companyRow["name"] . "<br><b>Industry:</b> " . $companyRow["industry"] .  "<br><b>Position:</b> " . $companyRow["position"]; ?>
     </div>
 </div>
 <div class="row">

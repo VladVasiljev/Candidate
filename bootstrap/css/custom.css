@@ -85,7 +85,7 @@ footer {
    margin-bottom: 0px;
 }
 
-/*body {*/
+/*body {
   /* background-image: url("img/background.png");*/
   /*   background-repeat: no-repeat;*/
   /*   background-attachment: fixed;*/
@@ -329,10 +329,17 @@ user_details p{
 
 
 
+select[type=industry]{
+    width: auto;
+    padding: 10px 20px;
+    margin: 2px 0px;
+    display:block;
+    border: 1px solid #74031C;
+    box-sizing: border-box;
+}
 
 
-
-input[type=text], input[type=password],input[type=number] {
+input[type=text], input[type=password],input[type=number] ,[type=email]{
     width: auto;
     padding: 10px 20px;
     margin: 2px 0px;

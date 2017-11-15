@@ -1,5 +1,5 @@
 <?php
-//include 'header.php';
+include 'header.php';
 session_start();
 require_once('class.company.php');
 $company = new COMPANY();
@@ -124,7 +124,7 @@ if(isset($_POST['btn-signup']))
             	<input type="password" class="form-control" name="txt_companyPassword" placeholder="Enter Password" />
             </div>
 			<div class="form-group">
-			<select name="txt_industryType">
+			<select type="industry" name="txt_industryType">
 			<option value="academic">Acedemic</option>
                   <option value="accountancy">Accountancy</option>
                   <option value="architecture">Architecture</option>
@@ -144,7 +144,7 @@ if(isset($_POST['btn-signup']))
 
             <div class="form-group">
             <label for='position'>Position</label> 
-                <select name='txt_position'>
+                <select type="industry" name='txt_position'>
                 <option value='manager'>Manager</option>
                 <option value='hr'>HR</option>
                 <option value='recruiter'>Recruiter</option>

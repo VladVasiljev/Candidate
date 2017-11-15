@@ -24,8 +24,8 @@
                         <a class="nav-item nav-link" href="company_signup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
-                         </div>
-                                 
+                        <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>
+                     </div>
                      </div>
                  </nav>
          
