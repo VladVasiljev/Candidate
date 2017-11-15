@@ -2,7 +2,6 @@
 <?php
 
 	require_once("company_session.php");
-	
 	require_once("class.company.php");
 	$auth_company = new COMPANY();
 	
@@ -44,6 +43,7 @@
 					?>
 
 				<div class="col-1-1">
+           
 						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
 						<center><img src="company_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" /></center>
 						<p class="page-header">
@@ -69,10 +69,18 @@
 		?>
 	 <div class="row">
     <div align="center" class="col-1-1">
+    <?php
+		include_once 'configs/dbh.php';
+				if (isset($companyRow['cid'])) {
+				    echo "Hello ". $companyRow['username'] ." your profile ID is:";
+                    echo $companyRow['cid'];
+                    
+                }
+                ?>
     <span>
     <a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
     </span>
-    <?php echo "Hello ". $companyRow['username'] .   " <br><b>Username:</b> " . $companyRow['username'] . " <br> <b>Company Name:</b> " . $companyRow["name"] . "<br><b>Industry:</b> " . $companyRow["industry"] .  "<br><b>Position:</b> " . $companyRow["position"]; ?>
+    <?php echo   " <br><b>Username:</b> " . $companyRow['username'] . " <br> <b>Company Name:</b> " . $companyRow["name"] . "<br><b>Industry:</b> " . $companyRow["industry"] .  "<br><b>Position:</b> " . $companyRow["position"]; ?>
     </div>
 </div>
 <div class="row">

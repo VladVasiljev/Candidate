@@ -31,10 +31,10 @@ if(isset($_POST['btn-signup']))
 	*/
 
 	if($companyName=="")	{
-		$error[] = "Provide Your First Name";	
+		$error[] = "Provide Your Company Name";	
 	}
 	else if($userName=="")	{
-		$error[] = "Provide Your Last Name";	
+		$error[] = "Provide Your Username Name";	
 	}
 	
 	else if($companyPassword=="")	{
@@ -76,7 +76,7 @@ if(isset($_POST['btn-signup']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage : Sign up</title>
+<title>Candidate: Sign up</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="style.css" type="text/css"  />
@@ -105,20 +105,20 @@ if(isset($_POST['btn-signup']))
 			{
 				 ?>
                  <div class="alert alert-info">
-                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='home.php'>login</a> here
+                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='new_company_login.php'>login</a> here
                  </div>
                  <?php
 			}
 			?>
 			
             <div class="form-group">
-            <input type="text" class="form-control" name="txt_companyName" placeholder="Enter Company Name" value="<?php if(isset($error)){echo $CompanyName;}?>"  />
+            <input type="text" class="form-control" name="txt_companyName" placeholder="Enter Username" value="<?php if(isset($error)){echo $userName;}?>"  />
             </div>
 			
             
 			
             <div class="form-group">
-            	<input type="text" class="form-control" name="txt_userName" placeholder="Enter Username" value="<?php if(isset($error)){echo $userName;}?>"/>
+            	<input type="text" class="form-control" name="txt_userName" placeholder="Enter Company Name" value="<?php if(isset($error)){echo $companyName;}?>"/>
             </div>
 			<div class="form-group">
             	<input type="password" class="form-control" name="txt_companyPassword" placeholder="Enter Password" />
@@ -130,7 +130,7 @@ if(isset($_POST['btn-signup']))
                   <option value="architecture">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>
-                  <option value="education">Education</option>
+                  <option value="education/training">Education/Training</option>
                   <option value="graduate">Graduate</option>
                   <option value="hair and beauty">Hair And Beauty</option>
 				  <option value="it">IT</option>
@@ -165,7 +165,7 @@ if(isset($_POST['btn-signup']))
                 </button>
             </div>
             <br />
-            <label>have an account ! <a href="user_login.php">Sign In</a></label>
+            <label>have an account ! <a href="new_company_login.php">Sign In</a></label>
         </form>
        </div>
 </div>

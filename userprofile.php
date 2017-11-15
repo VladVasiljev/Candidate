@@ -25,7 +25,7 @@
 
 <body>
 
-    <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+  <!--  <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
 
 
 	<div class="wrapper">
@@ -85,15 +85,16 @@
 		include_once 'configs/dbh.php';
 				if (isset($userRow['id'])) {
 				    echo "Hello Candidate, your user ID is:";
-				    echo $userRow['id'];
+					echo $userRow['id'];
+					
 				    
-				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio FROM newuser WHERE id = '" . $userRow['id'] . "'";
+				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio, timestamp FROM newuser WHERE id = '" . $userRow['id'] . "'";
 				    $result = mysqli_query($conn, $sql);
 				    
 				    if (mysqli_num_rows($result) > 0) {
 				        // output data of each row
 				        while ($row = mysqli_fetch_assoc($result)) {
-							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br><h2>Bio:</h2> " . $row["bio"];
+							echo " <br><b>Username:</b> " . $row['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"];
 							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
 							
 							
