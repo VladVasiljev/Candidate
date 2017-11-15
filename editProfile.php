@@ -1,61 +1,8 @@
 <?php
 //session_start();
 // including the database connection file
-include_once("dbh.php");
+include_once("configs/dbh.php");
 include 'header.php';
-//Session_start();
-/*
-if(isset($_POST['update']))
-{	
-	
-	
-	$id = mysqli_real_escape_string($conn, $_POST['id']);	
-
-	$firstName = mysqli_real_escape_string($conn, $_POST['first']);	
-	$lastName = mysqli_real_escape_string($conn, $_POST['last']);	
-	$userName = mysqli_real_escape_string($conn, $_POST['uid']);	
-	$email = mysqli_real_escape_string($conn, $_POST['email']);	
-	$yearsXP = mysqli_real_escape_string($conn, $_POST['years']);	
-	$industryType = mysqli_real_escape_string($conn, $_POST['industry']);	
-	$bio = mysqli_real_escape_string($conn, $_POST['bio']);	
-
-	
-		
-	
-	// checking empty fields
-	if(empty($firstName) || empty($lastName) || empty($email) || empty($yearsXP) || empty($industryType) || empty($bio) ) {	
-			
-		if(empty($firstName)) {
-			echo "<font color='red'>Location: </font><br/>";
-			
-		}
-		
-		if(empty($lastName)) {
-			echo "<font color='red'>Age field is empty.</font><br/>";
-		}
-		
-		if(empty($email)) {
-			echo "<font color='red'>Email field is empty.</font><br/>";
-        }	
-        
-        if(empty($yearsXP)) {
-			echo "<font color='red'>Years of Experience field is empty.</font><br/>";
-        }
-        if(empty($industryType)) {
-			echo "<font color='red'>Industry Type field is empty.</font><br/>";
-        }
-        if(empty($bio)) {
-			echo "<font color='red'>Bio field is empty.</font><br/>";
-		}
-	} else {	
-		//updating the table
-		$result = mysqli_query($conn, "UPDATE newuser  SET first='$firstName',last='$lastName',email='$email', years='$yearsXP',industry='$industryType',bio='$bio' WHERE id=$id");
-		
-		//redirectig to the display page. In our case, it is index.php
-		header("Location: userprofile.php");
-	}
-}
-*/
 ?>
 
 <?php
@@ -67,6 +14,7 @@ $result = mysqli_query($conn, "SELECT * FROM newuser WHERE id=$id");
 
 while($res = mysqli_fetch_array($result))
 {
+	$userName = $res['uid'];
 	$firstName = $res['first'];
 	$lastName = $res['last'];
     $email = $res['email'];
@@ -81,7 +29,7 @@ while($res = mysqli_fetch_array($result))
 	//Start of Image Upload PHP
 	error_reporting( ~E_NOTICE );
 	
-	require_once 'imageUploadConnection.php';
+	require_once 'configs/imageUploadConnection.php';
 
 	
 	
@@ -155,7 +103,8 @@ while($res = mysqli_fetch_array($result))
 			$upload_dir = 'user_cv/'; // cv upload directory	
 			$cvExt = strtolower(pathinfo($cvFile,PATHINFO_EXTENSION)); // get cv extension
 			$valid_extensions = array('pdf'); // valid extensions
-			$usercv = rand(1000,1000000).".".$cvExt;
+			$usercv = $userName.".".$cvExt;
+			//$usercv = rand(1000,1000000).".".$cvExt;
 			if(in_array($cvExt, $valid_extensions))
 			{			
 				if($cvSize < 5000000)
@@ -226,10 +175,6 @@ if(isset($_POST['cancel']))
 <!doctype html>
 <html lang="en">
 <head>
-	<!--
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link href="bootstrap/css/custom.css" rel="stylesheet"/>
--->
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -238,63 +183,6 @@ if(isset($_POST['cancel']))
 	
 </head>
 <body>
-<!--
-		<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Navbar</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="companysignup.php">Company</a>
-      <a class="nav-item nav-link" href="signup.php">User</a>
-    </div>
-  </div>
-</nav>
--->
-
-	
-	
-	<!--
-	<form name="form1" method="post" action="editProfile.php">
-		<table border="0">
-			
-			<tr> 
-				<td>First Name</td>
-				<td><input type="text" name="first" value="<?php// echo $firstName;?>"></td>
-			</tr>
-			<tr> 
-				<td>Last Name</td>
-				<td><input type="text" name="last" value="<?php //echo $lastName;?>"></td>
-			</tr>
-			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email" value="<?php //echo $email;?>"></td>
-			</tr>
-            <tr> 
-				<td>Years Experience</td>
-				<td><input type="text" name="years" value="<?php //echo $yearsXP;?>"></td>
-			</tr>
-            <tr> 
-				<td>Industry Type</td>
-				<td><input type="text" name="industry" value="<?php// echo $industryType;?>"></td>
-			</tr>
-            <tr> 
-				<td>Bio</td>
-				<td><input type="text" name="bio" value="<?php //echo $bio;?>"></td>
-			</tr>
-			<tr>
-				<td><input type="hidden" name="id" value=<?php //echo $_GET['id'];?>></td>
-				<td><input type="submit" name="update" value="Update"></td>
-			</tr>
-			</div>
-				
-			
-		</table>
-	</form>
-	-->
-
 
 	<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
 	<div class="container">
@@ -392,59 +280,13 @@ if(isset($_POST['cancel']))
 
 
 
-		<!--
-		<div class="form-group">
-            <label class="col-lg-3 control-label">Industry:</label>
-            <div class="col-lg-8">
-			<input class="form-control" type="text" name="industry_Type" value="<?php echo $industryType; ?>" required /></td>
-            </div>
-		</div>
-		-->
 		<div class="form-group">
             <label class="col-lg-3 control-label">Biography:</label>
             <div class="col-lg-8">
 			<input class="form-control" type="text" name="biography" value="<?php echo $bio; ?>" required />
             </div>
         </div>
-		
-<!--
-    <tr>
-	<td><label class="control-label">First Name</label></td>
-	<td><input class="form-control" type="text" name="first_name" value="<?php echo $firstName; ?>" required /></td>
-</tr>
-    
-    <tr>
-    	<td><label class="control-label">Last Name</label></td>
-        <td><input class="form-control" type="text" name="last_name" value="<?php echo $lastName; ?>" required /></td>
-    </tr>
-	<tr>
-    	<td><label class="control-label">Email Address</label></td>
-        <td><input class="form-control" type="text" name="email_Address" value="<?php echo $email; ?>" required /></td>
-    </tr>
 
-	<tr>
-    	<td><label class="control-label">Years of Experience</label></td>
-        <td><input class="form-control" type="text" name="years_XP" value="<?php echo $yearsXP; ?>" required /></td>
-    </tr>
-
-	<tr>
-    	<td><label class="control-label">Industry</label></td>
-        <td><input class="form-control" type="text" name="industry_Type" value="<?php echo $industryType; ?>" required /></td>
-    </tr>
-
-	<tr>
-    	<td><label class="control-label">Biography</label></td>
-        <td><input class="form-control" type="text" name="biography" value="<?php echo $bio; ?>" required /></td>
-    </tr>
-   
-    <tr>
-    	<td><label class="control-label">Profile Imgage</label></td>
-        <td>
-        	<p><img src="user_images/<?php echo $userPic; ?>" height="150" width="150" /></p>
-        	<input  type="file" name="user_image" accept="image/*" /> 
-        </td>
-    </tr>
-	-->
 	
 	<div class="form-group">
             <label class="col-md-3 control-label"></label>
@@ -457,25 +299,8 @@ if(isset($_POST['cancel']))
 		  </div>
         </div>
 		</div>
-<!--
-    <tr>
-        <td colspan="2"><button type="submit" name="btn_save_updates"> Update</button>
-        
-        <button type="submit" name="cancel" class="cancelbtn">Cancel </button>
-        
-        </td>
-    </tr>
-    
-	</table>
-	
--->
-    
+
 </form>
 
-<!--
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-			-->
 </body>
 </html>
