@@ -25,15 +25,22 @@
 
 <body>
 
-
-
     <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
 
-    <div class="container">
 
-		<?php
-			include_once 'configs/imageUploadConnection.php';
-			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['user_session'] . "'");
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-1-1">
+			<!--	<center>
+					<img alt="Logo" src="img/logo.png">
+				</center>-->
+			</div>
+			<div align="center" class="col-1-1">
+			<div class="user_details">
+
+			<?php
+			include_once 'configs/dbconfig.php';
+			$stmt = $auth_user->runQuery("SELECT id,userPic FROM newuser WHERE id = '" . $userRow['id'] . "'");
 			$stmt->execute();
 			
 			if($stmt->rowCount() > 0)
@@ -45,7 +52,7 @@
 
 				<div class="col-1-2">
 						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
-						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
+						<img src="user_images/<?php echo $userRow['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
 						<p class="page-header">
 						<span>
 					
@@ -71,11 +78,43 @@
 			}
 			
 		?>
-	
-	<?php echo " <br>Username: " . $userRow['uid'] . " <br> Name " . $userRow["first"] . " " . $userRow["last"] . " <br>Email: " . $userRow["email"] . "<br> Years Experience: " . $userRow["years"] . "<br> Industry: " . $userRow["industry"] . "<br><h2>Bio:</h2> " . $userRow["bio"]; ?>
-
+		
+		<h2>Candidate Details</h2>
 			
-	
+		<?php
+		include_once 'configs/dbh.php';
+				if (isset($userRow['id'])) {
+				    echo "Hello Candidate, your user ID is:";
+				    echo $userRow['id'];
+				    
+				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio FROM newuser WHERE id = '" . $userRow['id'] . "'";
+				    $result = mysqli_query($conn, $sql);
+				    
+				    if (mysqli_num_rows($result) > 0) {
+				        // output data of each row
+				        while ($row = mysqli_fetch_assoc($result)) {
+							echo " <br>Username: " . $row['uid'] . " <br> Name " . $row["first"] . " " . $row["last"] . " <br>Email: " . $row["email"] . "<br> Years Experience: " . $row["years"] . "<br> Industry: " . $row["industry"] . "<br><h2>Bio:</h2> " . $row["bio"];
+							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
+							
+							
+							
+				        }
+				    } else {
+				        echo "0 results";
+				    }
+				    
+				  //  mysqli_close($conn);
+				    
+				} else {
+				    echo "You are not logged in";
+				}
+
+				?>
+				</div>
+				</div>	
+		</div><!-- /.row -->
+		
+	</div><!-- /.wrapper -->
 	<?php include 'footer.php'?>
 
 </body>
