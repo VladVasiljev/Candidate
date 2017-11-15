@@ -19,50 +19,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                <!-- <img id="nav-logo" src="img/new-logo.png"/>-->
-                   <!-- <div class="navbar-nav">
+                   <div class="navbar-nav">
                         <a class="nav-item nav-link" href="home.php">Home</a>
                         <a class="nav-item nav-link" href="companysignup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
-                         </div>-->
-                                                        <?php
-                                    if (isset($_SESSION['user_sessionid'])) {
-                                       echo" <div class='navbar-nav'>
-                                        <a class='nav-item nav-link' href='home.php'>Home</a>
-                                        <a class='nav-item nav-link' href='contact.php'>Contact</a>
-                                    </div>";
-                                      
-                                        echo"<form action='userprofile.php' >
-                                        <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
-                                        </form>";
-                                        
-                                        echo "<form class='logoutbtn' action='includes/logout.php' >
-                                                                <button id='logout-button'>
-                                                                <img id='logout'  src='img/logout.png'/>
-                                                                </button>
-                                                            </form>";
-                                    } else if (isset($_SESSION['cid'])) {
-                                        echo" <div class='navbar-nav'>
-                                        <a class='nav-item nav-link' href='home.php'>Home</a>
-                                        <a class='nav-item nav-link' href='contact.php'>Contact</a>
-                                    </div>";
-                                            echo" <form action='companyprofile.php' >
-                                            <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
-                                            </form>";
-                                                    echo "<form class='logoutbtn' action='includes/logout.inc.php' >
-                                                        <button >
-                                                        <img id='logout'  src='img/logout.png'/>
-                                                        </button>
-                                                    </form> ";
-                                        }
-                                        else{
-                                            echo"<div class='navbar-nav'>
-                                            <a class='nav-item nav-link' href='home.php'>Home</a>
-                                            <a class='nav-item nav-link' href='company_signup.php'>Company</a>
-                                            <a class='nav-item nav-link' href='signup.php'>User</a>
-                                        </div>";
-                                        }
-                                    ?>
+                         </div>
+                                 
                      </div>
                  </nav>
          

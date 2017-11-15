@@ -1,5 +1,5 @@
 <?php
-//include 'header.php';
+include 'header.php';
 session_start();
 require_once("class.company.php");
 $login = new COMPANY();
