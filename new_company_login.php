@@ -1,6 +1,6 @@
 <?php
-include 'header.php';
-//session_start();
+//include 'header.php';
+session_start();
 require_once("class.company.php");
 $login = new COMPANY();
 
@@ -12,8 +12,7 @@ if($login->is_loggedin()!="")
 if(isset($_POST['btn-login']))
 {
     
-	$userName = strip_tags($_POST['txt_uname_email']);
-	
+	$userName = strip_tags($_POST['txt_uname_email']);	
 	$companyPassword = strip_tags($_POST['txt_password']);
 		
 	if($login->doLogin($userName,$companyPassword))

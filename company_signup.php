@@ -1,13 +1,13 @@
 <?php
-include 'header.php';
-//session_start();
+//include 'header.php';
+session_start();
 require_once('class.company.php');
 $company = new COMPANY();
 
 if($company->is_loggedin()!="")
 {
 	//Redirects the user to userprofile, if user tries to sign up while logged in.
-	$company->redirect('companyprofile.php');
+	$company->redirect('new_company_profile.php');
 }
 
 if(isset($_POST['btn-signup']))
