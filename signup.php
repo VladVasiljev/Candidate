@@ -1,10 +1,12 @@
 <?php
+include 'header.php';
 session_start();
 require_once('class.user.php');
 $user = new USER();
 
 if($user->is_loggedin()!="")
 {
+	//Redirects the user to userprofile, if user tries to sign up while logged in.
 	$user->redirect('userprofile.php');
 }
 
@@ -69,8 +71,8 @@ if(isset($_POST['btn-signup']))
 			}
 			else
 			{
-				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture)){	
-					$user->redirect('sign-up.php?joined');
+				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)){	
+					$user->redirect('signup.php?joined');
 				}
 			}
 		}
@@ -82,19 +84,17 @@ if(isset($_POST['btn-signup']))
 }
 
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-	<title>Title</title>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Coding Cage : Sign up</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="style.css" type="text/css"  />
+</head>
+<body>
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  </head>
-  <body>
-	  
 <div class="signin-form">
 
 <div class="container">
@@ -150,7 +150,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-			<select name="txt_industryType">
+			<select type="industry" name="txt_industryType">
 			<option value="academic">Acedemic</option>
                   <option value="accountancy">Accountancy</option>
                   <option value="architecture">Architecture</option>
@@ -169,12 +169,14 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="7798.png" />
+            	<input type="hidden" class="form-control" name="txt_userPic" placeholder="Enter Your Bio" value="default.png" />
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="7798.pdf" />
+            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
             </div>
+
+			
 			
             <div class="clearfix"></div><hr />
             <div class="form-group">
@@ -190,10 +192,5 @@ if(isset($_POST['btn-signup']))
 
 </div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

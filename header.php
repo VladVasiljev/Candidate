@@ -3,7 +3,8 @@
 
  
 ?>
-    <html>
+<!doctype html>
+<html lang="en">
       <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="bootstrap/css/custom.css" rel="stylesheet" />
@@ -18,50 +19,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                <!-- <img id="nav-logo" src="img/new-logo.png"/>-->
-                   <!-- <div class="navbar-nav">
+                   <div class="navbar-nav">
                         <a class="nav-item nav-link" href="home.php">Home</a>
-                        <a class="nav-item nav-link" href="companysignup.php">Company</a>
+                        <a class="nav-item nav-link" href="company_signup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
-                         </div>-->
-                                                        <?php
-                                    if (isset($_SESSION['id'])) {
-                                       echo" <div class='navbar-nav'>
-                                        <a class='nav-item nav-link' href='home.php'>Home</a>
-                                        <a class='nav-item nav-link' href='contact.php'>Contact</a>
-                                    </div>";
-                                      
-                                        echo"<form action='userprofile.php' >
-                                        <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
-                                        </form>";
-                                        
-                                        echo "<form class='logoutbtn' action='includes/logout.inc.php' >
-                                                                <button id='logout-button'>
-                                                                <img id='logout'  src='img/logout.png'/>
-                                                                </button>
-                                                            </form>";
-                                    } else if (isset($_SESSION['cid'])) {
-                                        echo" <div class='navbar-nav'>
-                                        <a class='nav-item nav-link' href='home.php'>Home</a>
-                                        <a class='nav-item nav-link' href='contact.php'>Contact</a>
-                                    </div>";
-                                            echo" <form action='companyprofile.php' >
-                                            <button id='profile-icon-button'><img id='profile-icon' src='img/profile-icon.png'/></button>
-                                            </form>";
-                                                    echo "<form class='logoutbtn' action='includes/logout.inc.php' >
-                                                        <button >
-                                                        <img id='logout'  src='img/logout.png'/>
-                                                        </button>
-                                                    </form> ";
-                                        }
-                                        else{
-                                            echo"<div class='navbar-nav'>
-                                            <a class='nav-item nav-link' href='home.php'>Home</a>
-                                            <a class='nav-item nav-link' href='companysignup.php'>Company</a>
-                                            <a class='nav-item nav-link' href='signup.php'>User</a>
-                                        </div>";
-                                        }
-                                    ?>
+                        <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>
+                     </div>
                      </div>
                  </nav>
          

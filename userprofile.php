@@ -1,5 +1,6 @@
+<?php include 'header.php';?>
 <?php
-	require_once("header.php");
+
 	require_once("session.php");
 	
 	require_once("class.user.php");
@@ -16,26 +17,30 @@
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
-	<title>Title</title>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link href="bootstrap/css/custom.css" rel="stylesheet" />
+<title>welcome - <?php print($userRow['id']); ?></title>
+</head>
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="bootstrap/css/custom.css" rel="stylesheet" />
-  </head>
-  <body>
+<body>
+
+  <!--  <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
 
 
-                <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-1-1">
+			<!--	<center>
+					<img alt="Logo" src="img/logo.png">
+				</center>-->
+			</div>
+			<div align="center" class="col-1-1">
+			<div class="user_details">
 
-
-
-		<?php
-			include_once 'imageUploadConnection.php';
-			$stmt = $conn->prepare("SELECT id,userPic FROM newuser WHERE id = '" . $_SESSION['user_session'] . "'");
+			<?php
+			include_once 'configs/dbconfig.php';
+			$stmt = $auth_user->runQuery("SELECT id,userPic FROM newuser WHERE id = '" . $userRow['id'] . "'");
 			$stmt->execute();
 			
 			if($stmt->rowCount() > 0)
@@ -47,7 +52,7 @@
 
 				<div class="col-1-2">
 						<!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
-						<img src="user_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
+						<img src="user_images/<?php echo $userRow['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
 						<p class="page-header">
 						<span>
 					
@@ -73,27 +78,45 @@
 			}
 			
 		?>
-	
-	<?php echo " <br>Username: " . $userRow['uid'] . " <br> Name " . $userRow["first"] . " " . $userRow["last"] . " <br>Email: " . $userRow["email"] . "<br> Years Experience: " . $userRow["years"] . "<br> Industry: " . $userRow["industry"] . "<br><h2>Bio:</h2> " . $userRow["bio"]; ?>
-    
-    	<label class="h5">welcome : <?php print($userRow['uid']); ?></label>
-    </div>
+		
+		<h2>Candidate Details</h2>
+			
+		<?php
+		include_once 'configs/dbh.php';
+				if (isset($userRow['id'])) {
+				    echo "Hello Candidate, your user ID is:";
+					echo $userRow['id'];
+					
+				    
+				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio, timestamp FROM newuser WHERE id = '" . $userRow['id'] . "'";
+				    $result = mysqli_query($conn, $sql);
+				    
+				    if (mysqli_num_rows($result) > 0) {
+				        // output data of each row
+				        while ($row = mysqli_fetch_assoc($result)) {
+							echo " <br><b>Username:</b> " . $row['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"];
+							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
+							
+							
+							
+				        }
+				    } else {
+				        echo "0 results";
+				    }
+				    
+				  //  mysqli_close($conn);
+				    
+				} else {
+				    echo "You are not logged in";
+				}
 
-</div>
-
-
+				?>
+				</div>
+				</div>	
+		</div><!-- /.row -->
 		
 	</div><!-- /.wrapper -->
 	<?php include 'footer.php'?>
 
-
-
-
-	  
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

@@ -1,24 +1,23 @@
 <?php
 include 'header.php';
 session_start();
-require_once("class.user.php");
-$login = new USER();
+require_once("class.company.php");
+$login = new COMPANY();
 
 if($login->is_loggedin()!="")
 {
-	$login->redirect('userprofile.php');
+	$login->redirect('new_company_profile.php');
 }
 
 if(isset($_POST['btn-login']))
 {
     
-	$userName = strip_tags($_POST['txt_uname_email']);
-	$userEmail = strip_tags($_POST['txt_uname_email']);
-	$userPassword = strip_tags($_POST['txt_password']);
+	$userName = strip_tags($_POST['txt_uname_email']);	
+	$companyPassword = strip_tags($_POST['txt_password']);
 		
-	if($login->doLogin($userName,$userEmail,$userPassword))
+	if($login->doLogin($userName,$companyPassword))
 	{
-		$login->redirect('userprofile.php');
+		$login->redirect('new_company_profile.php');
 	}
 	else
 	{
@@ -43,7 +42,7 @@ if(isset($_POST['btn-login']))
         
        <form class="form-signin" method="post" id="login-form">
       
-        <h2 class="form-signin-heading">Log Into your Candidate profile.</h2><hr />
+        <h2 class="form-signin-heading">Log Into your Company profile.</h2><hr />
         
         <div id="error">
         <?php

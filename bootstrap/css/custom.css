@@ -17,10 +17,18 @@ footer {
     max-height: 120px;
     background: #D6624D;
     margin-top: 100px;
+    display: block;
+    max-height: 120px;
+    background: #D6624D;
+    margin-top: 100px;
+    max-height: 20%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
-.fa {
-    color:#D6624D;  
+.fa {  
     padding: 10px;
     font-size: 30px;
     width: 50px;
@@ -85,7 +93,7 @@ footer {
    margin-bottom: 0px;
 }
 
-/*body {*/
+/*body {
   /* background-image: url("img/background.png");*/
   /*   background-repeat: no-repeat;*/
   /*   background-attachment: fixed;*/
@@ -329,10 +337,17 @@ user_details p{
 
 
 
+select[type=industry]{
+    width: auto;
+    padding: 10px 20px;
+    margin: 2px 0px;
+    display:block;
+    border: 1px solid #74031C;
+    box-sizing: border-box;
+}
 
 
-
-input[type=text], input[type=password],input[type=number] {
+input[type=text], input[type=password],input[type=number] ,[type=email]{
     width: auto;
     padding: 10px 20px;
     margin: 2px 0px;
@@ -674,6 +689,14 @@ nav ul form button {
     cursor: pointer;
 }
 
+#search button:hover{
+  
+        -moz-box-shadow:    1px 1px 2px 3px #ccc;
+        -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+        box-shadow:         1px 1px 2px 3px #ccc;
+    
+}
+
 #search input{
     width: 70%;
     height:60px;
@@ -684,6 +707,14 @@ nav ul form button {
     border-radius:25px;
     box-sizing: border-box;
 }
+
+#search input:hover{
+    -moz-box-shadow:    1px 1px 2px 3px #ccc;
+    -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+    box-shadow:         1px 1px 2px 3px #ccc;
+
+}
+
 
 
 

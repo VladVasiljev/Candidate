@@ -1,15 +1,11 @@
 <?php
 
 include 'header.php';
-    include 'dbh.php';
-
-
-
-
+//include 'configs/dbh.php';
 ?>
 
-
-<html>
+<!doctype html>
+<html lang="en">
     <head>
     <meta charset="UTF-8">
     <title>Candidate</title>
@@ -18,6 +14,7 @@ include 'header.php';
     </head>
     
     <body>
+
          <div class="wrapper">
        <div class="row">
       <div class="col-1-1">
@@ -29,12 +26,12 @@ include 'header.php';
         <div class="row">
                         <div   class="col-1-2">
                         <a href="user_login.php">
-                        <img id="user"  src="img/user.png" alt="Logo" max-width="100%" ></a>
+                        <img id="user"  src="img/user-login.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
                         <div  class="col-1-2">
-                        <a href="company_login.php">
-                        <img id ="company"  src="img/company.png" alt="Logo" max-width="100%" ></a>
+                        <a href="new_company_login.php">
+                        <img id ="company"  src="img/company-login.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
                             </div>
@@ -82,7 +79,7 @@ include 'header.php';
             </div>
 
   
-             
+        <?php include 'footer.php';?>     
     </div>
  </body>
 </html>
