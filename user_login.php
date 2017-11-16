@@ -43,11 +43,14 @@ if(isset($_POST['btn-login']))
 </head>
 <body>
 
-<div class="signin-form">
-
 	<div class="container">
-     
-        
+		
+		<div class="row">
+
+		<div class="signin-form">
+
+			<div class=" col-1-1">
+
        <form class="form-signin" method="post" id="login-form">
       
         <h2 class="form-signin-heading">Log In to WebApp.</h2><hr />
@@ -80,16 +83,20 @@ if(isset($_POST['btn-login']))
      	<hr />
         
         <div class="form-group">
-            <button type="submit" name="btn-login" class="btn btn-default">
+            <center>
+				<button type="submit" name="btn-login" class="btn btn-default">
                 	<i class="glyphicon glyphicon-log-in"></i> SIGN IN
-            </button>
+				</button>
+			</center>
         </div>  
       	<br />
             <label>Don't have account yet ! <a href="sign-up.php">Sign Up</a></label>
       </form>
+		</div>
+	  </div>
+
 
     </div>
-    
 </div>
 
 </body>
