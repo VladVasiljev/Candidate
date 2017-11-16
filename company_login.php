@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-    include 'dbh.php';
+include 'configs/dbh.php';
 ?>
 
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once('configs/dbconfig.php');
+require_once('dbconfig.php');
 
 class USER
 {	
@@ -40,8 +40,8 @@ class USER
 			$stmt->bindparam(":userExperience", $userExperience);									  
 			$stmt->bindparam(":userIndustryType", $userIndustryType);									  
 			$stmt->bindparam(":userBiography", $userBiography);									  
-			$stmt->bindparam(":userPicture", $userPicture);									  
-			$stmt->bindparam(":userCV", $userCV);									  
+			$stmt->bindparam(":userPicture", $userPicture);								  
+			$stmt->bindparam(":userCV", $userCV);								  
 				
 			$stmt->execute();	
 			

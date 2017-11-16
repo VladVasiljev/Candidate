@@ -1,32 +1,28 @@
 <?php
 include 'header.php';
 session_start();
-require_once("class.user.php");
-$login = new USER();
+require_once("class.company.php");
+$login = new COMPANY();
 
 if($login->is_loggedin()!="")
 {
-	$login->redirect('userprofile.php');
+	$login->redirect('new_company_profile.php');
 }
 
 if(isset($_POST['btn-login']))
 {
     
-	$userName = strip_tags($_POST['txt_uname_email']);
-	$userEmail = strip_tags($_POST['txt_uname_email']);
-	$userPassword = strip_tags($_POST['txt_password']);
+	$userName = strip_tags($_POST['txt_uname_email']);	
+	$companyPassword = strip_tags($_POST['txt_password']);
 		
-	if($login->doLogin($userName,$userEmail,$userPassword))
+	if($login->doLogin($userName,$companyPassword))
 	{
-		$login->redirect('userprofile.php');
+		$login->redirect('new_company_profile.php');
 	}
 	else
 	{
 		$error = "Wrong Details !";
 	}	
-
-
-
 }
 ?>
 <!doctype html>
@@ -36,21 +32,17 @@ if(isset($_POST['btn-login']))
 <title>Coding Cage : Login</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link href="bootstrap/css/custom.css" rel="stylesheet" />
-<link href="bootstrap/css/Login.css" rel="stylesheet" />
 </head>
 <body>
 
+<div class="signin-form">
+
 	<div class="container">
-		
-		<div class="row">
-
-		<div class="signin-form">
-
-			<div class=" col-1-1">
-
+     
+        
        <form class="form-signin" method="post" id="login-form">
       
-        <h2 class="form-signin-heading">Log Into your Candidate profile.</h2><hr />
+        <h2 class="form-signin-heading">Log Into your Company profile.</h2><hr />
         
         <div id="error">
         <?php
@@ -80,22 +72,18 @@ if(isset($_POST['btn-login']))
      	<hr />
         
         <div class="form-group">
-            <center>
-				<button type="submit" name="btn-login" class="btn btn-default">
-                	<i class="glyphicon glyphicon-log-in"></i> SIGN IN
-				</button>
-			</center>
+            <button type="submit" name="btn-login" class="btn btn-default">
+                	<i class="glyphicon glyphicon-log-in"></i> &nbsp; SIGN IN
+            </button>
         </div>  
       	<br />
             <label>Don't have account yet ! <a href="company_signup.php">Sign Up</a></label>
       </form>
-		</div>
-	  </div>
-
 
     </div>
+    
 </div>
 
 </body>
- 
+
 </html>

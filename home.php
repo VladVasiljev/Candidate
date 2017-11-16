@@ -1,13 +1,8 @@
 <?php
 
 include 'header.php';
-include 'dbh.php';
-
-
-
-
+//include 'configs/dbh.php';
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -35,7 +30,7 @@ include 'dbh.php';
                         
                         </div>
                         <div  class="col-1-2">
-                        <a href="company_login.php">
+                        <a href="new_company_login.php">
                         <img id ="company"  src="img/company-login.png" alt="Logo" max-width="100%" ></a>
                         
                         </div>
@@ -84,8 +79,9 @@ include 'dbh.php';
             </div>
 
   
-             
+        <?php include 'footer.php';?>     
     </div>
  </body>
 </html>
+
       
