@@ -53,7 +53,7 @@ Candidate
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
-                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
+                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class="auto">
                             
                                 <?php $search_term =' '; echo $search_term; ?>                                                                      
                                  <button>Search</button>
@@ -67,7 +67,7 @@ Candidate
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-                    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>	
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>	
 
 
                     <script type="text/javascript">
@@ -87,7 +87,7 @@ Candidate
     <div align="center" class="col-1-1">
     <div class="user_details">
     <?php
-			include_once 'imageUploadConnection.php';
+			include_once 'configs/imageUploadConnection.php';
 			$stmt = $conn->prepare("SELECT cid,userPic FROM company WHERE cid = '" . $_SESSION['cid'] . "'");
 			$stmt->execute();
 			
@@ -124,7 +124,7 @@ Candidate
     <h2>Company Details</h2>
       <?php
                 
-                include_once 'dbh.php';
+                include_once 'configs/dbh.php';
                 if (isset($_SESSION['cid'])) {
                     echo "<p>Hello, Welcome back.<br> Your user ID is:</p> ";
                     echo $_SESSION['cid'];

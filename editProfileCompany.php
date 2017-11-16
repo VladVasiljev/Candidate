@@ -1,6 +1,6 @@
 <?php
 // including the database connection file
-include_once("dbh.php");
+include_once("/configs/dbh.php");
 include 'header.php';
 /*
 if(isset($_POST['update']))
@@ -69,7 +69,7 @@ while($res = mysqli_fetch_array($result))
 	//Start of Image Upload PHP
 	error_reporting( ~E_NOTICE );
 	
-	require_once 'imageUploadConnection.php';
+	require_once 'configs/imageUploadConnection.php';
 
 	
 	
