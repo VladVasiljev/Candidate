@@ -1,3 +1,4 @@
+
 <?php
 
 	session_start();
@@ -13,3 +14,4 @@
 		// session no set redirects to login page
 		$session->redirect('home.php');
 	}
+              ?>
