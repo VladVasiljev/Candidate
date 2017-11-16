@@ -26,7 +26,7 @@ class USER
 		{
 			$new_password = password_hash($userPassword, PASSWORD_DEFAULT);
 			
-			$stmt = $this->conn->prepare("INSERT INTO newuser(uid,email,pwd,first,last,years,industry,bio,userPic) 
+			$stmt = $this->conn->prepare("INSERT INTO newuser(uid,email,pwd,first,last,years,industry,bio,userPic,user_cv) 
 		                                               VALUES(:userName, :userEmail, :userNewPassword, :firstName, :lastName, :userExperience, :userIndustryType, :userBiography, :userPicture,:userCV)");
 			
 			
