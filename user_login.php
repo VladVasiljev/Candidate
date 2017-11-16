@@ -1,4 +1,8 @@
 <?php
+
+include 'header.php';
+include 'dbh.php';
+
 session_start();
 require_once("class.user.php");
 $login = new USER();
@@ -23,6 +27,9 @@ if(isset($_POST['btn-login']))
 	{
 		$error = "Wrong Details !";
 	}	
+
+
+
 }
 ?>
 <!doctype html>
@@ -32,6 +39,7 @@ if(isset($_POST['btn-login']))
 <title>Coding Cage : Login</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link href="bootstrap/css/custom.css" rel="stylesheet" />
+<link href="bootstrap/css/Login.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -73,7 +81,7 @@ if(isset($_POST['btn-login']))
         
         <div class="form-group">
             <button type="submit" name="btn-login" class="btn btn-default">
-                	<i class="glyphicon glyphicon-log-in"></i> &nbsp; SIGN IN
+                	<i class="glyphicon glyphicon-log-in"></i> SIGN IN
             </button>
         </div>  
       	<br />

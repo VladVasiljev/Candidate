@@ -1,0 +1,34 @@
+.signin-form{
+    margin: auto;
+    width: 50%;
+    margin-top: 5%;
+}
+
+.form-signin-heading{
+    margin: auto;
+    width: 50%;
+}
+
+.form-group {
+    margin: auto;
+    width: 50%;
+    margin-top:1%;
+}
+
+label {
+    margin: auto;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.btn .btn-default{
+    margin:auto;
+    width: 50%;
+    margin-left: 2%;
+}
+
+glyphicon glyphicon-log-in {
+    margin: auto;
+    width: 50%;
+}
+
