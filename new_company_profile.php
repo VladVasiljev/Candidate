@@ -69,6 +69,7 @@
 		?>
 	 <div class="row">
     <div align="center" class="col-1-1">
+    <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>
     <?php
 		include_once 'configs/dbh.php';
 				if (isset($companyRow['cid'])) {
