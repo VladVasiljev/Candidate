@@ -17,10 +17,18 @@ footer {
     max-height: 120px;
     background: #D6624D;
     margin-top: 100px;
+    display: block;
+    max-height: 120px;
+    background: #D6624D;
+    margin-top: 100px;
+    max-height: 20%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
-.fa {
-    color:#D6624D;  
+.fa {  
     padding: 10px;
     font-size: 30px;
     width: 50px;
@@ -740,7 +748,10 @@ a{
 width:auto;
 }
 
-
+.signup-form {
+    margin: auto;
+    width: 50%;
+}
 
 
 

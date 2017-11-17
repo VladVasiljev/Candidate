@@ -2,12 +2,7 @@
 
 include 'header.php';
 //include 'configs/dbh.php';
-
-
-
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -84,8 +79,9 @@ include 'header.php';
             </div>
 
   
-             
+        <?php include 'footer.php';?>     
     </div>
  </body>
 </html>
+
       

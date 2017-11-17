@@ -1,3 +1,4 @@
+
 <?php
 $databaseHost = 'localhost';
 $databaseName = 'logintest';
