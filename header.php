@@ -25,11 +25,17 @@
                         <a class="nav-item nav-link" href="company_signup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
-                        <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>
+                    
+                      <!--  <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>-->
                      </div>
                      </div>
                  </nav>
-         
+         <?php
+if(isset($_SESSION['id'])){
+    echo"  <a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>  ";
+}
+
+?>
                     <img id=logo2"" src="img/logo2.png">
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
