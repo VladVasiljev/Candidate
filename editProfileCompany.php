@@ -1,6 +1,6 @@
 <?php
 // including the database connection file
-include_once("/configs/dbh.php");
+include_once("configs/dbh.php");
 include 'header.php';
 /*
 if(isset($_POST['update']))
@@ -170,7 +170,7 @@ while($res = mysqli_fetch_array($result))
 <?php
 if(isset($_POST['cancel']))
 {
-	header("Location: companyprofile.php");
+	header("Location: new_company_profile.php");
 }
 
 ?>
