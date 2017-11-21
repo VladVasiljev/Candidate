@@ -107,7 +107,7 @@ if (isset($_GET['s'])) {
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
-                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" autocomplete="off" spellcheck="false" class='auto'>
+                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
                                 <?php $search_term ='';
                                 echo $search_term; ?>                                                                      
                                  <button>Search</button>
