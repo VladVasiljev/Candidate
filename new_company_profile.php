@@ -164,7 +164,7 @@ if(!empty($search_results)):?>
         <p>Industry: <?php echo $search_result->industry; ?></p>
         <p>Years Experience: <?php echo $search_result->years; ?></p> 
         <?php echo $search_result->user_cv; ?> <!--Displays link saved in database-->
-        <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?> <!--Displays link saved in database in an iframe-->
+       <!-- <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?>--> <!--Displays link saved in database in an iframe-->
       <div style="margin: 24px 0;">
             <a href="#"><i class="fa fa-twitter"></i></a>  
             <a href="#"><i class="fa fa-linkedin"></i></a>  
@@ -186,7 +186,7 @@ if(!empty($search_results)):?>
 
              
 </div>
-	<?php include 'footer.php'?>
+<?php include 'footer.php'?>
 
 </body>
 </html>
