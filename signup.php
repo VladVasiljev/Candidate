@@ -101,7 +101,7 @@ if(isset($_POST['btn-signup']))
 <div class="container">
     	
         <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Sign up.</h2><hr />
+            <h2 class="form-signin-heading">Candidate Signup.</h2><hr />
             <?php
 			if(isset($error))
 			{
@@ -174,7 +174,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
+            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="No CV Added" />
             </div>
 
 			

@@ -15,14 +15,16 @@
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">© Candidate Ireland, Inc. IFSC, Mayor Street, North Dock, Dublin 1, D01 Y300.</span>
-        
+      
+        <div class="center">
         <div class="LogoGroup">
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-instagram"></a>
         <a href="#" class="fa fa-youtube"></a>
         </div>
+        </div>
+       <center> <span class="text-muted">© Candidate Ireland, Inc. IFSC, Mayor Street, North Dock, Dublin 1, D01 Y300.</span></center>
       </div>
     </footer>
 

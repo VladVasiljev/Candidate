@@ -28,10 +28,15 @@ footer {
     width: 100%;
 }
 
+.center {
+    text-align: center;
+    
+}
+
 .fa {  
     padding: 10px;
     font-size: 30px;
-    width: 50px;
+    width: auto;
     text-align: center;
     text-decoration: none;
 }
@@ -61,6 +66,11 @@ footer {
     padding: 0.0rem 1rem;
 }
 
+
+
+.form-sigin{
+    text-align:center;
+}
 /* Logout button goes to the left*/
 .logoutbtn{
     margin-left: auto;

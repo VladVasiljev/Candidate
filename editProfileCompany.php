@@ -83,7 +83,7 @@ while($res = mysqli_fetch_array($result))
 	}
 	else
 	{
-		header("Location: companyprofile.php");
+		header("Location: new_company_profile.php");
 		
 		
 	}
@@ -152,7 +152,7 @@ while($res = mysqli_fetch_array($result))
 				?>
                 <script>
 				alert('Successfully Updated ...');
-				window.location.href='companyprofile.php';
+				window.location.href='new_company_profile.php';
 				</script>
                 <?php
 			}
