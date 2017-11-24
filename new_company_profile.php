@@ -158,7 +158,9 @@ if (!empty($search_results)) :?>
         <p>Industry: <?php echo $search_result->industry; ?></p>
         <p>Years Experience: <?php echo $search_result->years; ?></p> 
         <?php echo $search_result->user_cv; ?> <!--Displays link saved in database-->
-        <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?> <!--Displays link saved in database in an iframe-->
+        <!-- <img src="user_cv/<?php // echo $search_result->userPic; ?> -->
+        <a href="user_cv/<?php echo $search_result->user_cv?>" target=_blank>View Users CV</a>
+        <a href="user_cv/<?php echo $search_result->user_cv?>">Download</a>
       <div style="margin: 24px 0;">
             <a href="#"><i class="fa fa-twitter"></i></a>  
             <a href="#"><i class="fa fa-linkedin"></i></a>  
