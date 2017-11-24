@@ -60,7 +60,7 @@ if(isset($_POST['btn-signup']))
 			else
 			{
 				if($company->register($userName,$companyName,$companyPassword,$position,$IndustryType,$companyPicture)){	
-					$company->redirect('signup.php?joined');
+					$company->redirect('new_company_login.php?joined');
 				}
 			}
 		}
