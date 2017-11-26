@@ -35,7 +35,7 @@
 					<img alt="Logo" src="img/logo.png">
 				</center>-->
 			</div>
-			<div align="center" class="col-1-1">
+			<div align="center" class="col-1-2">
 			<div class="user_details">
 
 			<?php
@@ -115,7 +115,11 @@
 
 
 				</div>
-				</div>	
+				</div>	 
+				<div class="col-1-2">
+			
+					<iframe src="user_cv/<?php echo  $row['user_cv']?>" height=100% width=100%> </iframe>
+				</div>
 		</div><!-- /.row -->
 		
 	</div><!-- /.wrapper -->

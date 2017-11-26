@@ -103,7 +103,7 @@ while($res = mysqli_fetch_array($result))
 			$upload_dir = 'user_cv/'; // cv upload directory	
 			$cvExt = strtolower(pathinfo($cvFile,PATHINFO_EXTENSION)); // get cv extension
 			$valid_extensions = array('pdf'); // valid extensions
-			$usercv = $userName.".".$cvExt;
+			$usercv = $userName."'s CV.".$cvExt;
 			//$usercv = rand(1000,1000000).".".$cvExt;
 			if(in_array($cvExt, $valid_extensions))
 			{			
@@ -251,17 +251,17 @@ if(isset($_POST['cancel']))
 		</div>
 
 		<div class="form-group">
-            <label class="col-lg-3 control-label">Industry</label>
+            <label class="col-lg-3 control-label ">Industry</label>
             <div class="col-lg-8">
               <div class="ui-select">
-                <select name="industry_Type" class="form-control">
+                <select name="industry_Type" class="form-control" >
 				<?php
 				while($res = mysqli_fetch_array($result)){
 					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";
 				}
 				?>
                   <option value="academic">Acedemic</option>
-                  <option value="accountancy">Accountancy</option>
+                  <option value="accountancy and finance">Accountancy</option>
                   <option value="architecture">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>
