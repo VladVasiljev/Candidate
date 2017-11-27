@@ -153,7 +153,7 @@ if(isset($_POST['btn-signup']))
 			<div class="form-group">
 			<select type="industry" name="txt_industryType">
 			<option value="academic">Acedemic</option>
-                  <option value="accountancy">Accountancy</option>
+                  <option value="accountancy and finance">Accountancy</option>
                   <option value="architecture">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>
@@ -174,7 +174,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="No CV Added" />
+            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
             </div>
 
 			

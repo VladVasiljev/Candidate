@@ -271,7 +271,7 @@ if(isset($_POST['cancel']))
    
     
 		<div class="form-group">
-            <label class="col-lg-3 control-label">First Name:</label>
+            <label class="col-lg-3 control-label">Company Name:</label>
             <div class="col-lg-8">
 			<input class="form-control" type="text" name="company_Name" value="<?php echo $companyName; ?>" required />
             </div>

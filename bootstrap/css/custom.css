@@ -7,8 +7,9 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, 0.69);
+    color: white;
     font-weight: bold;
+    font-family: Arial;
 }
 
 /*Control the footer part of the webiste. */
@@ -18,15 +19,15 @@ footer {
     background: #D6624D;
     margin-top: 100px;
     display: block;
-    max-height: 120px;
     background: #D6624D;
     margin-top: 100px;
-    max-height: 20%;
     position: absolute;
     left: 0;
     right: 0;
     width: 100%;
 }
+
+
 
 .center {
     text-align: center;
@@ -34,6 +35,7 @@ footer {
 }
 
 .fa {  
+    color:white;
     padding: 10px;
     font-size: 30px;
     width: auto;
@@ -48,7 +50,7 @@ footer {
 
 /*Colour change for the footer text */ 
 .text-muted {
-    color: #000000!important;
+    color: white!important;
 }
 
 /* Controls the navbar */
@@ -144,6 +146,8 @@ button {
     max-width: 100%;
     height: auto;
 }
+
+
 
 #logout-button{
     background-color: #D6624D;
@@ -287,6 +291,10 @@ nav ul form button {
     box-sizing: border-box;
 }
 
+#search input[type=number]{
+    width:15%;
+}
+
 textarea:focus, input:focus, button:focus{
     outline: none;
 }
@@ -325,6 +333,7 @@ a{
 #edit{
     width:20px;
     height:20px;
+   
 }
 
 #signup button {
@@ -445,21 +454,7 @@ label {
     font-size:1.5em;
 }
 
-.card button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #C3D7CE;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    border-radius:0px;
-    margin-left: 0px;
-    margin-bottom:-18px;
-  }
+
   
  .card  a {
     text-decoration: none;
@@ -874,6 +869,10 @@ label {
     border-radius:0px;
     margin-left: 0px;
     margin-bottom:-36px;
+  }
+
+  .card form{
+      margin-bottom:-8px;
   }
   
  .card  a {

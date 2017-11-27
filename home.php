@@ -43,6 +43,7 @@ include 'header.php';
 <p>Don't have an account? Candidate sign up <a href="signup.php">Here</a></p>
 <p>Company sign up <a href="companysignup.php">Here</a></p>
 </div>
+<center><img   src="img/devices.png" alt="Logo" max-width="100%" ></a></center>
 </div>
 </div>
                         
