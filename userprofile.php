@@ -97,10 +97,12 @@
 							echo  " <br><b>CV:</b> " . $row['user_cv'] . " <br><b>Username:</b> " . $row['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"];
 							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
 							echo"<a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>";
+
 						}
 					}
 					
 					else {
+
 				        echo "0 results";
 				    }
 				    

@@ -88,7 +88,9 @@
 <?php
                     
                 //check if search data was submitted
+
 if (isset($_GET['s'], $_GET['m'])) {
+
 //include the search class
     require_once( dirname( __FILE__ ) . '../class-search.php');
 
@@ -111,7 +113,9 @@ if (isset($_GET['s'], $_GET['m'])) {
                     <form action=" " method="get">
                         <div class="form-field">
                             <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
+
                             <input  type="number" name="m" placeholder="Number of years" results ="5" value="" >
+
                                 <?php $search_term ='';
                                 echo $search_term; ?>                                                                      
                                  <button>Search</button>
