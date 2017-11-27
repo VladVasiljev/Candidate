@@ -182,11 +182,7 @@ if (!empty($search_results)) :?>
 
              
 </div>
-<<<<<<< HEAD
 <?php include 'footer.php'?>
-=======
-    <?php include 'footer.php'?>
->>>>>>> ad206576df0a238bb80fd1a12cc689f6a19e26ae
 
 </body>
 </html>
