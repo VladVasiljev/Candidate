@@ -30,6 +30,8 @@
    <!-- <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
 
     <div class="container">
+      <center>  <h2>Company Details</h2></center>
+   
 
         <?php
             include_once 'configs/imageUploadConnection.php';
@@ -86,7 +88,9 @@
 <?php
                     
                 //check if search data was submitted
-if (isset($_GET['s'])) {
+
+if (isset($_GET['s'], $_GET['m'])) {
+
 //include the search class
     require_once( dirname( __FILE__ ) . '../class-search.php');
 
@@ -95,19 +99,23 @@ if (isset($_GET['s'])) {
 
 //store search term into variable
     $search_term = $_GET['s'];
+    $search_term2 = $_GET['m'];
 
 //send the search term to our search class and store the result
-    $search_results = $search->search($search_term);
+    $search_results = $search->search($search_term, $search_term2);
 }
 
                 ?>
         <div align="center"  id="search">
             <h1>Search for your Candidate</h1>
-            <p>Please use the search box to search by industry or years experience</p><br>
+            <p>Use the search box's to search by industry and years experience</p><br>
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
                             <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
+
+                            <input  type="number" name="m" placeholder="Number of years" results ="5" value="" >
+
                                 <?php $search_term ='';
                                 echo $search_term; ?>                                                                      
                                  <button>Search</button>
@@ -142,8 +150,8 @@ $(function() {
         
 if (!empty($search_results)) :?>
 <div align="center" class="results-count">
-<p><?php echo $search_results['count'];?> Candidates match your search,
-    </p></br>
+<h3><?php echo $search_results['count'];?> Candidates match your search,
+</h3></br>
 </div><br>
 <?php foreach ($search_results['results'] as $search_result) : ?>
 <!--Start of the profile card section-->
@@ -157,16 +165,17 @@ if (!empty($search_results)) :?>
         <p>Email Address: <?php echo $search_result->email; ?></p>
         <p>Industry: <?php echo $search_result->industry; ?></p>
         <p>Years Experience: <?php echo $search_result->years; ?></p> 
-        <?php echo $search_result->user_cv; ?> <!--Displays link saved in database-->
-        <?php echo "<iframe src=\"user_cv\" width=\"100%\" style=\"height:50%\"></iframe>";?> <!--Displays link saved in database in an iframe-->
-      <div style="margin: 24px 0;">
+      <!--  <?php echo $search_result->user_cv; ?>--> <!--Displays link saved in database-->
+       <!-- <a href="user_cv/<?php echo $search_result->user_cv?>"target=_blank>View Cv</a>--><!--View cv-->
+     <div style="margin: 24px 0;">
             <a href="#"><i class="fa fa-twitter"></i></a>  
             <a href="#"><i class="fa fa-linkedin"></i></a>  
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-whatsapp"></i></a> 
         </div>
+      <form action="user_cv/<?php echo $search_result->user_cv?>"target=_blank>
         <button>View CV</button><br><br>
-   
+    </form>
         </div>
             </div>
     
@@ -180,7 +189,7 @@ if (!empty($search_results)) :?>
 
              
 </div>
-    <?php include 'footer.php'?>
+<?php include 'footer.php'?>
 
 </body>
 </html>
