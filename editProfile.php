@@ -95,7 +95,7 @@ while($res = mysqli_fetch_array($result))
 		}	
 			//cv upload code
 		$cvFile = $_FILES['user_cv']['name'];
-		$tmp_dir = $_FILES['user_cv']['tmp_name'];
+		$tmp_dir1 = $_FILES['user_cv']['tmp_name'];
 		$cvSize = $_FILES['user_cv']['size'];
 
 		if($cvFile)
@@ -110,7 +110,7 @@ while($res = mysqli_fetch_array($result))
 				if($cvSize < 5000000)
 				{
 					unlink($upload_dir.$edit_row['usercv']);
-					move_uploaded_file($tmp_dir,$upload_dir.$usercv);
+					move_uploaded_file($tmp_dir1,$upload_dir.$usercv);
 				}
 				else
 				{
@@ -119,9 +119,16 @@ while($res = mysqli_fetch_array($result))
 			}
 			else
 			{
-				$errMSG = "Sorry, only PDF files are allowed.";		
+				$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";		
 			}	
 		}
+		else
+		{
+			// if no image selected the old image remain as it is.
+			$usercv = $edit_row['user_cv']; // old image from database
+		}	
+			
+	
 						
 		
 		// if no error occured, continue ....
@@ -254,7 +261,7 @@ if(isset($_POST['cancel']))
             <label class="col-lg-3 control-label ">Industry</label>
             <div class="col-lg-8">
               <div class="ui-select">
-                <select name="industry_Type" class="form-control" >
+                <select name="industry_Type" class="form-control" value="<?php echo $industryType; ?>  >
 				<?php
 				while($res = mysqli_fetch_array($result)){
 					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";
