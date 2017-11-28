@@ -87,7 +87,7 @@ if(isset($_POST['btn-login']))
 			</center>
         </div>  
       	<br />
-            <label>Don't have account yet ! <a href="company_signup.php">Sign Up</a></label>
+            <label>Don't have account yet ! <a href="signup.php">Sign Up</a></label>
       </form>
 		</div>
 	  </div>

@@ -263,12 +263,9 @@ if(isset($_POST['cancel']))
             <label class="col-lg-3 control-label ">Industry</label>
             <div class="col-lg-8">
               <div class="ui-select">
-                <select class="form-control" type="text" name="industry_Type" value="<?php echo $industryType; ?>" required / >
-				<?php
-				while($res = mysqli_fetch_array($result)){
-					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";
-				}
-				?>
+                <select name="industry_Type" class="form-control">
+				
+                  <option value="<?php echo $industryType; ?>" selected > <?php echo $industryType; echo " [Current Position]"; ?></option> 
                   <option value="academic">Acedemic</option>
                   <option value="accountancy and finance">Accountancy</option>
                   <option value="architecture">Architecture</option>
