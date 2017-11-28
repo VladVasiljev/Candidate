@@ -34,13 +34,15 @@ footer {
 }
 
 .fa {  
-    color:white;
+    color:rgb(48, 33, 33);
     padding: 10px;
     font-size: 30px;
     width: auto;
     text-align: center;
     text-decoration: none;
 }
+
+
 
 
 /*Home Page Pictures*/
@@ -963,6 +965,8 @@ label {
   
   .card button:hover, a:hover {
     opacity: 0.7;
+    color:black;
+    font-family: Arial;
   }
 
   .user_details{
