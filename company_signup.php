@@ -60,7 +60,7 @@ if(isset($_POST['btn-signup']))
 			else
 			{
 				if($company->register($userName,$companyName,$companyPassword,$position,$IndustryType,$companyPicture)){	
-					$company->redirect('signup.php?joined');
+					$company->redirect('new_company_login.php?joined');
 				}
 			}
 		}
@@ -88,7 +88,7 @@ if(isset($_POST['btn-signup']))
 <div class="container">
     	
         <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Sign up.</h2><hr />
+            <h2 class="form-signin-heading">Company Signup</h2><hr />
             <?php
 			if(isset($error))
 			{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2017 at 11:55 AM
+-- Generation Time: Nov 21, 2017 at 01:09 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `userPic` varchar(200) NOT NULL,
   `position` enum('manager','hr','recruiter','') NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `company`
@@ -63,7 +63,10 @@ INSERT INTO `company` (`cid`, `name`, `username`, `industry`, `pwd`, `userPic`, 
 (16, 'user1', 'user1', 'it', '$2y$10$L3WLZQ9fN9fo0pPdiofnheBzWQgPQDqvg08yhwGhFTiOuX8biLjD2', 'default.png', 'manager'),
 (17, 'vladvlad', 'green', 'it', '$2y$10$wUDm9JM/bjxvbn/Ca1JRduIfT7yUHTb1Pr9I81/V4Ef46U3j5symK', 'default.png', 'manager'),
 (18, 'kfsdjkfjsdkfds', 'sdklfjsdfksjdk', 'it', '$2y$10$IesrhuQv2udxdFnerqzXUOnrUczlyDNcxDEZbhx/7fGiYM5cabG1a', 'default.png', 'manager'),
-(19, 'ewfsjfklj', 'NewBob', 'it', '$2y$10$InYyVbXjNaTwKzDo7V.rue/rCYBld98xG2nHR7qc7GeIbM/v8hXvO', 'default.png', 'manager');
+(19, 'ewfsjfklj', 'NewBob', 'it', '$2y$10$InYyVbXjNaTwKzDo7V.rue/rCYBld98xG2nHR7qc7GeIbM/v8hXvO', 'default.png', 'manager'),
+(20, 'VV', 'Vladislavs', 'it', '$2y$10$g2ryM61yqokpe8Z5RGErn.n5OeH0w9GtEOLBPk6vFcwjuMVr7mBY2', 'default.png', 'manager'),
+(21, 'VV1234', 'Vlad123456', 'it', '$2y$10$LDscasl6OqU77/NlfnnMI.bjD5wvCYMvIuCUJyCyQL83fbxcxhH8y', 'default.png', 'manager'),
+(22, 'VV97', 'Vlad97', 'it', '$2y$10$Ge/NfGIGBylkho1/TGDk9OwD5IY/CooZt6m.8UAowHRSrGNsrS9Bq', 'default.png', 'manager');
 
 -- --------------------------------------------------------
 
