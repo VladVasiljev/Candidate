@@ -2,7 +2,7 @@
 	$HOST = 'localhost';
 	$USER = 'root';
 	$PASS = '';
-	$NAME = 'logintest';
+	$NAME = 'candidate';
 	
 	try{
 		$conn = new PDO("mysql:host={$HOST};dbname={$NAME}",$USER,$PASS);

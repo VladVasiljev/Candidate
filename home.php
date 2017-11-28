@@ -25,45 +25,47 @@ include 'header.php';
           
         <div class="row">
                         <div   class="col-1-2">
-                        <a href="user_login.php">
-                        <div class="image-hover-text-container">
+                       
+               <div class="image-hover-text-container">
 						  <div class="image-hover-image">
-							<img src="img/CandidateLogin.png" class="img-fluid" alt="Candidate Login Image">
+              <a href="user_login.php"><span diaplay="block"><img src="img/CompanyLogin.png" class="img-fluid" alt="Candidate Login Image"></span>
 						  </div>
 						  <div class="image-hover-text">
 							<div class="image-hover-text-bubble">
-							  <span class="image-hover-text-title">Candidate Login</span>
-							  Sign into your Candidate Profile to find your next big job.
+							  <span class="image-hover-text-title"><b>Candidate Login</b></span>
+							  <b>Click here to login to your profile!</b>
 							</div>
 						  </div>
 						</div>
                         
                         </div>
                         <div  class="col-1-2">
-                        <a href="new_company_login.php">
+                        
 							<div class="image-hover-text-container">
 							 <div class="image-hover-image">
-							<img src="img/CompanyLogin.png" class="img-fluid" alt="Company Login Image">
+               <a href="new_company_login.php"><span>
+							<img src="img/CandidateLogin.png" class="img-fluid" alt="Company Login Image"></span>
 						  </div>
-						  
+
 						  <div class="image-hover-text">
 							<div class="image-hover-text-bubble">
-							  <span class="image-hover-text-title">Company Login</span>
-							  Sign into your Company Profile to find the Leading Candidates in today's world.
+							  <span class="image-hover-text-title"><b>Company Login</b></span>
+							 <b>Click here to login to your profile!</b>
 							</div>
 						  </div>
 						</div>                        
                         </div>
                             </div>
+</a>
 <div class="row">
 <div class="col-1-1">
 <div class="home_text">
-<p><a href="user_login.php"> Click the User icon to login and start editing your profile so you can get noticed by hiring managers looking to fill positions today</p>
-<p><a href="new_company_login.php">Managers click the Company icon to find the right candidate to fill that position</p>
-<p><a href="signup.php"> Don't have an account? Candidate sign up here</a></p>
-<p><a href="companysignup.php">Sign up here if you need a company profile</a></p>
+<p>Click the User icon to login and start editing your profile so you can get noticed by hiring managers looking to fill positions today</p>
+<p>Managers click the Company icon to find the right candidate to fill that position</p>
+<p> Don't have an account? Candidate sign up here!</p>
+<p>Sign up here if you need a company profile!</p>
 </div>
-<center><img   src="img/devices.png" alt="Logo" max-width="100%" ></a></center>
+<center><img   src="img/devices.png" alt="Logo" max-width="100%" ></center>
 </div>
 </div>
                         

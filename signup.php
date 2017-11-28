@@ -73,7 +73,7 @@ if(isset($_POST['btn-signup']))
 			else
 			{
 				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)){	
-					$user->redirect('signup.php?joined');
+					$user->redirect('user_login.php?joined');
 				}
 			}
 		}

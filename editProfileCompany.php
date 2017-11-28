@@ -49,8 +49,29 @@ if(isset($_POST['update']))
 ?>
 
 <?php
+require_once("company_session.php");
+
+require_once("class.company.php");
+$auth_company = new COMPANY();
+
+
+$company_id = $_SESSION['company_session'];
+
+$stmt = $auth_company->runQuery("SELECT * FROM company WHERE cid=:company_id");
+$stmt->execute(array(":company_id"=>$company_id));
+
+
+$companyRow=$stmt->fetch(PDO::FETCH_ASSOC);
 //getting id from url
 $id = $_GET['cid'];
+
+if (isset($_SESSION['company_session']) && !isset($_GET['cid'])) {
+	echo 'good';
+}
+else{
+	session_destroy();
+	unset($_SESSION['company_session']);
+}
 
 //selecting data associated with this particular id
 $result = mysqli_query($conn, "SELECT * FROM company WHERE cid=$id");
@@ -297,13 +318,9 @@ if(isset($_POST['cancel']))
             <div class="col-lg-8">
               <div class="ui-select">
                 <select name="industry_Type" class="form-control">
-				<?php
-				while($res = mysqli_fetch_array($result)){
-					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";
-				}
-				?>
+				<option value="<?php echo $industryType; ?>" selected > <?php echo $industryType; echo " [Current Position]"; ?></option> 
                   <option value="academic">Acedemic</option>
-                  <option value="accountancy">Accountancy</option>
+                  <option value="accountancy and finance">Accountancy</option>
                   <option value="architecture">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>

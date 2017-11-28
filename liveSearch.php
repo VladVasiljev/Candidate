@@ -2,7 +2,7 @@
 	$HOST = 'localhost';
 	$USER = 'root';
 	$PASS = '';
-	$NAME = 'logintest';
+	$NAME = 'candidate';
 	
 	
 
