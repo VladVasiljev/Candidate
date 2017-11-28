@@ -1,8 +1,10 @@
+
 <?php
 //session_start();
 // including the database connection file
 include_once("configs/dbh.php");
 include 'header.php';
+
 ?>
 
 <?php
@@ -124,8 +126,8 @@ while($res = mysqli_fetch_array($result))
 		}
 		else
 		{
-			// if no image selected the old image remain as it is.
-			$usercv = $edit_row['user_cv']; // old image from database
+			// if no cv selected the old cv remains as it is.
+			$usercv = $edit_row['user_cv']; // old cv from database
 		}	
 			
 	
@@ -193,7 +195,7 @@ if(isset($_POST['cancel']))
 
 	<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
 	<div class="container">
-    <h3>Hello <?php echo $firstName; ?> you can edit your profile here!</h3>
+    <h3>Hello <?php echo $firstName; ?> You can edit your profile here!</h3>
   	<hr>
 	<div class="row">
       <!-- left column -->
@@ -261,7 +263,7 @@ if(isset($_POST['cancel']))
             <label class="col-lg-3 control-label ">Industry</label>
             <div class="col-lg-8">
               <div class="ui-select">
-                <select name="industry_Type" class="form-control" value="<?php echo $industryType; ?>  >
+                <select class="form-control" type="text" name="industry_Type" value="<?php echo $industryType; ?>" required / >
 				<?php
 				while($res = mysqli_fetch_array($result)){
 					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";

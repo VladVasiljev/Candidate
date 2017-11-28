@@ -21,7 +21,7 @@ class search{
         FROM newuser
         WHERE industry LIKE '%{$sanitized}%'
         AND years >= '$sanitized2'
-        ORDER by years DESC
+        ORDER by years ASC
         ");
 
         
