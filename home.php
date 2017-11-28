@@ -63,6 +63,7 @@ include 'header.php';
 <p><a href="signup.php"> Don't have an account? Candidate sign up here</a></p>
 <p><a href="companysignup.php">Sign up here if you need a company profile</a></p>
 </div>
+<center><img   src="img/devices.png" alt="Logo" max-width="100%" ></a></center>
 </div>
 </div>
                         
@@ -70,33 +71,7 @@ include 'header.php';
              
           
 
-    <div align="center" class="social">
-<span>
-                                            <a href="#" target="_blank">
-                                                <img src="img/fb_icon.png" alt="Facebook icon" /></a>
-                                        </span>
-
-                                <span>
-                                <a href="#" target="_blank">
-                                    <img src="img/twitter_icon.png" alt="Twitter icon" /></a></span>
-
-                                <span>
-                                        <a href="#" target="_blank">
-                                    <img src="img/insta_icon.png" alt="Instagram icon" ></a>
-                                    </span>
-
-                                <span>
-                                        <a href="#" target="_blank">
-                                    <img src="img/linkedin-icon.png" alt="Linkedin icon" ></a>
-                                    </span>
-
-
-
-                                 <span>
-                                        <a href="" target="_blank">
-                                    <img src="img/Snapchat-icon-png.png" alt="Snapchat icon" ></a>
-                                    </span><br>
-            </div>
+ 
 
   
         <?php include 'footer.php';?>     

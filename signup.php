@@ -101,7 +101,7 @@ if(isset($_POST['btn-signup']))
 <div class="container">
     	
         <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Sign up.</h2><hr />
+            <h2 class="form-signin-heading">Candidate Signup.</h2><hr />
             <?php
 			if(isset($error))
 			{
@@ -153,7 +153,7 @@ if(isset($_POST['btn-signup']))
 			<div class="form-group">
 			<select type="industry" name="txt_industryType">
 			<option value="academic">Acedemic</option>
-                  <option value="accountancy">Accountancy</option>
+                  <option value="accountancy and finance">Accountancy</option>
                   <option value="architecture">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>
