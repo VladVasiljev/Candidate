@@ -65,12 +65,12 @@ $companyRow=$stmt->fetch(PDO::FETCH_ASSOC);
 //getting id from url
 $id = $_GET['cid'];
 
-if (isset($_SESSION['company_session']) && !isset($_GET['cid'])) {
-	echo 'good';
+if ($company_id == $id) {
+	echo "$user_id + \n $id";
 }
 else{
-	session_destroy();
-	unset($_SESSION['company_session']);
+	echo header("Location: new_company_profile.php");
+	
 }
 
 //selecting data associated with this particular id

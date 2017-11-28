@@ -23,12 +23,12 @@ $stmt->execute(array(":user_id"=>$user_id));
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
 
-if (isset($_SESSION['user_session']) && !isset($_GET['id'])) {
-	echo 'good';
+if ($user_id == $id) {
+	echo "$user_id + \n $id";
 }
 else{
-	session_destroy();
-	unset($_SESSION['user_session']);
+	echo header("Location: userprofile.php");
+	
 }
 
 
