@@ -8,7 +8,7 @@ class search{
     }
     
     private function connect(){
-        $this->mysqli = new mysqli('localhost','root',"",'logintest');
+        $this->mysqli = new mysqli('localhost','root',"",'candidate');
     }
     
     public function search($search_term,$search_term2){

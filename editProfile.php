@@ -10,7 +10,27 @@ include 'header.php';
 
 <?php
 //getting id from url
+require_once("session.php");
+
+require_once("class.user.php");
+$auth_user = new USER();
+
+
+$user_id = $_SESSION['user_session'];
+$stmt = $auth_user->runQuery("SELECT * FROM newuser WHERE id=:user_id");
+$stmt->execute(array(":user_id"=>$user_id));
+
+$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
+
+if (isset($_SESSION['user_session']) && !isset($_GET['id'])) {
+	echo 'good';
+}
+else{
+	session_destroy();
+	unset($_SESSION['user_session']);
+}
+
 
 //selecting data associated with this particular id
 $result = mysqli_query($conn, "SELECT * FROM newuser WHERE id=$id");

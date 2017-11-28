@@ -1,7 +1,7 @@
 
 <?php
 $databaseHost = 'localhost';
-$databaseName = 'logintest';
+$databaseName = 'candidate';
 $databaseUsername = 'root';
 $databasePassword = '';
 
