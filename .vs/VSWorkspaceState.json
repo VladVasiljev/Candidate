@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\bootstrap",
-    "\\bootstrap\\css"
+    "\\bootstrap\\css",
+    "\\img"
   ],
-  "SelectedNode": "\\bootstrap\\css\\Login.css",
+  "SelectedNode": "\\home.php",
   "PreviewInSolutionExplorer": false
 }
