@@ -120,7 +120,7 @@
 				</div>	 
 				<div class="col-1-2">
 			
-					<iframe src="user_cv/<?php echo  $row['user_cv']?>" height=100% width=100%> </iframe>
+					<iframe src="user_cv/<?php echo  $userRow['user_cv']?>" height=100% width=100%> </iframe>
 				</div>
 		</div><!-- /.row -->
 		
