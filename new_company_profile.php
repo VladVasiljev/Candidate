@@ -87,19 +87,17 @@
 <!-- Searching Database-->
 <?php
                     
-                //check if search data was submitted
-
-if (isset($_GET['s'], $_GET['m'])) {
-
+                //check if search data was submitted for search input and years input
+if (isset($_GET['s'], $_GET['y'])) {
 //include the search class
     require_once( dirname( __FILE__ ) . '../class-search.php');
 
 //instantiate a new instance of the search class
     $search = new search();
 
-//store search term into variable
+//store search term and years into variable's
     $search_term = $_GET['s'];
-    $search_term2 = $_GET['m'];
+    $search_term2 = $_GET['y'];
 
 //send the search term to our search class and store the result
     $search_results = $search->search($search_term, $search_term2);
@@ -113,9 +111,7 @@ if (isset($_GET['s'], $_GET['m'])) {
                     <form action=" " method="get">
                         <div class="form-field">
                             <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
-
-                            <input  type="number" name="m" placeholder="Number of years" results ="5" value="" >
-
+                            <input  type="number" name="y" placeholder="Number of years" results ="5" value="" >
                                 <?php $search_term ='';
                                 echo $search_term; ?>                                                                      
                                  <button>Search</button>

@@ -297,13 +297,9 @@ if(isset($_POST['cancel']))
             <div class="col-lg-8">
               <div class="ui-select">
                 <select name="industry_Type" class="form-control">
-				<?php
-				while($res = mysqli_fetch_array($result)){
-					echo "<option value='" .$res['industry']."'>'".$res['name']."'</option>";
-				}
-				?>
+				<option value="<?php echo $industryType; ?>" selected > <?php echo $industryType; echo " [Current Position]"; ?></option> 
                   <option value="academic">Acedemic</option>
-                  <option value="accountancy">Accountancy</option>
+                  <option value="accountancy and finance">Accountancy</option>
                   <option value="architecture">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>

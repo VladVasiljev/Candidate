@@ -94,10 +94,10 @@
 				    if (mysqli_num_rows($result) > 0) {
 				        // output data of each row
 				        while ($row = mysqli_fetch_assoc($result)) {
-							echo  " <br><b>CV:</b> " . $row['user_cv'] . " <br><b>Username:</b> " . $row['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"];
+							echo  " <br><label>CV:</label> " . $row['user_cv'] . " <br><b>Username:</b> " . $row['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"];
 							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
 							echo"<a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>";
-
+							
 						}
 					}
 					
@@ -119,8 +119,10 @@
 				</div>
 				</div>	 
 				<div class="col-1-2">
-			
-					<iframe src="user_cv/<?php echo  $row['user_cv']?>" height=100% width=100%> </iframe>
+			<!--	<center><h3><?php echo $userRow['uid']?>'s CV</h3></center>
+					<iframe src="user_cv/<?php echo $userRow['user_cv']?>" height=100% width=100%> </iframe>-->
+				<center><h5>Click here to view <?php echo $userRow['uid']?>'s CV</h5>
+					<a href= "user_cv/<?php echo $userRow['user_cv']?>" target=_blank><img src="img/sample_cv.PNG" width="100%" height="100%"/></a></center>
 				</div>
 		</div><!-- /.row -->
 		
