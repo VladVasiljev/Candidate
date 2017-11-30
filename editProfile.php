@@ -23,13 +23,10 @@ $stmt->execute(array(":user_id"=>$user_id));
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
 
-if (isset($_SESSION['user_session']) && !isset($_GET['id'])) {
+if (!isset($_SESSION['user_session']) && !isset($_GET['id'])) {
 	echo 'good';
 }
-else{
-	session_destroy();
-	unset($_SESSION['user_session']);
-}
+
 
 
 //selecting data associated with this particular id
