@@ -23,10 +23,13 @@ $stmt->execute(array(":user_id"=>$user_id));
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
 
-if (!isset($_SESSION['user_session']) && !isset($_GET['id'])) {
-	echo 'good';
+if ($user_id == $id) {
+	echo "$user_id + \n $id";
 }
-
+else{
+	echo header("Location: userprofile.php");
+	
+}
 
 
 //selecting data associated with this particular id
@@ -217,7 +220,7 @@ if(isset($_POST['cancel']))
   	<hr>
 	<div class="row">
       <!-- left column -->
-      <div class="col-md-3">
+      <div class="col-1-2">
         <div class="text-center">
 		<img src="user_images/<?php echo $userPic; ?>" height="250" width="250" class="rounded-circle" alt="avatar" />
           <h6>Prefered Image Size 250 x250</h6>
@@ -229,7 +232,7 @@ if(isset($_POST['cancel']))
         </div>
 	  </div>
 	  
-	  <div class="col-md-9 personal-info">
+	  <div class="col-1-2">
         <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <i class="fa fa-coffee"></i>  

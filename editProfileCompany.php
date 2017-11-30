@@ -65,12 +65,12 @@ $companyRow=$stmt->fetch(PDO::FETCH_ASSOC);
 //getting id from url
 $id = $_GET['cid'];
 
-if (isset($_SESSION['company_session']) && !isset($_GET['cid'])) {
-	echo 'good';
+if ($company_id == $id) {
+	//echo "$company_id + \n $id";
 }
 else{
-	session_destroy();
-	unset($_SESSION['company_session']);
+	echo header("Location: new_company_profile.php");
+	
 }
 
 //selecting data associated with this particular id
@@ -262,7 +262,7 @@ if(isset($_POST['cancel']))
   	<hr>
 	<div class="row">
       <!-- left column -->
-      <div class="col-md-3">
+      <div class="col-1-2">
         <div class="text-center">
 		<img src="company_images/<?php echo $userPic; ?>" height="250" width="250" class="rounded-circle" alt="avatar" />
           <h6>Prefered Image Size 250 x250</h6>
@@ -271,7 +271,7 @@ if(isset($_POST['cancel']))
         </div>
 	  </div>
 	  
-	  <div class="col-md-9 personal-info">
+	  <div class="col-1-2">
         <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <i class="fa fa-coffee"></i>  
