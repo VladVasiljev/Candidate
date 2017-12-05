@@ -4,22 +4,15 @@
 // including the database connection file
 include_once("configs/dbh.php");
 include 'header.php';
-
 ?>
-
-
 <?php
 //getting id from url
 require_once("session.php");
-
 require_once("class.user.php");
 $auth_user = new USER();
-
-
 $user_id = $_SESSION['user_session'];
 $stmt = $auth_user->runQuery("SELECT * FROM newuser WHERE id=:user_id");
 $stmt->execute(array(":user_id"=>$user_id));
-
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
 
@@ -30,7 +23,6 @@ else{
 	echo header("Location: userprofile.php");
 	
 }
-
 
 //selecting data associated with this particular id
 $result = mysqli_query($conn, "SELECT * FROM newuser WHERE id=$id");
@@ -44,6 +36,7 @@ while($res = mysqli_fetch_array($result))
     $yearsXP = $res['years'];
     $industryType = $res['industry'];
 	$bio = $res['bio'];
+	$locationType = $res['location'];
 	
 }
 ?>
@@ -59,7 +52,7 @@ while($res = mysqli_fetch_array($result))
 	if(isset($_GET['id']) && !empty($_GET['id']))
 	{
 		$id = $_GET['id'];
-		$stmt_edit = $conn->prepare('SELECT id,first,last,years,industry,bio,userPic, user_cv FROM newuser WHERE id =:uid');
+		$stmt_edit = $conn->prepare('SELECT id,first,last,years,industry,bio,userPic, user_cv, location FROM newuser WHERE id =:uid');
 		$stmt_edit->execute(array(':uid'=>$id));
 		$edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
 		extract($edit_row);
@@ -81,6 +74,7 @@ while($res = mysqli_fetch_array($result))
 		$yearsXP = $_POST['years_XP'];//Years of Experi
 		$industryType = $_POST['industry_Type'];//Industry Type
 		$bio = $_POST['biography'];//biography
+		$locationType = $_POST['location'];//biography
 		
 
 		//image upload code
@@ -164,7 +158,8 @@ while($res = mysqli_fetch_array($result))
 													   industry=:industry,
 													   bio=:biography,
 													   userPic=:upic,
-													   user_cv=:cv 
+													   user_cv=:cv,
+													   location=:location 
 													   WHERE id=:uid');
 			$stmt->bindParam(':fname',$firstName);
 			$stmt->bindParam(':lname',$lastName);
@@ -175,6 +170,7 @@ while($res = mysqli_fetch_array($result))
 			$stmt->bindParam(':upic',$userpic);
 			$stmt->bindParam(':uid',$id);
 			$stmt->bindParam(':cv',$usercv);
+			$stmt->bindParam(':location',$locationType);
 				
 			if($stmt->execute()){
 				?>
@@ -285,14 +281,13 @@ if(isset($_POST['cancel']))
             <div class="col-lg-8">
               <div class="ui-select">
                 <select name="industry_Type" class="form-control">
-				
-                  <option value="<?php echo $industryType; ?>" selected > <?php echo $industryType; echo " [Current Position]"; ?></option> 
+				<option value="<?php echo $industryType; ?>" selected ><?php echo $industryType; echo " [Current Position]"; ?></option> 
                   <option value="academic">Acedemic</option>
                   <option value="accountancy and finance">Accountancy</option>
-                  <option value="architecture">Architecture</option>
+                  <option value="architecture/design">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>
-                  <option value="education">Education</option>
+                  <option value="education/training">Education</option>
                   <option value="graduate">Graduate</option>
                   <option value="hair and beauty">Hair And Beauty</option>
 				  <option value="it">IT</option>
@@ -305,7 +300,44 @@ if(isset($_POST['cancel']))
             </div>
           </div>
 
-
+		  <div class="form-group">
+			<select type="location" name="location">
+			<option value="<?php echo $locationType; ?>" selected ><?php echo $locationType; echo " [Current Location]"; ?></option> 
+            
+				  <option value="Antrim">Antrim</option>
+                  <option value="Armagh">Armagh</option>
+                  <option value="Carlow">Carlow</option>
+                  <option value="Clare">Clare</option>
+                  <option value="Cork">Cork</option>
+                  <option value="Derry">Derry</option>
+                  <option value="Donegal">Donegal</option>
+                  <option value="Down">Down</option>
+				  <option value="Dublin">Dublin</option>
+				  <option value="Fermanagh">Fermanagh</option>
+				  <option value="Galway">Galway</option>
+				  <option value="Kerry">Kerry</option>
+				  <option value="Kildare">Kildare</option>
+				  <option value="Kilkenny">Kilkenny</option>
+				  <option value="Laois">Laois</option>
+				  <option value="Leitrim">Leitrim</option>
+				  <option value="Limerick">Limerick</option>
+				  <option value="Longford">Longford</option>
+				  <option value="Louth">Louth</option>
+				  <option value="Mayo">Mayo</option>
+				  <option value="Meath">Meath</option>
+				  <option value="Monaghan">Monaghan</option>
+				  <option value="Offaly">Offaly</option>
+				  <option value="Roscommon">Roscommon</option>
+				  <option value="Sligo">Sligo</option>
+				  <option value="Tipperary">Tipperary</option>
+				  <option value="Tyrone">Tyrone</option>
+				  <option value="Waterford">Waterford</option>
+				  <option value="Westmeath">Westmeath</option>
+				  <option value="Wexford">Wexford</option>
+				  <option value="Wicklow">Wicklow</option>
+                </select>
+			
+            </div>
 
 		<div class="form-group">
             <label class="col-lg-3 control-label">Biography:</label>

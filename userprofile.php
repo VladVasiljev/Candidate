@@ -113,20 +113,21 @@ include_once("configs/dbh.php");?>
 		/*
 		include_once 'configs/dbh.php';
 				if (isset($userRow['id'])) {
+					echo"<a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>";
 				    echo "<h3>Hello</h3>" . $userRow['uid'] ." your profile ID is:";
 					echo $userRow['id'];
 					
 					
 				    
-				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio, timestamp, user_cv FROM newuser WHERE id = '" . $userRow['id'] . "'";
+				    $sql    = "SELECT id, first, uid, last, email, years, industry, bio, timestamp, user_cv, location FROM newuser WHERE id = '" . $userRow['id'] . "'";
 				    $result = mysqli_query($conn, $sql);
 				    
 				    if (mysqli_num_rows($result) > 0) {
 				        // output data of each row
 				        while ($row = mysqli_fetch_assoc($result)) {
-							echo  " <br><label>CV:</label> " . $userRow['user_cv'] . " <br><b>Username:</b> " . $userRowrow['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"];
+							echo " <br><label>Location:</label> " . $row['location'] . " <br><label>CV:</label> " . $row['user_cv'] . " <br><b>Username:</b> " . $row['uid'] . " <br><b>Name:</b> " . $row["first"] . " " . $row["last"] . " <br><b>Email:</b> " . $row["email"] . "<br><b> Years Experience:</b> " . $row["years"] . "<br> <b>Industry:</b> " . $row["industry"] . " <br>You joined on ".$row['timestamp']."<br><b>Bio:</b> " . $row["bio"] ;
 							//echo "</br><a href=\"editProfile.php?id=$row[id]\">Edit Profile</a>";
-							echo"<a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>";
+							
 							
 						}
 					}
@@ -143,6 +144,12 @@ include_once("configs/dbh.php");?>
 				}
 */
 				?>
+				<!--
+				<form action="user_cv/<?php echo $userRow['user_cv']?>" target=_blank>
+				<button>View CV</button>
+				</form>
+				<br><a href= "user_cv/<?php echo $userRow['user_cv']?>" target=_blank>View CV</a>-->
+
 
 
 

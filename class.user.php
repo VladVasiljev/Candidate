@@ -20,14 +20,14 @@ class USER
 		return $stmt;
 	}
 	
-	public function register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)
+	public function register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV,$userLocation)
 	{
 		try
 		{
 			$new_password = password_hash($userPassword, PASSWORD_DEFAULT);
 			
-			$stmt = $this->conn->prepare("INSERT INTO newuser(uid,email,pwd,first,last,years,industry,bio,userPic,user_cv) 
-		                                               VALUES(:userName, :userEmail, :userNewPassword, :firstName, :lastName, :userExperience, :userIndustryType, :userBiography, :userPicture,:userCV)");
+			$stmt = $this->conn->prepare("INSERT INTO newuser(uid,email,pwd,first,last,years,industry,bio,userPic,user_cv,location) 
+		                                               VALUES(:userName, :userEmail, :userNewPassword, :firstName, :lastName, :userExperience, :userIndustryType, :userBiography, :userPicture,:userCV, :userLocation)");
 			
 			
 
@@ -41,7 +41,8 @@ class USER
 			$stmt->bindparam(":userIndustryType", $userIndustryType);									  
 			$stmt->bindparam(":userBiography", $userBiography);									  
 			$stmt->bindparam(":userPicture", $userPicture);									  
-			$stmt->bindparam(":userCV", $userCV);									  
+			$stmt->bindparam(":userCV", $userCV);	
+			$stmt->bindparam(":userLocation", $userLocation);								  
 				
 			$stmt->execute();	
 			
