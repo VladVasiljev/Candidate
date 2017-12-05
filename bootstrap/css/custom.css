@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
   
 .bg-faded {
-    background-color: #D6624D;
+    background-color: #B22A34;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -15,10 +15,9 @@
 footer {
     display: block;
     max-height: 120px;
-    background: #D6624D;
+    background: #B22A34;
     margin-top: 100px;
-    background: #D6624D;
-    margin-top: 100px;
+   
     position: absolute;
     left: 0;
     right: 0;
@@ -136,6 +135,7 @@ body {
 /* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.7;
+    
 }
 
 /*Colour change for the footer text */ 
@@ -385,16 +385,7 @@ nav ul form button {
     cursor: pointer;
 }
 
-#search input{
-    width: 70%;
-    height:60px;
-    padding: 10px 20px;
-    margin: 2px 0px;
-    display: block;
-    border: 3px solid #C3D7CE;
-    border-radius:25px;
-    box-sizing: border-box;
-}
+
 
 #search input[type=number]{
     width:15%;
@@ -403,6 +394,7 @@ nav ul form button {
 textarea:focus, input:focus, button:focus{
     outline: none;
 }
+
 
 
 #signup select {
@@ -461,7 +453,7 @@ user_details p{
 
 
 
-select[type=industry]{
+select[type=industry],[type=location]{
     width: auto;
     padding: 10px 20px;
     margin: 2px 0px;
