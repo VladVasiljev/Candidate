@@ -11,16 +11,17 @@ class search{
         $this->mysqli = new mysqli('localhost','root',"",'candidate');
     }
     
-    public function search($search_term,$search_term2){
+    public function search($search_term,$search_term2,$search_term3){
         $sanitized = $this->mysqli->real_escape_string($search_term);
         $sanitized2 = $this->mysqli->real_escape_string($search_term2);
+        $sanitized3 = $this->mysqli->real_escape_string($search_term3);
 
         
         $query = $this->mysqli->query("
-        SELECT  first, last, email, industry, years, userPic, user_cv
+        SELECT  first, last, email, industry, years, userPic, user_cv, location
         FROM newuser
         WHERE industry LIKE '%{$sanitized}%'
-        AND years >= '$sanitized2'
+        AND years >= '$sanitized2' AND location ='$sanitized3'
         ORDER by years ASC
         ");
 

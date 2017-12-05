@@ -25,6 +25,7 @@ if(isset($_POST['btn-signup']))
 	$userBiography = strip_tags($_POST['txt_userBio']);
 	$userPicture = strip_tags($_POST['txt_userPic']);
 	$userCV = strip_tags($_POST['txt_userCV']);
+	$userLocation = strip_tags($_POST['txt_location']);
 
 	
 	/*
@@ -72,7 +73,7 @@ if(isset($_POST['btn-signup']))
 			}
 			else
 			{
-				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV)){	
+				if($user->register($userName,$userEmail,$userPassword,$firstName,$lastName,$userExperience,$userIndustryType,$userBiography,$userPicture,$userCV,$userLocation)){	
 					$user->redirect('user_login.php?joined');
 				}
 			}
@@ -89,7 +90,7 @@ if(isset($_POST['btn-signup']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage : Sign up</title>
+<title>Uemployed</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="style.css" type="text/css"  />
@@ -152,12 +153,12 @@ if(isset($_POST['btn-signup']))
 
 			<div class="form-group">
 			<select type="industry" name="txt_industryType">
-			<option value="academic">Acedemic</option>
+				  <option value="academic">Acedemic</option>
                   <option value="accountancy and finance">Accountancy</option>
-                  <option value="architecture">Architecture</option>
+                  <option value="architecture/design">Architecture</option>
                   <option value="childcare">Childcare</option>
                   <option value="drivers">Drivers</option>
-                  <option value="education">Education</option>
+                  <option value="education/training">Education</option>
                   <option value="graduate">Graduate</option>
                   <option value="hair and beauty">Hair And Beauty</option>
 				  <option value="it">IT</option>
@@ -166,7 +167,42 @@ if(isset($_POST['btn-signup']))
 				  <option value="motor industry">Motor Industry</option>
 				  <option value="retail">Retail</option>
                 </select>
-			</select>
+			 </div>
+			<div class="form-group">
+			<select type="location" name="txt_location">
+				  <option value="Antrim">Antrim</option>
+                  <option value="Armagh">Armagh</option>
+                  <option value="Carlow">Carlow</option>
+                  <option value="Clare">Clare</option>
+                  <option value="Cork">Cork</option>
+                  <option value="Derry">Derry</option>
+                  <option value="Donegal">Donegal</option>
+                  <option value="Down">Down</option>
+				  <option value="Dublin">Dublin</option>
+				  <option value="Fermanagh">Fermanagh</option>
+				  <option value="Galway">Galway</option>
+				  <option value="Kerry">Kerry</option>
+				  <option value="Kildare">Kildare</option>
+				  <option value="Kilkenny">Kilkenny</option>
+				  <option value="Laois">Laois</option>
+				  <option value="Leitrim">Leitrim</option>
+				  <option value="Limerick">Limerick</option>
+				  <option value="Longford">Longford</option>
+				  <option value="Louth">Louth</option>
+				  <option value="Mayo">Mayo</option>
+				  <option value="Meath">Meath</option>
+				  <option value="Monaghan">Monaghan</option>
+				  <option value="Offaly">Offaly</option>
+				  <option value="Roscommon">Roscommon</option>
+				  <option value="Sligo">Sligo</option>
+				  <option value="Tipperary">Tipperary</option>
+				  <option value="Tyrone">Tyrone</option>
+				  <option value="Waterford">Waterford</option>
+				  <option value="Westmeath">Westmeath</option>
+				  <option value="Wexford">Wexford</option>
+				  <option value="Wicklow">Wicklow</option>
+                </select>
+			
             </div>
 
 			<div class="form-group">
@@ -174,7 +210,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
 			<div class="form-group">
-            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="123.pdf" />
+            	<input type="hidden" class="form-control" name="txt_userCV" placeholder="Enter Your Bio" value="samplecv.pdf" />
             </div>
 
 			
