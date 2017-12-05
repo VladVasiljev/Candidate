@@ -83,12 +83,14 @@ if(isset($_POST['btn-signup']))
 </head>
 <body>
 
-<div class="signin-form">
+
 
 <div class="container">
-    	
+	<div class="row">
+		<div class="col-1-2">
+<div class="signin-form">
         <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Company Signup</h2><hr />
+            <h2 class="form-signin-heading">Company Signup  </h2><hr />
             <?php
 			if(isset($error))
 			{
@@ -122,8 +124,14 @@ if(isset($_POST['btn-signup']))
             </div>
 			<div class="form-group">
             	<input type="password" class="form-control" name="txt_companyPassword" placeholder="Enter Password" />
-            </div>
+			</div>
+		</div>
+		</div>
+		<div class="col-1-2">
 			<div class="form-group">
+		<h2 class="form-signin-heading">-Fill out all fields</h2><hr/>
+			
+				
 			<select type="industry" name="txt_industryType">
 			<option value="academic">Acedemic</option>
                   <option value="accountancy">Accountancy</option>
@@ -143,7 +151,7 @@ if(isset($_POST['btn-signup']))
             </div>
 
             <div class="form-group">
-            <label for='position'>Position</label> 
+            <!--<label for='position'>Position</label> -->
                 <select type="industry" name='txt_position'>
                 <option value='manager'>Manager</option>
                 <option value='hr'>HR</option>
@@ -166,8 +174,10 @@ if(isset($_POST['btn-signup']))
             </div>
             <br />
             <label>have an account ! <a href="new_company_login.php">Sign In</a></label>
-        </form>
-       </div>
+		</form>
+		</div>
+	   </div>
+		</div>
 </div>
 
 </div>

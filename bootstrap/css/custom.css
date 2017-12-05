@@ -3,7 +3,7 @@
 
   
 .bg-faded {
-    background-color: #D6624D;
+    background-color: #B22A34;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -16,10 +16,9 @@
 footer {
     display: block;
     max-height: 120px;
-    background: #D6624D;
+    background: #B22A34;
     margin-top: 100px;
-    background: #D6624D;
-    margin-top: 100px;
+   
     position: absolute;
     left: 0;
     right: 0;
@@ -114,6 +113,7 @@ body {
 /* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.7;
+    
 }
 
 /*Colour change for the footer text */ 
@@ -360,16 +360,7 @@ nav ul form button {
     cursor: pointer;
 }
 
-#search input{
-    width: 70%;
-    height:60px;
-    padding: 10px 20px;
-    margin: 2px 0px;
-    display: block;
-    border: 3px solid #C3D7CE;
-    border-radius:25px;
-    box-sizing: border-box;
-}
+
 
 #search input[type=number]{
     width:15%;
@@ -379,6 +370,9 @@ textarea:focus, input:focus, button:focus{
     outline: none;
 }
 
+.form-signin{
+   
+}
 
 #signup select {
     width: auto;
@@ -436,7 +430,7 @@ user_details p{
 
 
 
-select[type=industry]{
+select[type=industry],[type=location]{
     width: auto;
     padding: 10px 20px;
     margin: 2px 0px;
@@ -743,9 +737,20 @@ nav ul form button {
     font-family: sans-serif;
     font-size: 20px;
     
+}
 
- 
-    
+
+
+#details{
+    border-style: ridge;
+    border-width: 2px;
+    border-color:#B22A34;
+    background-color:#e6e6ff;
+    width:500px;
+    max-height:100%;
+}
+#search{
+    align-content:center;
 }
 
 #search p{
@@ -766,7 +771,7 @@ nav ul form button {
     background: url(img/search_icon.png) no-repeat;
     text-align: center;
     font-weight: bold;
-    border: 2px solid #C3D7CE;
+    border: 2px solid #B22A34;
     border-radius: 25px;
     width: 150px;
     background-color: #fff;
@@ -777,9 +782,9 @@ nav ul form button {
 
 #search button:hover{
   
-        -moz-box-shadow:    1px 1px 2px 3px #ccc;
-        -webkit-box-shadow: 1px 1px 2px 3px #ccc;
-        box-shadow:         1px 1px 2px 3px #ccc;
+        -moz-box-shadow:    2px 2px 3px 4px #ccc;
+        -webkit-box-shadow: 2px 2px 3px 4px #ccc;
+        box-shadow:         2px 2px 3px 4px #ccc;
     
 }
 
@@ -787,9 +792,10 @@ nav ul form button {
     width: 70%;
     height:60px;
     padding: 10px 20px;
+    margin-bottom:5px;
     margin: 2px 0px;
     display: block;
-    border: 3px solid #C3D7CE;
+    border: 2px solid #B22A34;
     border-radius:25px;
     box-sizing: border-box;
 }
@@ -817,7 +823,7 @@ nav ul form button {
 }
 
 a{
-    color:BD1414;
+    color:#B22A34;
 }
 
 #signup button {
@@ -919,7 +925,7 @@ label {
       color:black;
   }
   .card_img{
-      background-color: #D6624D;
+      background-color: #B22A34;
       width:100%;
   }
 
@@ -942,7 +948,7 @@ label {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #D6624D;
+    background-color: #B22A34;
     text-align: center;
     cursor: pointer;
     width: 100%;

@@ -29,8 +29,13 @@
 
    <!-- <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
 
-    <div class="container">
-      <center>  <h2>Company Details</h2></center>
+    <div class ="container">
+    <div class ="row">
+    <div align="center" class ="col-1-1">
+    <div id ="details">
+    
+    <br>
+      <center><h2>Company Details</h2></center>
    
 
         <?php
@@ -43,7 +48,7 @@
                 extract($row);
                 ?>
 
-                <div class="col-1-1">
+               
            
                     <!-- <p class="page-header"><?php echo $userName."&nbsp;/&nbsp;".$userProfession; ?></p> -->
                     <center><img src="company_images/<?php echo $row['userPic']; ?>" class="img-rounded" width="200px" height="200px" /></center>
@@ -51,7 +56,7 @@
                         
                     </p>
                     
-                    </div>
+                   
                            
                     <?php
             }
@@ -62,13 +67,16 @@
                     <span class="glyphicon glyphicon-info-sign"></span> &nbsp; No Data Found ...
                 </div>
             </div>
+           
             <?php
         }
             
         ?>
      <div class="row">
     <div align="center" class="col-1-1">
-    <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>
+    <div class = "userinformation">
+    <a href="logout.php?logout=true">Sign Out</a><br>
+    <span><a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a></span> <br>
     <?php
         include_once 'configs/dbh.php';
     if (isset($companyRow['cid'])) {
@@ -76,19 +84,20 @@
         echo $companyRow['cid'];
     }
                 ?>
-    <span>
-    <a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a> 
-    </span>
-    <?php echo   " <br><b>Username:</b> " . $companyRow['username'] . " <br> <b>Company Name:</b> " . $companyRow["name"] . "<br><b>Industry:</b> " . $companyRow["industry"] .  "<br><b>Position:</b> " . $companyRow["position"]; ?>
+   
+    <?php echo   " <br><b>Username:</b> " . $companyRow['username'] . " <br> <b>Company Name:</b> " . $companyRow["name"] . "<br><b>Industry:</b> " . $companyRow["industry"] .  "<br><b>Position:</b> " . $companyRow["position"]."<br>" ; ?><br>
+    </div>
+    </div>
     </div>
 </div>
-<div class="row">
+</div>
+                 
 <div class="col-1-1">
 <!-- Searching Database-->
 <?php
                     
                 //check if search data was submitted for search input and years input
-if (isset($_GET['s'], $_GET['y'])) {
+if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
 //include the search class
     require_once( dirname( __FILE__ ) . '../class-search.php');
 
@@ -98,20 +107,59 @@ if (isset($_GET['s'], $_GET['y'])) {
 //store search term and years into variable's
     $search_term = $_GET['s'];
     $search_term2 = $_GET['y'];
+    $search_term3 = $_GET['l'];
 
 //send the search term to our search class and store the result
-    $search_results = $search->search($search_term, $search_term2);
+    $search_results = $search->search($search_term, $search_term2,$search_term3);
 }
 
                 ?>
         <div align="center"  id="search">
+        <br><br>
             <h1>Search for your Candidate</h1>
-            <p>Use the search box's to search by industry and years experience</p><br>
+            <p>Step 1: Choose Industry,<br> Step 2: Choose Years Experience,<br> Step 3: Choose Location</p><br>
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
                             <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
                             <input  type="number" name="y" placeholder="Number of years" results ="5" value="" >
+                            <div class="form-group">
+			<select type="location" name="l">
+            <option value="antrim">Antrim</option>
+				  <option value="antrim">Antrim</option>
+                  <option value="armagh">Armagh</option>
+                  <option value="carlow">Carlow</option>
+                  <option value="clare">Clare</option>
+                  <option value="cork">Cork</option>
+                  <option value="derry">Derry</option>
+                  <option value="donegal">Donegal</option>
+                  <option value="down">Down</option>
+				  <option value="dublin">Dublin</option>
+				  <option value="fermanagh">Fermanagh</option>
+				  <option value="galway">Galway</option>
+				  <option value="kerry">Kerry</option>
+				  <option value="kildare">Kildare</option>
+				  <option value="kilkenny">Kilkenny</option>
+				  <option value="laois">Laois</option>
+				  <option value="leitrim">Leitrim</option>
+				  <option value="limerick">Limerick</option>
+				  <option value="longford">Longford</option>
+				  <option value="louth">Louth</option>
+				  <option value="mayo">Mayo</option>
+				  <option value="meath">Meath</option>
+				  <option value="monaghan">Monaghan</option>
+				  <option value="offaly">Offaly</option>
+				  <option value="roscommon">Roscommon</option>
+				  <option value="sligo">Sligo</option>
+				  <option value="tipperary">Tipperary</option>
+				  <option value="tyrone">Tyrone</option>
+				  <option value="waterford">Waterford</option>
+				  <option value="westmeath">Westmeath</option>
+				  <option value="wexford">Wexford</option>
+				  <option value="wicklow">Wicklow</option>
+                </select>
+			
+            </div>
                                 <?php $search_term ='';
                                 echo $search_term; ?>                                                                      
                                  <button>Search</button>
@@ -161,6 +209,7 @@ if (!empty($search_results)) :?>
         <p>Email Address: <?php echo $search_result->email; ?></p>
         <p>Industry: <?php echo $search_result->industry; ?></p>
         <p>Years Experience: <?php echo $search_result->years; ?></p> 
+        <p>Location: <?php echo $search_result->location; ?></p> 
       <!--  <?php echo $search_result->user_cv; ?>--> <!--Displays link saved in database-->
        <!-- <a href="user_cv/<?php echo $search_result->user_cv?>"target=_blank>View Cv</a>--><!--View cv-->
      <div style="margin: 24px 0;">
