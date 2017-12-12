@@ -43,8 +43,8 @@ include_once("configs/dbh.php");?>
 		  -->
         </div>
 		<div class="editview">
-		<a  href="editProfile.php?id=<?php echo $userRow['id']; ?>" title="click for edit"> <img id="edit" src="img/edit.png">Edit Profile</a>
-		<a  href="user_cv/<?php echo $userRow['user_cv']; ?>" title="Click To View CV"> <img id="edit" src="img/edit.png">View CV</a>
+		<a  href="editProfile.php?id=<?php echo $userRow['id']; ?>" title="click for edit"> <img id="edit" src="https://png.icons8.com/edit/ultraviolet/30/000000">Edit Profile</a>
+		<a  href="user_cv/<?php echo $userRow['user_cv']; ?>" title="Click To View CV"> <img id="edit" src="https://png.icons8.com/eye/ultraviolet/30/000000">View CV</a>
 	  </div>
 	  </div>
 
