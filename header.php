@@ -1,9 +1,5 @@
 
-<?php
- //session_start();
 
- 
-?>
 <!doctype html>
 <html lang="en">
       <head>
@@ -25,17 +21,18 @@
                         <a class="nav-item nav-link" href="company_signup.php">Company</a>
                         <a class="nav-item nav-link" href="signup.php">User</a>
                         <a class="nav-item nav-link" href="contact.php">Contact</a>
+                     
                     
-                      <!--  <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>-->
+                       <a class="nav-item nav-link" href="logout.php?logout=true">Sign Out</a>
                      </div>
                      </div>
                  </nav>
          <?php
-if(isset($_SESSION['id'])){
-    echo"  <a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>  ";
-}
-
+//if(isset($_SESSION['user_seesion'])){
+  //  echo"  <a class='nav-item nav-link' href='logout.php?logout=true'>Sign Out</a>  ";
+//}
 ?>
+
 
                     <img id="MainLogo" src="img/main_logo.png">
                     

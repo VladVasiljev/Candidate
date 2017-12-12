@@ -38,7 +38,7 @@ include_once("configs/dbh.php");?>
 					<img alt="Logo" src="img/logo.png">
 				</center>-->
 			</div>
-			<div align="center" class="col-1-2">
+			<div align="center" class="col-1-1">
 			<div class="user_details">
 			<img src="user_images/<?php echo $userRow['userPic']; ?>" class="img-rounded" width="200px" height="200px" />
 			<?php
@@ -84,6 +84,7 @@ include_once("configs/dbh.php");?>
 		?>
 		<h2>Candidate Details</h2>
 		<div class="UserInformation">
+		<a  href="editProfile.php?id=<?php echo $userRow['id']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a>
 		<b>First Name: </b><p class="userInformation"><?php echo $userRow['first'];?></p>
 		<br>
 		<b>Last Name: </b><p class="userInformation"><?php echo $userRow['last'];?></p>

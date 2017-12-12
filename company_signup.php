@@ -133,19 +133,19 @@ if(isset($_POST['btn-signup']))
 			
 				
 			<select type="industry" name="txt_industryType">
-			<option value="academic">Acedemic</option>
-                  <option value="accountancy">Accountancy</option>
-                  <option value="architecture">Architecture</option>
-                  <option value="childcare">Childcare</option>
-                  <option value="drivers">Drivers</option>
-                  <option value="education/training">Education/Training</option>
-                  <option value="graduate">Graduate</option>
-                  <option value="hair and beauty">Hair And Beauty</option>
-				  <option value="it">IT</option>
-				  <option value="manaul labour">Manual Labour</option>
-				  <option value="medical">Medical</option>
-				  <option value="motor industry">Motor Industry</option>
-				  <option value="retail">Retail</option>
+			<option value="Academic">Acedemic</option>
+                  <option value="Accountancy">Accountancy</option>
+                  <option value="Architecture/Design">Architecture</option>
+                  <option value="Childcare">Childcare</option>
+                  <option value="Drivers">Drivers</option>
+                  <option value="Education/Training">Education/Training</option>
+                  <option value="Graduate">Graduate</option>
+                  <option value="Hair and Beauty">Hair And Beauty</option>
+				  <option value="It">IT</option>
+				  <option value="Manaul Labour">Manual Labour</option>
+				  <option value="Medical">Medical</option>
+				  <option value="Motor Industry">Motor Industry</option>
+				  <option value="Retail">Retail</option>
                 </select>
 			</select>
             </div>

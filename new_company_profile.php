@@ -74,7 +74,7 @@
         ?>
      <div class="row">
     <div align="center" class="col-1-1">
-    <div class = "userinformation">
+    <div class = "UserInformation">
     <a href="logout.php?logout=true">Sign Out</a><br>
     <span><a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a></span> <br>
     <?php
