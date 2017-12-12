@@ -1,34 +1,27 @@
 <?php include 'header.php';?>
 <?php
-    
+    //require connection scripts
     require_once("company_session.php");
     require_once("class.company.php");
     $auth_company = new COMPANY();
     
-    
+    //assigning session id
     $company_id = $_SESSION['company_session'];
     
+    //select all information from company table in database
     $stmt = $auth_company->runQuery("SELECT * FROM company WHERE cid=:company_id");
     $stmt->execute(array(":company_id"=>$company_id));
-   
-    
     $companyRow=$stmt->fetch(PDO::FETCH_ASSOC);
     
 ?>
-
-
+<!-- Start of html-->
 <!doctype html>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
 </head>
-
 <body>
-
-
-
-   <!-- <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
-
+<!-- <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>-->
     <div class ="container">
     <div class ="row">
     <div align="center" class ="col-1-1">
@@ -112,18 +105,25 @@ if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
 //send the search term to our search class and store the result
     $search_results = $search->search($search_term, $search_term2,$search_term3);
 }
-
-                ?>
+ ?>
         <div align="center"  id="search">
         <br><br>
-            <h1>Search for your Candidate</h1>
-            <p>Step 1: Choose Industry,<br> Step 2: Choose Years Experience,<br> Step 3: Choose Location</p><br>
+            <h1>Search for your Candidate</h1><hr>
+            <!--Search Instruction-->
+            <img src="https://png.icons8.com/level-1/androidL/49/3498db"><h5> Choose Industry</h5><hr><br><img src="https://png.icons8.com/circled-2-c/color/49/3498db"><h5> Choose Years Experience</h5><hr><br><img src="https://png.icons8.com/circled-3-c/color/49/3498db"> <h5>Choose Location</h5><hr><br>
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">
-                            <input type="search" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" class='auto'>
-                            <input  type="number" name="y" placeholder="Number of years" results ="5" value="" >
+                            <!--Input for searching industry -->
+                            <div class="form-field">
+                            <input type="search" class="form-control" name="s" placeholder="Search industry, example it, retail etc" results ="5" value="" >
+                            </div><br>
+                            <!--Input for searching Years experience -->
+                            <div class="form-field">
+                            <input  type="number" class="form-control" name="y" placeholder="Number of years" results ="5" value="" >
+                        </div><br>
                             <div class="form-group">
+                            <!--Input for searching location -->
 			<select type="location" name="l">
             <option value="antrim">Antrim</option>
 				  <option value="antrim">Antrim</option>
@@ -160,6 +160,7 @@ if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
                 </select>
 			
             </div>
+                                <!--Echo results of search-->
                                 <?php $search_term ='';
                                 echo $search_term; ?>                                                                      
                                  <button>Search</button>
@@ -171,22 +172,23 @@ if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
                 </div>
 </div>
 </div>
-
+                    <!--External JS Links-->
                     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
                     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>    
+                           <!-- Live search script-->
+                           <script type="text/javascript">
+                                
+                            $(function() {
+                                
+                                //autocomplete
+                                $(".auto").autocomplete({
+                                    source: "liveSearch.php",
+                                    minLength: 1
+                                });                
 
-                    <script type="text/javascript">
-$(function() {
-    
-    //autocomplete
-    $(".auto").autocomplete({
-        source: "liveSearch.php",
-        minLength: 1
-    });                
-
-});
-</script>
-            
+                            });
+                            </script>
+        
     <!-- Search results-->
 <div class="col-1-1">
 <p>Results of your search appear here!</p>
@@ -198,7 +200,7 @@ if (!empty($search_results)) :?>
 </h3></br>
 </div><br>
 <?php foreach ($search_results['results'] as $search_result) : ?>
-<!--Start of the profile card section-->
+<!--Start of the candidate profile card section-->
     <div class="namecard"></br>
     <div class="card">
         <div class="card_img">
@@ -234,6 +236,7 @@ if (!empty($search_results)) :?>
 
              
 </div>
+<!--link to footer-->
 <?php include 'footer.php'?>
 
 </body>
