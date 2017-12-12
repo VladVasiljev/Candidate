@@ -470,6 +470,7 @@ select[type=industry],[type=location]{
     display:block;
     border: 1px solid #74031C;
     box-sizing: border-box;
+    border-radius: 25px;
 }
 
 #search input{		 
@@ -591,7 +592,9 @@ label {
   }
 
 
-
+.inline_input{
+    float:left;
+}
 
 
 /* grid */
