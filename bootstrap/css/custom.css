@@ -11,6 +11,21 @@
     font-family: Arial;
 }
 
+/*Moves edit profile and view cv icons over to the center */ 
+.editview{
+    text-align: center;
+}
+
+.text-center{
+    border-width: 1px;
+    /* border-color: black; */
+    border-style: groove;
+    margin-right: 50px;
+    background: #f5f5f5;
+}
+
+
+
 /*Control the footer part of the webiste. */
 footer {
     display: block;
@@ -91,6 +106,10 @@ body {
     .image-hover-image img {
         border-radius: 0%;
         width: 640px;
+    }
+
+    .rounded-circle{
+        padding-bottom: 10px;
     }
 
 
