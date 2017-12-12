@@ -53,7 +53,7 @@ include_once("configs/dbh.php");?>
         <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <!-- <i class="fa fa-coffee"></i> --> 
-          Please Fill In <strong>All Fields</strong> Before Saving Changes.
+         Click <strong>Edit</strong> to make changes or click the <strong>CV</strong> Icon to view saved CV
         </div>
 		
 		<h3>Personal information</h3>
