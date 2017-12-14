@@ -1,9 +1,17 @@
 <?php
+
+
+/*
+ * Classname liveSearch.php
+ *@reference https://daveismyname.blog/autocomplete-with-php-mysql-and-jquery-ui
+ *@author Vladislavs Vasiljevs, x15493322
+ * 
+ */
 	$HOST = 'localhost';
 	$USER = 'root';
 	$PASS = '';
 	$NAME = 'candidate';
-	
+
 	
 
 if (isset($_GET['term'])){

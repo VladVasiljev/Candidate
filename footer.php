@@ -1,29 +1,35 @@
     <html>
-
+<!--
+ * Classname EditProfileCompany.php
+ *@reference https://fontawesome.com
+ * @author Vladislavs Vasiljevs, x15493322
+ *
+ -->
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+       <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
         <link href="bootstrap/css/custom.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>Candidate</title>
         <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     </head>
-
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     <body>
 
 
-
+<!-- * @author Vladislavs Vasiljevs, x15493322 -->
     <footer class="footer">
       <div class="container">
       
         <div class="center">
         <div class="LogoGroup">
-        <span> <img  src="img/footer-devices.png" alt="Logo" max-width="100%" ></a></span>
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-youtube"></a>
-        <span> <img src="img/footer-devices.png" alt="Logo" max-width="100%" ></a></span>
+       <!-- <span> <img  src="img/footer-devices.png" alt="Logo" max-width="100%" ></a></span> -->
+        <i style="font-size:3em; color:white" class="fab fa-facebook"></i>
+        <i style="font-size:3em; color:White"class="fab fa-google-plus-square"></i>
+        <!-- <i style="font-size:3em; color:#804c9e" class="fab fa-instagram"></i>-->
+        <i style="font-size:3em; color:white" class="fab fa-twitter-square"></i>
+        <!--<i style="font-size:3em; color:#ff0000" class="fab fa-youtube"></i>-->
+        <!-- <span> <img src="img/footer-devices.png" alt="Logo" max-width="100%" ></a></span> -->
         </div>
         </div>
    

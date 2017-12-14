@@ -9,6 +9,11 @@
         <title>Uemployed</title>
         <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     </head>
+<!--
+ * Classname header.php
+ * @author Vladislavs Vasiljevs, x15493322
+ * @author Paul Kinsella, x13125974
+ -->
     <body>
      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

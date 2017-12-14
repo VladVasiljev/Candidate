@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * Classname session.php
+ *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ */ 
+
+
 	session_start();
 	
 	require_once 'class.user.php';
