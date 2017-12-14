@@ -1,11 +1,6 @@
 <?php
-
 include 'header.php';
-    include 'dbh.php';
-
-
-
-
+include 'configs/dbh.php';
 ?>
 
 
@@ -44,7 +39,6 @@ include 'header.php';
                                     
                          }
                           
-
                             ?>
                             </div>
                         
@@ -57,4 +51,3 @@ include 'header.php';
         </div>
     </body>
 </html>
-      

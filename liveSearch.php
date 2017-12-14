@@ -1,6 +1,4 @@
 <?php
-
-
 /*
  * Classname liveSearch.php
  *@reference https://daveismyname.blog/autocomplete-with-php-mysql-and-jquery-ui
