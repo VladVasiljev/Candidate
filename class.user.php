@@ -1,4 +1,9 @@
 <?php
+/*
+ * Classname class.user.php
+ *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ * @author Vladislavs Vasiljevs, x15493322
+ */ 
 
 require_once('configs/dbconfig.php');
 

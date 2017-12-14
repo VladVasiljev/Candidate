@@ -1,5 +1,13 @@
 
 <?php
+/*
+ * Classname signup.php
+ *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ * @author Vladislavs Vasiljevs, x15493322
+ * 
+ */ 
+
+
 include 'header.php';
 session_start();
 require_once('class.user.php');
@@ -97,6 +105,7 @@ if(isset($_POST['btn-signup']))
 </head>
 <body>
 
+<!-- @author Vladislavs Vasiljevs, x15493322  *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html -->
 <div class="signin-form">
 
 <div class="container">
@@ -168,6 +177,7 @@ if(isset($_POST['btn-signup']))
 				  <option value="Retail">Retail</option>
                 </select>
 			 </div>
+			 <!-- @author Paul Kinsella, x13125974 -->
 			<div align="center" class="form-group">
 			<select type="location" name="txt_location">
 				  <option value="Antrim">Antrim</option>
