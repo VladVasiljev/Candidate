@@ -1,19 +1,22 @@
 <?php
+//required connection scripts
 include 'header.php';
 session_start();
+//require company class
 require_once('class.company.php');
 $company = new COMPANY();
-
+//checking if user is logged in
 if($company->is_loggedin()!="")
 {
 	//Redirects the user to userprofile, if user tries to sign up while logged in.
 	$company->redirect('new_company_profile.php');
 }
 
+//checking the submit button was pressed
 if(isset($_POST['btn-signup']))
 {
 	
-	
+	//storing post data in variables 
 	$userName = strip_tags($_POST['txt_userName']);
 	$companyPassword = strip_tags($_POST['txt_companyPassword']);
 	$companyName = strip_tags($_POST['txt_companyName']);
@@ -29,7 +32,7 @@ if(isset($_POST['btn-signup']))
 		$error[] = "provide name !";	
 	}
 	*/
-
+	//basic error handling, checking to see if fields are empty
 	if($companyName=="")	{
 		$error[] = "Provide Your Company Name";	
 	}
@@ -49,6 +52,7 @@ if(isset($_POST['btn-signup']))
 	{
 		try
 		{
+			//comparing input data to database records
 			$stmt = $company->runQuery("SELECT username FROM company WHERE username=:userName ");
 			$stmt->execute(array(':userName'=>$userName));
 			$row=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -72,11 +76,13 @@ if(isset($_POST['btn-signup']))
 }
 
 ?>
+
+<!--Start of html document-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Candidate: Sign up</title>
+<title>Sign up</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="style.css" type="text/css"  />
@@ -87,10 +93,10 @@ if(isset($_POST['btn-signup']))
 
 <div class="container">
 	<div class="row">
-		<div class="col-1-2">
+		<div class="col-1-1">
 <div class="signin-form">
         <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Company Signup  </h2><hr />
+           <center> <h2 class="form-signin-heading">Company Signup  </h2><hr /></center>
             <?php
 			if(isset($error))
 			{
@@ -113,23 +119,23 @@ if(isset($_POST['btn-signup']))
 			}
 			?>
 			
-            <div class="form-group">
+            <div align="center" class="form-group">
             <input type="text" class="form-control" name="txt_companyName" placeholder="Enter Username" value="<?php if(isset($error)){echo $userName;}?>"  />
             </div>
 			
             
 			
-            <div class="form-group">
+            <div align="center" class="form-group">
             	<input type="text" class="form-control" name="txt_userName" placeholder="Enter Company Name" value="<?php if(isset($error)){echo $companyName;}?>"/>
             </div>
-			<div class="form-group">
+			<div align="center" class="form-group">
             	<input type="password" class="form-control" name="txt_companyPassword" placeholder="Enter Password" />
 			</div>
 		</div>
 		</div>
-		<div class="col-1-2">
+		<div align="center" class="col-1-1">
 			<div class="form-group">
-		<h2 class="form-signin-heading">-Fill out all fields</h2><hr/>
+		
 			
 				
 			<select type="industry" name="txt_industryType">

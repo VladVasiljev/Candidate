@@ -51,7 +51,7 @@ include_once("configs/dbh.php");?>
 	  
 	  <div class="col-1-2">
         <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <a class="panel-close close" data-dismiss="alert">Close</a> 
           <!-- <i class="fa fa-coffee"></i> --> 
          Click <strong>Edit</strong> to make changes or click the <strong>CV</strong> Icon to view saved CV
         </div>

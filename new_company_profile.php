@@ -110,7 +110,11 @@ if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
         <br><br>
             <h1>Search for your Candidate</h1><hr>
             <!--Search Instruction-->
-            <img src="https://png.icons8.com/level-1/androidL/49/3498db"><h5> Choose Industry</h5><hr><br><img src="https://png.icons8.com/circled-2-c/color/49/3498db"><h5> Choose Years Experience</h5><hr><br><img src="https://png.icons8.com/circled-3-c/color/49/3498db"> <h5>Choose Location</h5><hr><br>
+            <img src="https://png.icons8.com/level-1/androidL/49/3498db">
+            <h5> Choose Industry</h5><hr><br>
+            <img src="https://png.icons8.com/circled-2-c/color/49/3498db">
+            <h5> Choose Years Experience</h5><hr><br><img src="https://png.icons8.com/circled-3-c/color/49/3498db">
+             <h5>Choose Location</h5><hr><br>
                 <div class="search-form">
                     <form action=" " method="get">
                         <div class="form-field">

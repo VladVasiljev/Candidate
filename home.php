@@ -28,7 +28,7 @@ include 'header.php';
                        
                <div class="image-hover-text-container">
 						  <div class="image-hover-image">
-              <a href="user_login.php"><span diaplay="block"><img src="img/CompanyLogin.png" class="img-fluid" alt="Candidate Login Image" width="100%"></span>
+              <a href="user_login.php"><span diaplay="block"><img src="img/business-2.jpg" class="img-fluid" alt="Candidate Login Image" width="100%"></span>
 						  </div>
 						  <div class="image-hover-text">
 							<div class="image-hover-text-bubble">
@@ -44,7 +44,7 @@ include 'header.php';
 							<div class="image-hover-text-container">
 							 <div class="image-hover-image">
                <a href="new_company_login.php"><span>
-							<img src="img/CandidateLogin.png" class="img-fluid" alt="Company Login Image" width="100%"></span>
+							<img src="img/business-1.jpg" class="img-fluid" alt="Company Login Image" width="100%"></span>
 						  </div>
 
 						  <div class="image-hover-text">

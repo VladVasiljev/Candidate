@@ -44,11 +44,11 @@ if(isset($_POST['btn-login']))
 		
 		<div class="row">
 
-		<div class="signin-form">
+		<div class="form-group">
 
 			<div class=" col-1-1">
 
-       <form class="form-signin" method="post" id="login-form">
+       <form class="form-control" method="post" >
       
         <h2 class="form-signin-heading">Log Into your Candidate profile.</h2><hr />
         

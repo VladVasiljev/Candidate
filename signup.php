@@ -101,8 +101,8 @@ if(isset($_POST['btn-signup']))
 
 <div class="container">
     	
-        <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Candidate Signup.</h2><hr />
+        <form method="post" class="form-group">
+            <h2 align="center" class="form-signin-heading">Candidate Signup.</h2><hr />
             <?php
 			if(isset($error))
 			{
@@ -125,33 +125,33 @@ if(isset($_POST['btn-signup']))
 			}
 			?>
 			
-            <div class="form-group">
+            <div align="center" class="form-group">
             <input type="text" class="form-control" name="txt_firstName" placeholder="Enter First Name" value="<?php if(isset($error)){echo $firstName;}?>"  />
             </div>
 			
-            <div class="form-group">
+            <div align="center" class="form-group">
             <input type="text" class="form-control" name="txt_lastName" placeholder="Enter Last Name"  value="<?php if(isset($error)){echo $lastName;}?>"/>
             </div>
 			
-            <div class="form-group">
+            <div align="center" class="form-group">
             	<input type="text" class="form-control" name="txt_userName" placeholder="Enter Username" value="<?php if(isset($error)){echo $userName;}?>"/>
             </div>
-			<div class="form-group">
+			<div align="center" class="form-group">
             	<input type="password" class="form-control" name="txt_userPassword" placeholder="Enter Password" />
             </div>
-			<div class="form-group">
+			<div align="center" class="form-group">
             	<input type="email" class="form-control" name="txt_userEmail" placeholder="Enter Email" value="<?php if(isset($error)){echo $userEmail;}?>"  />
             </div>
 			
-			<div class="form-group">
+			<div align="center" class="form-group">
             	<input type="number" class="form-control" name="txt_userExperience" placeholder="Enter Years Experinece" min="0" max="60" value="0" />
             </div>
 
-			<div class="form-group">
+			<div align="center" class="form-group">
             	<input type="text" class="form-control" name="txt_userBio" placeholder="Enter Your Bio" value="<?php if(isset($error)){echo $bio;}?>"/>
             </div>
 
-			<div class="form-group">
+			<div align="center" class="form-group">
 			<select type="industry" name="txt_industryType">
 				  <option value="Academic">Acedemic</option>
                   <option value="Accountancy and Finance">Accountancy</option>
@@ -168,7 +168,7 @@ if(isset($_POST['btn-signup']))
 				  <option value="Retail">Retail</option>
                 </select>
 			 </div>
-			<div class="form-group">
+			<div align="center" class="form-group">
 			<select type="location" name="txt_location">
 				  <option value="Antrim">Antrim</option>
                   <option value="Armagh">Armagh</option>
@@ -216,13 +216,13 @@ if(isset($_POST['btn-signup']))
 			
 			
             <div class="clearfix"></div><hr />
-            <div class="form-group">
+            <div align="center" class="form-group">
             	<button type="submit" class="btn btn-primary" name="btn-signup">
                 	<i class="glyphicon glyphicon-open-file"></i>&nbsp;SIGN UP
                 </button>
             </div>
             <br />
-            <label>have an account ! <a href="user_login.php">Sign In</a></label>
+            <center><label>have an account ! <a href="user_login.php">Sign In</a></label></center
         </form>
        </div>
 </div>
