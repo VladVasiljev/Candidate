@@ -97,7 +97,14 @@
 </div>
                  
 <div class="col-1-1">
+<!--
+ * Classname new_company_profile.php
+ *@reference https://www.youtube.com/watch?v=546sFEHUS_k
+ * @author Paul Kinsella, x13125974
+ */ -->
+
 <!-- Searching Database-->
+
 <?php
                     
                 //check if search data was submitted for search input and years input

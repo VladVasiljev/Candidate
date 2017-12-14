@@ -1,5 +1,9 @@
 <?php
-
+/*
+* Classname new_company_profile.php
+*@reference https://www.youtube.com/watch?v=546sFEHUS_k
+* @author Paul Kinsella, x13125974
+*/ 
 class search{
     private $mysqli;
     

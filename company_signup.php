@@ -94,7 +94,7 @@ if(isset($_POST['btn-signup']))
 <div class="container">
 	<div class="row">
 		<div class="col-1-1">
-<div class="signin-form">
+			<div class="signin-form">
         <form method="post" class="form-signin">
            <center> <h2 class="form-signin-heading">Company Signup  </h2><hr /></center>
             <?php
