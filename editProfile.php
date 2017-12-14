@@ -1,11 +1,25 @@
 
 <?php
+/*
+ * Classname editProfile.php
+ *@reference http://www.codingcage.com/2016/02/upload-insert-update-delete-image-using.html
+ *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ * @author Vladislavs Vasiljevs, x15493322
+ * @author Paul Kinsella, x13125974
+ */ 
+
+
+
 //session_start();
 // including the database connection file
 include_once("configs/dbh.php");
 include 'header.php';
 ?>
 <?php
+/**
+*@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ * @author Vladislavs Vasiljevs, x15493322
+ */ 
 //getting id from url
 require_once("session.php");
 require_once("class.user.php");
@@ -43,6 +57,10 @@ while($res = mysqli_fetch_array($result))
 
 <?php
 	//Start of Image Upload PHP
+	/**
+*@reference http://www.codingcage.com/2016/02/upload-insert-update-delete-image-using.htm
+ * @author Vladislavs Vasiljevs, x15493322
+ */ 
 	error_reporting( ~E_NOTICE );
 	
 	require_once 'configs/imageUploadConnection.php';
@@ -63,9 +81,7 @@ while($res = mysqli_fetch_array($result))
 		
 		
 	}
-	
-	
-	
+
 	if(isset($_POST['btn_save_updates']))
 	{
 		$firstName = $_POST['first_name'];//Users First Name
@@ -198,7 +214,9 @@ if(isset($_POST['cancel']))
 }
 
 ?>
+
 <!doctype html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -210,6 +228,10 @@ if(isset($_POST['cancel']))
 </head>
 <body>
 
+<!--
+*@reference http://www.codingcage.com/2016/02/upload-insert-update-delete-image-using.htm
+ * @author Vladislavs Vasiljevs, x15493322
+-->
 	<form method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
 	<div class="container">
     <h3>Hello <?php echo $firstName; ?> You can edit your profile here!</h3>
@@ -300,6 +322,7 @@ if(isset($_POST['cancel']))
             </div>
           </div>
 
+		<!-- @author Paul Kinsella, x13125974 -->
 		  <div class="form-group">
 			<select type="location" name="location">
 			<option value="<?php echo $locationType; ?>" selected ><?php echo $locationType; echo " [Current Location]"; ?></option> 

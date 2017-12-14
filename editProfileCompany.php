@@ -1,4 +1,13 @@
 <?php
+/*
+ * Classname EditProfileCompany.php
+ *@reference http://www.codingcage.com/2016/02/upload-insert-update-delete-image-using.html
+ * @author Vladislavs Vasiljevs, x15493322
+ * @author Paul Kinsella, x13125974
+ */ 
+
+
+
 // including the database connection file
 include_once("configs/dbh.php");
 include 'header.php';

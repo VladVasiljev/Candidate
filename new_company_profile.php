@@ -1,5 +1,16 @@
 <?php include 'header.php';?>
 <?php
+/*
+ * Classname new_company_profile.php
+ *@reference http://www.codingcage.com/2016/02/upload-insert-update-delete-image-using.html
+ *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ *@reference https://daveismyname.blog/autocomplete-with-php-mysql-and-jquery-ui
+ * @author Vladislavs Vasiljevs, x15493322
+ * @author Paul Kinsella, x13125974
+ */ 
+
+
+
     //require connection scripts
     require_once("company_session.php");
     require_once("class.company.php");
@@ -171,7 +182,10 @@ if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
         </div>
                 </div>
 </div>
-</div>
+</div>                  
+                <!-- @author Vladislavs Vasiljevs, x15493322
+                @reference https://daveismyname.blog/autocomplete-with-php-mysql-and-jquery-ui
+                 -->
                     <!--External JS Links-->
                     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
                     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>    

@@ -1,4 +1,13 @@
 <?php
+/*
+ * Classname new_company_login.php
+ *@reference http://www.codingcage.com/2015/04/php-login-and-registration-script-with.html
+ * @author Vladislavs Vasiljevs, x15493322
+ * @author Paul Kinsella, x13125974
+ */ 
+
+
+
 include 'header.php';
 session_start();
 require_once("class.company.php");

@@ -1,4 +1,11 @@
-<?php include 'header.php';
+<?php
+/*
+ * Classname userprofile.php
+ * @author Vladislavs Vasiljevs, x15493322
+ * @author Paul Kinsella, x13125974
+ */ 
+
+include 'header.php';
 include_once("configs/dbh.php");?>
 <?php
 
@@ -25,7 +32,7 @@ include_once("configs/dbh.php");?>
 </head>
 
 <body>
-
+<!-- * @author Vladislavs Vasiljevs, x15493322  @author Paul Kinsella, x13125974 -->
 <form method="" enctype="multipart/form-data" class="form-horizontal" role="form" id="userProfileForm">
 	<div class="container">
     <h3>Hello <?php echo $userRow['first']; ?> <?php echo $userRow['last'];?> Welcome To Your Profile Page</h3>
@@ -43,8 +50,9 @@ include_once("configs/dbh.php");?>
 		  -->
         </div>
 		<div class="editview">
-		<a  href="editProfile.php?id=<?php echo $userRow['id']; ?>" title="click for edit"> <img id="edit" src="https://png.icons8.com/edit/ultraviolet/30/000000">Edit Profile</a>
-		<a  href="user_cv/<?php echo $userRow['user_cv']; ?>" title="Click To View CV"> <img id="edit" src="https://png.icons8.com/eye/ultraviolet/30/000000">View CV</a>
+		<a  href="editProfile.php?id=<?php echo $userRow['id']; ?>" title="click for edit"> <img id="edit" src="https://png.icons8.com/edit-file/office/30/000000">Edit Profile</a>
+		<a  href="user_cv/<?php echo $userRow['user_cv']; ?>" title="Click To View CV"> <img id="edit" src="https://png.icons8.com/eye/office/30/000000">View CV</a>
+		<a href="logout.php?logout=true"><img id="edit" src="https://png.icons8.com/export/office/30/000000"/>Sign Out</a>
 	  </div>
 	  </div>
 
@@ -56,7 +64,7 @@ include_once("configs/dbh.php");?>
          Click <strong>Edit</strong> to make changes or click the <strong>CV</strong> Icon to view saved CV
         </div>
 		
-		<h3>Personal information</h3>
+		<h3>Personal Information</h3>
 	
     <?php
 	if(isset($errMSG)){

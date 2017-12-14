@@ -1,5 +1,9 @@
 <?php
-
+/*
+ * Classname userprofile.php
+ * @author Paul Kinsella, x13125974
+ * @author Kevin Carmody,	x15468652
+ */ 
 include 'header.php';
 //include 'configs/dbh.php';
 ?>
