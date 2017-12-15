@@ -395,7 +395,8 @@ nav ul form button {
 
 .home_text{
     text-align: center;
-    color:black;
+    color:#7c7e82;
+
 }
 
 #search button{
@@ -847,10 +848,7 @@ nav ul form button {
 
 }
 
-.home_text{
-    text-align: center;
-    color:black;
-}
+
 
 #search button{
     background: url(img/search_icon.png) no-repeat;
