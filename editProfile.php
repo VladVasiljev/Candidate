@@ -30,8 +30,10 @@ $stmt->execute(array(":user_id"=>$user_id));
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
 
+//Prevents user from editing other user accounts, brings user back to userprofile
+// @author Vladislavs Vasiljevs, x15493322
 if ($user_id == $id) {
-	echo "$user_id + \n $id";
+	
 }
 else{
 	echo header("Location: userprofile.php");

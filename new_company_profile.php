@@ -79,8 +79,10 @@
      <div class="row">
     <div align="center" class="col-1-1">
     <div class = "UserInformation">
-    <a href="logout.php?logout=true">Sign Out</a><br>
-    <span><a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="img/edit.png"></a></span> <br>
+    <a  href="editProfileCompany.php?cid=<?php echo $companyRow['cid']; ?>" title="click for edit"> <img id="edit" src="https://png.icons8.com/edit-file/office/30/000000">Edit Profile</a>
+	<a href="logout.php?logout=true"><img id="edit" src="https://png.icons8.com/export/office/30/000000"/>Sign Out</a>
+    <!--<a href="logout.php?logout=true">Sign Out</a><br>-->
+    <span></span> <br>
     <?php
         include_once 'configs/dbh.php';
     if (isset($companyRow['cid'])) {
@@ -206,7 +208,7 @@ if (isset($_GET['s'], $_GET['y'],$_GET['l'])) {
                             $(function() {
                                 
                                 //autocomplete
-                                $(".auto").autocomplete({
+                                $(".form-control").autocomplete({
                                     source: "liveSearch.php",
                                     minLength: 1
                                 });                
@@ -250,7 +252,7 @@ if (!empty($search_results)) :?>
     </form>
         </div>
             </div>
-    
+            
     <?php endforeach; ?>
   
     
@@ -259,10 +261,9 @@ if (!empty($search_results)) :?>
 
 <?php endif; ?>
 
-             
+          
 </div>
 <!--link to footer-->
-<?php include 'footer.php'?>
-
+<?php include 'footer.php'?> 
 </body>
 </html>
