@@ -16,7 +16,7 @@ if($company->is_loggedin()!="")
 if(isset($_POST['btn-signup']))
 {
 	
-	//storing post data in variables 
+	//storing post data into variables 
 	$userName = strip_tags($_POST['txt_userName']);
 	$companyPassword = strip_tags($_POST['txt_companyPassword']);
 	$companyName = strip_tags($_POST['txt_companyName']);
@@ -90,7 +90,7 @@ if(isset($_POST['btn-signup']))
 <body>
 
 
-
+<!--Container that holds all content-->
 <div class="container">
 	<div class="row">
 		<div class="col-1-1">

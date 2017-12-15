@@ -242,10 +242,10 @@ if (!empty($search_results)) :?>
       <!--  <?php echo $search_result->user_cv; ?>--> <!--Displays link saved in database-->
        <!-- <a href="user_cv/<?php echo $search_result->user_cv?>"target=_blank>View Cv</a>--><!--View cv-->
      <div style="margin: 24px 0;">
-            <a href="#"><i class="fa fa-twitter"></i></a>  
-            <a href="#"><i class="fa fa-linkedin"></i></a>  
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-whatsapp"></i></a> 
+            <a href="#"><i class="fab fa-twitter"></i></a>  
+            <a href="#"><i class="fab fa-linkedin"></i></a>  
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a> 
         </div>
       <form action="user_cv/<?php echo $search_result->user_cv?>"target=_blank>
         <button>View CV</button><br><br>
