@@ -55,7 +55,7 @@ if(isset($_POST['btn-login']))
 
 			<div class=" col-1-1">
 
-       <form class="form-control" method="post" >
+			<form class="form-signin" method="post" id="login-form">
       
         <h2 class="form-signin-heading">Log Into your Candidate profile.</h2><hr />
         
